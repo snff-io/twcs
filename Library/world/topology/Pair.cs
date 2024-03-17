@@ -29,15 +29,20 @@ public class Pair
         return new Pair(x, y, topType, bottomType, magnitude, pressure, layer);
     }
 
-    public int X { get; }
-    public int Y { get; }
-    public int TopType { get; }
-    public int BottomType { get; }
-    public int Magnitude { get; private set; } = 1;
-    public int Pressure { get; private set; } = 0;
-    public int Layer { get; private set; } = 0;
+    public double MaxMagnitude = 50;
 
-    public Pair(int x, int y, int topType, int bottomType, int magnitude = 1, int pressure = 0, int layer = 0)
+    static Pair none =  new Pair(0,0,0,0,0,0,0);
+    public static Pair None =>none;
+
+    public int X { get; set; }
+    public int Y { get; set; }
+    public int TopType { get; set; }
+    public int BottomType { get; set; }
+    public double Magnitude { get; set; } = 1;
+    public double Pressure { get; set; } = 0;
+    public int Layer { get; set; } = 0;
+
+    public Pair(int x, int y, int topType, int bottomType, double magnitude = 1, double pressure = 0, int layer = 0)
     {
         X = x;
         Y = y;

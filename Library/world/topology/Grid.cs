@@ -2,7 +2,8 @@ namespace library.worldcomputer.info;
 
 
 
- class Grid {
+public class Grid
+{
     public Pair[][][] Layers { get; set; } = new Pair[0][][];
 
     public Grid(int layerSize = 379)
@@ -17,9 +18,6 @@ namespace library.worldcomputer.info;
 
         for (int layerIndex = 0; layerIndex < LayerSize; layerIndex++)
         {
-            if (grid.Length >= LayerSize)
-                break;
-
             if (grid.Length <= popLayers)
             {
                 Pair[][] layer = new Pair[LayerSize][];
