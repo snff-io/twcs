@@ -3,7 +3,7 @@ using System.Collections.Generic;
 public class Processor()
 {
 
-    void SimulateSingleTurn(Grid grid)
+    public void SimulateSingleTurn(Grid grid)
     {
         for (int layerIndex = 0; layerIndex < grid.LayerSize; layerIndex++)
         {
@@ -12,7 +12,7 @@ public class Processor()
                 for (int y = 0; y < grid.LayerSize; y++)
                 {
                     Pair pair = grid.Layers[layerIndex][x][y];
-                    if (pair != null)
+                    if (pair != null && pair != Pair.None)
                     {
                         var pairGroup = new PairGroup(grid, pair);
                         UpdateMagnitude(pairGroup);
@@ -45,7 +45,7 @@ public class Processor()
         foreach (string direction in new[] { "north", "south", "east", "west" })
         {
             var neighbor = pairGroup.Get(direction);
-            if (neighbor == null)
+            if (neighbor == null || neighbor == Pair.None)
             {
                 pressure += 0.9;
             }

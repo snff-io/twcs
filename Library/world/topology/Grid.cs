@@ -1,3 +1,5 @@
+using MongoDB.Bson.Serialization.Serializers;
+using System.Linq;
 namespace library.worldcomputer.info;
 
 
@@ -5,6 +7,9 @@ namespace library.worldcomputer.info;
 public class Grid
 {
     public Pair[][][] Layers { get; set; } = new Pair[0][][];
+
+
+    public DateTime Initialized = DateTime.MaxValue;
 
     public Grid(int layerSize = 379)
     {
@@ -18,7 +23,7 @@ public class Grid
 
         for (int layerIndex = 0; layerIndex < LayerSize; layerIndex++)
         {
-            if (grid.Length <= popLayers)
+            if (layerIndex <= popLayers)
             {
                 Pair[][] layer = new Pair[LayerSize][];
                 for (int x = 0; x < LayerSize; x++)
@@ -28,10 +33,10 @@ public class Grid
 
                     for (int y = 0; y < LayerSize; y++)
                     {
-                        col[y] = Pair.RandomIndividual(x, y, grid.Length);
+                        col[y] = Pair.RandomIndividual(x, y, layerIndex);
                     }
                 }
-                grid[grid.Length] = layer;
+                grid[layerIndex] = layer;
             }
             else
             {
@@ -39,10 +44,17 @@ public class Grid
                 for (int i = 0; i < LayerSize; i++)
                 {
                     emptyLayer[i] = new Pair[LayerSize];
+                    for (int j = 0; j < LayerSize; j++)
+                    {
+                        emptyLayer[i][j] = Pair.None;
+                    }
+
                 }
-                grid[grid.Length] = emptyLayer;
+                grid[layerIndex] = emptyLayer;
             }
         }
+        Layers = grid;
+        Initialized = DateTime.Now;
     }
 
     public IEnumerable<Pair[][]> GetPopulatedLayers()
@@ -58,5 +70,27 @@ public class Grid
         }
 
         return popLayers;
+    }
+
+    // public IEnumerable<Pair> GetAllPairs()
+    // {
+    //     var ret = new List<Pair>();
+
+    //     for (int l = 0; l < this.Layers.Count(); l++)
+    //     {
+    //         for (int x = 0; x < this.Layers[l].Count(); x++)
+    //         {
+    //             for (int y = 0; y < this.Layers[l][x].Count(); y++)
+    //             {
+    //                 ret.Add(this.Layers[l][x][y]);
+    //             }
+    //         }
+    //     }
+
+    //     return ret;
+    // }
+
+    public IEnumerable<Pair> GetAllPairs() {
+        return Layers.SelectMany(layer => layer.SelectMany(row => row));
     }
 }
