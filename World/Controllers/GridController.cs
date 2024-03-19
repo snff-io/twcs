@@ -90,6 +90,22 @@ namespace World.Controllers
             }
         }
 
+        [HttpGet("/grid/location/{layer}/{x}/{y}")]
+        public IActionResult StatLocation(int layer, int x, int y)
+        {
+            if (the_grid == null)
+            {
+                return StatusCode(400, "Bad Request. Grid not initialized.");
+            }
+
+            if (layer < 0 || layer >= the_grid.LayerSize || x < 0 || x >= the_grid.LayerSize || y < 0 || y >= the_grid.LayerSize)
+            {
+                return StatusCode(400, "Bad Request. Invalid layer, x, or y value.");
+            }
+
+            return new JsonResult(the_grid.Layers[layer][x][y]);
+        }
+
         [HttpGet("/grid/metrics")]
         public async Task<IActionResult> StatMetrics(int startLayer = 0, int endLayer = 2)
         {
@@ -113,7 +129,7 @@ namespace World.Controllers
                     pair.Pressure.ToString(),
                     pair.Stability.ToString(),
                     pair.TopType.ToString(),
-                    pair.BottomType.ToString());
+                    pair.BottomType.ToString()).Observe(1);
             });
 
             await _grid_registry.CollectAndExportAsTextAsync(Response.Body);

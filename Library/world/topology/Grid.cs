@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.DataProtection;
 using MongoDB.Bson.Serialization.Serializers;
 using System.Linq;
 namespace library.worldcomputer.info;
@@ -11,7 +12,7 @@ public class Grid
 
     public DateTime Initialized = DateTime.MaxValue;
 
-    public Grid(int layerSize = 379)
+    public Grid(int layerSize = 37)
     {
         LayerSize = layerSize;
     }
@@ -46,9 +47,12 @@ public class Grid
                     emptyLayer[i] = new Pair[LayerSize];
                     for (int j = 0; j < LayerSize; j++)
                     {
-                        emptyLayer[i][j] = Pair.None;
+                        var ep = Pair.None.Copy();
+                        ep.Layer = layerIndex;
+                        ep.X = i;
+                        ep.Y = j;
+                        emptyLayer[i][j] = ep;
                     }
-
                 }
                 grid[layerIndex] = emptyLayer;
             }

@@ -1,0 +1,14 @@
+# Use the official Grafana base image
+FROM grafana/grafana:latest as cachebreak
+
+# Define volume for Grafana configuration
+VOLUME ["/grafana"]
+
+# Copy custom configuration files into the container
+COPY grafana.ini /grafana/grafana.ini
+
+# Expose Grafana port
+EXPOSE 3000
+
+# Start Grafana
+CMD ["grafana-server", "--homepath=usr/share/grafana", "--config=/grafana/grafana.ini"]

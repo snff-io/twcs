@@ -1,23 +1,14 @@
-#See https://aka.ms/customizecontainer to learn how to customize your debug container and how Visual Studio uses this Dockerfile to build your images for faster debugging.
+FROM prom/prometheus
 
-FROM mcr.microsoft.com/dotnet/runtime:8.0 AS base
-USER app
-WORKDIR /app
+# Create a volume for Prometheus configuration and data
+VOLUME ["/prometheus"]
 
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
-ARG BUILD_CONFIGURATION=Release
-WORKDIR /src
-COPY ["Computer/Computer.csproj", "Computer/"]
-RUN dotnet restore "./Computer/Computer.csproj"
-COPY . .
-WORKDIR "/src/Computer"
-RUN dotnet build "./Computer.csproj" -c $BUILD_CONFIGURATION -o /app/build
+# Copy the Prometheus configuration file into the volume directory
+COPY prometheus.yml /prometheus/prometheus.yml
 
-FROM build AS publish
-ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./Computer.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
-FROM base AS final
-WORKDIR /app
-COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "Computer.dll"]
+# Expose the port Prometheus listens on
+EXPOSE 9090
+
+# Define the command to run the Prometheus server
+CMD ["--config.file=/prometheus/prometheus.yml", "--storage.tsdb.path=/prometheus/data"]
