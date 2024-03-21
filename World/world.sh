@@ -1,0 +1,1 @@
+docker run --rm -it -p 4554:8080/tcp world:latest

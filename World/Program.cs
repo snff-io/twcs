@@ -13,12 +13,7 @@ builder.Services.AddScoped<Processor>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
 
-    //app.UseSwagger();
-    //app.UseSwaggerUI();
-}
 
 app.UseHttpsRedirection();
 
@@ -26,4 +21,12 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.Run("http://100.115.92.197:5260");
+if (app.Environment.IsDevelopment())
+{
+    app.Run("http://100.115.92.197:5260");
+}
+else
+{
+    app.Run();
+}
+

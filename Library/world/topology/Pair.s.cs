@@ -12,12 +12,13 @@ public partial class Pair
         new int[] { 3, 1, 0, 1, 1, 1, 1, 0, 0 },
         new int[] { 4, 1, 0, 0, 1, 1, 1, 0, 0 },
         new int[] { 5, 1, 0, 0, 0, 1, 0, 0, 0 },
-        new int[] { 6, 1, 0, 0, 0, 1, 1, 0, 0 },
+        new int[] { 6, 1, 0, 0, 0, 1, 1, 0, 0 },    
         new int[] { 7, 1, 0, 0, 0, 1, 1, 1, 1 },
         new int[] { 8, 1, 0, 0, 1, 1, 1, 0, 1 }
     };
     public static int CheckStability(int topType, int bottomType)
-    {
+    {   if (bottomType == -1 || topType == -1)
+            return 0;
         return StabilityTable[bottomType][topType];
     }
 
