@@ -76,25 +76,25 @@ public class Grid
         return popLayers;
     }
 
-    // public IEnumerable<Pair> GetAllPairs()
-    // {
-    //     var ret = new List<Pair>();
+    public IEnumerable<Pair> GetAllPairs()
+    {
+        var ret = new List<Pair>();
 
-    //     for (int l = 0; l < this.Layers.Count(); l++)
-    //     {
-    //         for (int x = 0; x < this.Layers[l].Count(); x++)
-    //         {
-    //             for (int y = 0; y < this.Layers[l][x].Count(); y++)
-    //             {
-    //                 ret.Add(this.Layers[l][x][y]);
-    //             }
-    //         }
-    //     }
+        for (int l = 0; l < this.Layers.Count(); l++)
+        {
+            for (int x = 0; x < this.Layers[l].Count(); x++)
+            {
+                for (int y = 0; y < this.Layers[l][x].Count(); y++)
+                {
+                    ret.Add(this.Layers[l][x][y]);
+                }
+            }
+        }
 
-    //     return ret;
-    // }
-
-    public IEnumerable<Pair> GetAllPairs() {
-        return Layers.SelectMany(layer => layer.SelectMany(row => row));
+        return ret;
     }
+
+    // public IEnumerable<Pair> GetAllPairs() {
+    //     return Layers.SelectMany(layer => layer.SelectMany(row => row));
+    // }
 }
