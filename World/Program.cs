@@ -21,12 +21,5 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-if (app.Environment.IsDevelopment())
-{
-    app.Run("http://100.115.92.197:5260");
-}
-else
-{
-    app.Run();
-}
+app.Run();
 

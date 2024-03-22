@@ -2,7 +2,7 @@
 
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 USER app
-EXPOSE 5000
+EXPOSE 8080
 WORKDIR /world
 COPY bin/Debug/net8.0 .
 CMD ["dotnet", "World.dll"]
