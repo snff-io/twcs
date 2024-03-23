@@ -1,22 +1,29 @@
+using library.worldcomputer.info;
 namespace Computer
 {
     public class Worker : BackgroundService
     {
         private readonly ILogger<Worker> _logger;
+        private readonly IGrid _grid;
+        private IProcessor _processor;
 
-        public Worker(ILogger<Worker> logger)
+        public IGrid Grid => _grid;
+
+        public Worker(ILogger<Worker> logger, IGrid grid, IProcessor processor)
         {
             _logger = logger;
+            _grid = grid;
+            _processor = processor;
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
+            _grid.InitializeGrid();
+
             while (!stoppingToken.IsCancellationRequested)
             {
-                if (_logger.IsEnabled(LogLevel.Information))
-                {
-                    _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
-                }
+                _processor.Process(_grid);
+
                 await Task.Delay(1000, stoppingToken);
             }
         }

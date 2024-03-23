@@ -1,7 +1,7 @@
 docker rm -f prometheus
 docker run \
-  -d \
+  -it \
   -p 9090:9090 \
   --name prometheus \
   -v prometheus:/prometheus \
-  twc_prometheus:latest
+  prometheus:latest

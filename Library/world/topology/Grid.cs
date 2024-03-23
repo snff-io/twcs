@@ -5,21 +5,20 @@ namespace library.worldcomputer.info;
 
 
 
-public class Grid
+public class Grid : IGrid
 {
     public Pair[][][] Layers { get; set; } = new Pair[0][][];
-
-
     public DateTime Initialized = DateTime.MaxValue;
 
-    public Grid(int layerSize = 37)
+    public Grid()
     {
-        LayerSize = layerSize;
+        
     }
 
     public int LayerSize { get; set; }
-    public void InitializeGrid(int popLayers = 0)
-    {
+    public void InitializeGrid(int layerSize = 190, int popLayers = 0)
+    {   
+        LayerSize = layerSize;
         var grid = new Pair[LayerSize][][];
 
         for (int layerIndex = 0; layerIndex < LayerSize; layerIndex++)

@@ -1,9 +1,14 @@
 namespace library.worldcomputer.info;
 using System.Collections.Generic;
-public class Processor()
+public class Processor : IProcessor
 {
 
-    public void SimulateSingleTurn(Grid grid)
+    public void Process(IGrid grid)
+    {
+        SimulateSingleTurn(grid);
+    }
+    
+    public void SimulateSingleTurn(IGrid grid)
     {
         for (int layerIndex = 0; layerIndex < grid.LayerSize; layerIndex++)
         {
@@ -86,7 +91,7 @@ public class Processor()
         return stability < pressure;
     }
 
-    public void FlipPair(Grid grid, bool flip, PairGroup pairGroup)
+    public void FlipPair(IGrid grid, bool flip, PairGroup pairGroup)
     {
         if (flip)
         {

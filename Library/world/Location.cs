@@ -1,8 +1,7 @@
 namespace library.worldcomputer.info;
 
-public class Location {
-    public double Layer {get;set;}
-    public double X {get;set;}
-    public double Y {get;set;}
-
+public class Location: ILocation {
+    public int Layer {get;set;} = 1;
+    public int X {get;set;} = 0;
+    public int Y {get;set;} = 0;
 }

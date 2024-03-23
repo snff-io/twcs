@@ -4,4 +4,5 @@ docker run -d \
   -e GF_PATHS_CONFIG=/grafana/grafana.ini \
   --name grafana \
   -v grafana:/grafana \
-  twc_grafana
+  -v grafana_data:/var/lib/grafana \
+  grafana

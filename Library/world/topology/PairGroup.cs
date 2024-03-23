@@ -11,7 +11,7 @@ public class PairGroup
     public Pair Down { get; set; }
 
 
-    public PairGroup(Grid grid, int layer, int x, int y)
+    public PairGroup(IGrid grid, int layer, int x, int y)
     {
        try
         {
@@ -29,7 +29,7 @@ public class PairGroup
         }
     }
 
-    public PairGroup(Grid grid, Pair current)
+    public PairGroup(IGrid grid, Pair current)
     :this(grid, current.Layer, current.X, current.Y)
     {
  
