@@ -1,88 +1,122 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text;
+using Terminal.Gui.Graphs;
+using System.Text.RegularExpressions;
+
+
 
 public class WordNet
 {
-    private Dictionary<string, List<string>> wordToSynsets;
-    private Dictionary<string, List<string>> synsetToWords;
+    string[] cmd_verbs = {
+        "travel",
+        "use",
+        "take",
+        "put",
+        "examine",
+        "speak",
+        "laugh"
+    };
 
-    public WordNet(string wordNetDirectory)
+    string[] cmd_nouns =
     {
-        wordToSynsets = new Dictionary<string, List<string>>();
-        synsetToWords = new Dictionary<string, List<string>>();
-        LoadWordNet(wordNetDirectory);
-    }
+        "device",
+        "location",
+        "energy",
+        "pair",
+        "vibration"
+    };
 
-    public List<string> GetSynsets(string word)
+    public string Resolve(string input, PartOfSpeech pos)
     {
-        if (wordToSynsets.ContainsKey(word))
+        string[] cmd_words;
+        switch (pos) {
+            case PartOfSpeech.noun: 
+                cmd_words = cmd_nouns;
+                break;
+            case PartOfSpeech.verb:
+                cmd_words = cmd_verbs;
+                break;
+            default:
+                throw new Exception("no, bad");
+
+        }       
+
+        using (var fidx = File.OpenRead("/home/zampinojosh/src/twcs/Terminal/wn/dict/index." + pos.ToString()))
+        using (var reader = new StreamReader(fidx))
         {
-            return wordToSynsets[word];
-        }
-        return new List<string>(); // Return empty list if word not found
-    }
+            var qwords = input.Split(' ');
 
-    public List<string> GetWordsInSynset(string synset)
-    {
-        if (synsetToWords.ContainsKey(synset))
-        {
-            return synsetToWords[synset];
-        }
-        return new List<string>(); // Return empty list if synset not found
-    }
-
-    private void LoadWordNet(string wordNetDirectory)
-    {
-        // Load data files and construct mappings
-        LoadWordToSynsets(Path.Combine(wordNetDirectory, "dict", "data.noun"));
-        // Add other data files as needed (e.g., data.verb, data.adj, etc.)
-    }
-
-    private void LoadWordToSynsets(string filePath)
-    {
-        using (StreamReader reader = new StreamReader(filePath))
-        {
-            string line;
-            while ((line = reader.ReadLine()) != null)
+            foreach (var qword in qwords)
             {
-                string[] parts = line.Split(' ');
-                string synset = parts[0];
-                string[] words = parts[1].Split(',');
-                foreach (string word in words)
-                {
-                    if (!wordToSynsets.ContainsKey(word))
-                    {
-                        wordToSynsets[word] = new List<string>();
-                    }
-                    wordToSynsets[word].Add(synset);
+                if (cmd_words.Contains(qword))
+                    return qword;
+            }
 
-                    if (!synsetToWords.ContainsKey(synset))
+            while (!reader.EndOfStream)
+            {
+                var line = reader.ReadLine();
+                var words = input.Split(' ');
+                foreach (var word in words)
+                {
+
+                    if (!line.StartsWith(word))
+                        continue;
+
+                    // Regular expression pattern to match 8 consecutive digits
+                    string pattern = @"\b\d{8}\b";
+
+                    // Find all matches of 8-digit groups in the line
+                    var matches = Regex.Matches(line, pattern);
+                    // Iterate over matches and add them to the synset offsets
+
+                    using (var fverb = File.OpenRead("/home/zampinojosh/src/twcs/Terminal/wn/dict/data." + pos.ToString()))
+                    using (var vreader = new StreamReader(fverb))
                     {
-                        synsetToWords[synset] = new List<string>();
+                        foreach (Match match in matches)
+                        {
+
+                            fverb.Seek(int.Parse(match.Value), SeekOrigin.Begin);
+                            var fverbLine = vreader.ReadLine();
+
+                            if (fverbLine == null)
+                                continue;
+
+                            foreach (var verb in cmd_words)
+                            {
+                                if (fverbLine.ToLower().Contains(verb))
+                                    return verb;
+                            }
+                        }
                     }
-                    synsetToWords[synset].Add(word);
+
                 }
             }
         }
+
+        return "";
     }
+
+    // open "index.verb", scan foreach word in input, gather indexes, seek in data.verb at indexes looking for a preferred verb  
 }
 
+
+    public enum PartOfSpeech
+    {
+        noun,
+        verb,
+        adj,
+        adv
+
+    }
 class Program
 {
     static void Main(string[] args)
     {
-        // Initialize WordNet with the directory containing WordNet dictionary files
-        WordNet wordNet = new WordNet("/home/zampinojosh/src/twcs/Terminal/wn/");
+        var wn = new WordNet();
 
-        // Example usage: Get synsets for a word
-        string word = "dog";
-        List<string> synsets = wordNet.GetSynsets(word);
-        Console.WriteLine($"Synsets for '{word}': {string.Join(", ", synsets)}");
-
-        // Example usage: Get words in a synset
-        string synset = "dog.n.01";
-        List<string> wordsInSynset = wordNet.GetWordsInSynset(synset);
-        Console.WriteLine($"Words in synset '{synset}': {string.Join(", ", wordsInSynset)}");
+        System.Console.WriteLine(wn.Resolve(args[0],PartOfSpeech.verb));
+        System.Console.WriteLine(wn.Resolve(args[0],PartOfSpeech.noun));
     }
 }
