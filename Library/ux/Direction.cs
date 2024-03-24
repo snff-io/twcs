@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
 using YamlDotNet.Core;
 
 public static class Directions
@@ -15,24 +16,24 @@ public static class Directions
         {
             case "u":
             case "up":
-                return Direction.Up;
+                return Direction.up;
             case "d":
             case "down":
-                return Direction.Down;
+                return Direction.down;
             case "n":
             case "north":
-                return Direction.North;
+                return Direction.north;
             case "s":
             case "south":
-                return Direction.South;
+                return Direction.south;
             case "e":
             case "east":
-                return Direction.East;
+                return Direction.east;
             case "w":
             case "west":
-                return Direction.West;
+                return Direction.west;
             default:
-                throw new ArgumentException("Invalid direction");
+                return Direction.none;
         }
 
     }
@@ -40,10 +41,11 @@ public static class Directions
 
 public enum Direction
 {
-    Up,
-    Down,
-    North,
-    South,
-    East,
-    West
+    none,
+    up,
+    down,
+    north,
+    south,
+    east,
+    west
 }

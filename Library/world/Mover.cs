@@ -10,81 +10,84 @@ public class Mover : IMove
 
     }
 
-public bool TryMove(ILocation location, Direction direction)
-{
-    switch (direction)
+    public bool TryMove(ILocation location, Direction direction)
     {
-        case Direction.Up:
-            if (location.Layer + 1 > _grid.LayerSize)
-            {
-                location.Layer += 1;
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+        switch (direction)
+        {
+            case Direction.up:
+                if (location.Layer + 1 > _grid.LayerSize)
+                {
+                    location.Layer += 1;
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
 
-        case Direction.Down:
-            if (location.Layer - 1 >= 0)
-            {
-                location.Layer -= 1;
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            case Direction.down:
+                if (location.Layer - 1 >= 0)
+                {
+                    location.Layer -= 1;
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
 
-        case Direction.North:
-            if (location.Y - 1 >= 0)
-            {
-                location.Y -= 1;
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            case Direction.north:
+                if (location.Y - 1 >= 0)
+                {
+                    location.Y -= 1;
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
 
-        case Direction.South:
-            if (location.Y + 1 < _grid.LayerSize)
-            {
-                location.Y += 1;
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            case Direction.south:
+                if (location.Y + 1 < _grid.LayerSize)
+                {
+                    location.Y += 1;
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
 
-        case Direction.West:
-            if (location.X - 1 >= 0)
-            {
-                location.X -= 1;
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            case Direction.west:
+                if (location.X - 1 >= 0)
+                {
+                    location.X -= 1;
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
 
-        case Direction.East:
-            if (location.X + 1 < _grid.LayerSize)
-            {
-                location.X += 1;
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            case Direction.east:
+                if (location.X + 1 < _grid.LayerSize)
+                {
+                    location.X += 1;
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
 
-        default:
-            throw new ArgumentException("Invalid direction");
+            default:
+                throw new ArgumentException("Invalid direction");
+        }
     }
-}
 
-
-
+    public bool TryParse(string arguments, out string intentPath)
+    {
+        intentPath = "";
+        return false;       
+    }
 }

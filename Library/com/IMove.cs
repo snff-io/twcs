@@ -1,4 +1,6 @@
 namespace library.worldcomputer.info;
-public interface IMove {
+public interface IMove:IIntent
+{
+    
     bool TryMove(ILocation location, Direction direction);
 }
