@@ -1,105 +1,219 @@
 body {
-    color: rgb(222, 112, 3);
-    background-color: rgb(19, 19, 19);
+  color: rgb(222, 112, 3);
+  background-color: rgb(19, 19, 19);
+  
 }
 
 .layout {
-    width: 1024px;
-    height: 768px;
-    /* border-width: 1px;
-    border-color: rgb(4, 66, 255);
-    border-style: solid; */
-    overflow: hidden;
-    transform-origin: top left; /* Ensure scaling starts from top left corner */
-    transform: scale(1);
-  
+  width: 1024px;
+  height: 768px;
+  overflow: hidden;
+  transform-origin: top left;
+  /* Ensure scaling starts from top left corner */
+  transform: scale(1);
+  background-color: rgb(53, 53, 53);
+  background-image: url("img/cdj.jpeg");
+  background-size: cover;
+  background-position: center;
+
 }
-/* div{
-    border-width: 1px;
-    border-color: rgb(4, 66, 255);
-    border-style: inset; 
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Adjust as needed */
+  grid-template-rows: 1fr 1fr; /* Adjust as needed */
+  gap: 4px; /* Adjust as needed */
+}
+
+.item {
+  background-color:transparent; /* Just for demonstration */
+}
+
+/* Layout No Touch I lay you out.*/
+.div_output {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  background-color: rgb(53, 53, 53);
+  background-image: url("img/runerock.jpeg");
+  background-size: cover;
+  background-position: center;
+  
+  width: 250px;
+  height: 646px;
+  z-index: 100;
+}
+
+.div_breadcrumb {
+  position: absolute;
+  left: 10px;
+  top: 660px;
+  background-color: rgb(53, 53, 53);
+  width: 250px;
+  height: 26px;
+  z-index: 10000;
+}
+
+.div_input {
+  position: absolute;
+  left: 10px;
+  top: 690px;
+  background-color: rgb(53, 53, 53);
+  width: 250px;
+  height: 78px;
+  z-index: 100;
+}
+
+.div_upper {
+  position: absolute;
+  left: 264px;
+  top: 10px;
+  background-color: rgb(53, 53, 53);
+  /* background-image: url("img/chartt.jpeg"); */
+  background-size: cover;
+  background-position: center;
+  width: 768px;
+  height: 150px;
+  opacity: .7;
+}
+
+.div_mid_left {
+  position: absolute;
+  left: 264px;
+  top: 164px;
+  /* background-image: url("img/bl.jpeg"); */
+  background-color: rgb(53, 53, 53);
+  opacity: .7;
+
+  background-size: cover;
+  background-position: center;
+  width: 380px;
+  height: 350px;
+}
+
+.div_mid_right {
+  position: absolute;
+  left: 648px;
+  top: 164px;
+  /* background-image: url("img/energy.jpeg"); */
+  background-color: rgb(53, 53, 53);
+  opacity: .7;
+
+  background-size: cover;
+  width: 384px;
+  height: 350px;
+}
+
+.div_lower_left {
+  position: absolute;
+  left: 264px;
+  top: 518px;
+  background-color: rgb(53, 53, 53);
+  opacity: .7;
+  /* background-image: url("img/chartt.jpeg"); */
+  background-size: cover;
+  width: 250px;
+  height: 250px;
+}
+
+.div_lower_cent {
+  position: absolute;
+  left: 518px;
+  top: 518px;
+  background-color: transparent;
+  background-image: url("img/chartt.jpeg");
+  background-color: rgb(53, 53, 53);
+  opacity: .7;
+  background-size: cover;
+  width: 252px;
+  height: 250px;
+ 
+}
+
+.div_lower_right {
+  position: absolute;
+  left: 774px;
+  top: 518px;
+  background-color: rgb(53, 53, 53);
+  background-image: url("img/bellaluna.jpeg");
+  background-size: cover;
+  width: 250px;
+  height: 250px;
+}
+
+/* 
+.div_lower_cent_1 {
+  background-color: rgb(53, 53, 53);
+  background-image: url("img/empty.jpeg");
+  background-size: cover;
+}
+
+.div_lower_cent_2 {
+  background-color: rgb(53, 53, 53);
+  background-image: url("img/empty.jpeg");
+  background-size: cover;
+}
+
+.div_lower_cent_3 {
+  background-color: rgb(53, 53, 53);
+  background-image: url("img/empty.jpeg");
+  background-size: cover;
+}
+
+.div_lower_cent_4 {
+  background-color: rgb(53, 53, 53);
+  background-image: url("img/hearseeker.jpeg");
+  background-size: cover;
+}
+
+.div_lower_right_1 {
+  background-color: rgb(53, 53, 53);
+  background-image: url("img/victrola.jpeg");
+  background-size: cover;
+}
+
+.div_lower_right_2 {
+  background-color: rgb(53, 53, 53);
+  background-image: url("img/zed.jpeg");
+  background-size: cover;
+}
+
+.div_lower_right_3 {
+  background-color: rgb(53, 53, 53);
+  background-image: url("img/yummybar.jpeg");
+  background-size: cover;
+}
+
+.div_lower_right_4 {
+  background-color: rgb(53, 53, 53);
+  background-image: url("img/bellaluna.jpeg");
+  background-size: cover;
 } */
 
-.div_output {
-    position: absolute;
-    left: 10px;
-    top: 10px;
-    background-color: rgb(53, 53, 53);
-    width: 250px;
-    height: 680px;
-    z-index: 100;
-  }
+textarea {
+  position: relative;
+  resize: none;
+  color:whitesmoke;
+}
+
+.ta_output {
+  background-color: transparent;
+  width: 243px;
+  height: 639px;
+}
+
+.ta_breadcrumb {
+  font-size: xx-small;
+  background-color: transparent;
+  width: 243px;
+  height: 20px;
+  overflow: hidden; /* Hide overflow */
   
-  .div_breadcrumb {
-    position: absolute;
-    left: 10px;
-    top: 694px;
-    background-color: rgb(53, 53, 53);
-    width: 250px;
-    height: 26px;
-    z-index: 10000;
-  }
-  
-  .div_input {
-    position: absolute;
-    left: 10px;
-    top: 724px;
-    background-color: rgb(53, 53, 53);
-    width: 250px;
-    height: 50px;
-    z-index: 100;
-  }
-  
-  .div_upper {
-    position: absolute;
-    left: 264px;
-    top: 10px;
-    background-color: rgb(53, 53, 53);
-    width: 768px;
-    height: 150px;
-  }
-  
-  .div_mid_left {
-    position: absolute;
-    left: 264px;
-    top: 164px;
-    background-color: rgb(53, 53, 53);
-    width: 380px;
-    height: 350px;
-  }
-  
-  .div_mid_right {
-    position: absolute;
-    left: 648px;
-    top: 164px;
-    background-color: rgb(53, 53, 53);
-    width: 384px;
-    height: 350px;
-  }
-  
-  .div_lower_left {
-    position: absolute;
-    left: 264px;
-    top: 518px;
-    background-color: rgb(53, 53, 53);
-    width: 250px;
-    height: 250px;
-  }
-  
-  .div_lower_cent {
-    position: absolute;
-    left: 518px;
-    top:518px;
-    background-color: rgb(53, 53, 53);
-    width: 252px;
-    height: 250px;
-  }
-  
-  .div_lower_right {
-    position: absolute;
-    left: 774px;
-    top: 518px;
-    background-color: rgb(53, 53, 53);
-    width: 250px;
-    height: 250px;
-  }
+}
+
+.ta_input {
+  font-size: smaller;
+  background-color: transparent;
+  width: 243px;
+  height: 71px;
+}

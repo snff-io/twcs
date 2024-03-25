@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
 
-public class CmdParser:ICmdParser
+public class CmdParser : ICmdParser
 {
 
     List<IIntent> _intents;
@@ -19,31 +19,22 @@ public class CmdParser:ICmdParser
         _intents = new List<IIntent>(){
             mover
         };
-        
+
         _status = status;
     }
 
-
-    public List<string> ParseCommand(string input)
+    public string ParseCommand(string input)
     {
-        var result = new List<string>();
-        foreach(var intent in _intents) {
+        foreach (var intent in _intents)
+        {
             string intentPath = "";
-            if ( intent.TryParse(input, out intentPath))
+            if (intent.TryParse(input, out intentPath))
             {
-                result.Add(intentPath);
+                return intentPath;
             }
         }
 
-        if (!result.Any()) {
-            result.Add(_status[2]);
-        }
-
-        return result;
-
+        return _status[2];
     }
-
-
-
 }
 

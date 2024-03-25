@@ -7,23 +7,35 @@
     <title>Document</title>
     <!-- Import jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
     <link rel="stylesheet" href="index.css" />
 
 </head>
 
 <body>
     <div id="layout" class="layout">
-        <div class="div_output"></div>
-        <div class="div_breadcrumb"></div>
-        <div class="div_input"></div>
+        <div class="div_output"><textarea class="ta_output"></textarea></div>
+        <div class="div_breadcrumb"><textarea id="ta_breadcrumb" class="ta_breadcrumb"></textarea></div>
+        <div class="div_input"><textarea id="ta_input" class="ta_input" oninput="sendMessage()" ></textarea></div>
         <div class="div_upper"></div>
         <div class="div_mid_left"></div>
         <div class="div_mid_right"></div>
         <div class="div_lower_left"></div>
-        <div class="div_lower_cent"></div>
-        <div class="div_lower_right"></div>
+        <div class="div_lower_cent container">
+            <div class="item div_lower_cent_1"></div>
+            <div class="item div_lower_cent_2"></div>
+            <div class="item div_lower_cent_3"></div>
+            <div class="item div_lower_cent_4"></div>
+        </div>
+        <div class="div_lower_right container">
+            <div class="item div_lower_right_1"></div>
+            <div class="item div_lower_right_2"></div>
+            <div class="item div_lower_right_3"></div>
+            <div class="item div_lower_right_4"></div>
+        </div>
 
     </div>
+    <script src="websocket-client.js"></script>
     <script>
         currentScale = 1;
         function adjustScale() {

@@ -2,13 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using Terminal.Gui.Graphs;
 using System.Text.RegularExpressions;
 
 
 
-public class WordNet
+public class WordNet : IWordResolver
 {
+    const string BASE_PATH = "/home/zampinojosh/src/twcs/Library/ux/WordNet/dict/";
+
     string[] cmd_verbs = {
         "travel",
         "use",
@@ -28,22 +29,10 @@ public class WordNet
         "vibration"
     };
 
-    public string Resolve(string input, PartOfSpeech pos)
+    public string Resolve(string input, PartOfSpeech pos, params string[] cmd_words)
     {
-        string[] cmd_words;
-        switch (pos) {
-            case PartOfSpeech.noun: 
-                cmd_words = cmd_nouns;
-                break;
-            case PartOfSpeech.verb:
-                cmd_words = cmd_verbs;
-                break;
-            default:
-                throw new Exception("no, bad");
 
-        }       
-
-        using (var fidx = File.OpenRead("/home/zampinojosh/src/twcs/Computer/WordNet/dict/index." + pos.ToString()))
+        using (var fidx = File.OpenRead(($"{BASE_PATH}/index.{pos}")))
         using (var reader = new StreamReader(fidx))
         {
             var qwords = input.Split(' ');
@@ -60,6 +49,8 @@ public class WordNet
                 var words = input.Split(' ');
                 foreach (var word in words)
                 {
+                    if (line == null)
+                        break;
 
                     if (!line.StartsWith(word))
                         continue;
@@ -71,7 +62,7 @@ public class WordNet
                     var matches = Regex.Matches(line, pattern);
                     // Iterate over matches and add them to the synset offsets
 
-                    using (var fverb = File.OpenRead("/home/zampinojosh/src/twcs/Computer/WordNet/dict/data." + pos.ToString()))
+                    using (var fverb = File.OpenRead($"{BASE_PATH}/data.{pos}"))
                     using (var vreader = new StreamReader(fverb))
                     {
                         foreach (Match match in matches)
@@ -90,7 +81,6 @@ public class WordNet
                             }
                         }
                     }
-
                 }
             }
         }
@@ -102,21 +92,12 @@ public class WordNet
 }
 
 
-    public enum PartOfSpeech
-    {
-        noun,
-        verb,
-        adj,
-        adv
-
-    }
-class Program
+public enum PartOfSpeech
 {
-    static void Main(string[] args)
-    {
-        var wn = new WordNet();
+    noun,
+    verb,
+    adj,
+    adv
 
-        System.Console.WriteLine(wn.Resolve(args[0],PartOfSpeech.verb));
-        System.Console.WriteLine(wn.Resolve(args[0],PartOfSpeech.noun));
-    }
 }
+

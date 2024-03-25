@@ -76,6 +76,11 @@ namespace World.Controllers
             try
             {
                 EnsureGridInitialized();
+
+                if (the_grid == null) {
+                    return await Task.FromResult(StatusCode(500, "Internal server error, null exception"));
+                }
+
                 var sw_turn = Stopwatch.StartNew();
                 _processor.SimulateSingleTurn(the_grid);
                 sw_turn.Stop();

@@ -1,6 +1,6 @@
 public interface ICmdParser
 {
-    public List<string> ParseCommand(string input);
+    public string ParseCommand(string input);
 
 
 }

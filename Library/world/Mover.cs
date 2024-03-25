@@ -1,13 +1,21 @@
+using System.ComponentModel;
 using library.worldcomputer.info;
+using Microsoft.AspNetCore.Components.Web;
 
 public class Mover : IMove
 {
     private IGrid _grid;
+    private IWordResolver _wordResolver;
 
     public Mover(IGrid grid)
     {
         _grid = grid;
 
+    }
+
+    public Mover(IWordResolver wordResolver)
+    {
+        _wordResolver = wordResolver;
     }
 
     public bool TryMove(ILocation location, Direction direction)
@@ -87,7 +95,26 @@ public class Mover : IMove
 
     public bool TryParse(string arguments, out string intentPath)
     {
+    
         intentPath = "";
-        return false;       
+        var travel = _wordResolver.Resolve(arguments, PartOfSpeech.verb, "travel" );
+
+        if (travel != "")
+        {
+            intentPath = "travel";
+
+            //extract Direction
+            var direction = _wordResolver.Resolve(arguments, PartOfSpeech.noun, "north","south", "east","west","up","down");
+            
+            if (direction != "")
+                intentPath += "." + direction;
+
+            
+            //TODO:
+            //extract optional number from arguments
+        }
+
+        return intentPath != ""; 
+        
     }
 }
