@@ -43,7 +43,7 @@ public class WordNet
 
         }       
 
-        using (var fidx = File.OpenRead("/home/zampinojosh/src/twcs/Terminal/wn/dict/index." + pos.ToString()))
+        using (var fidx = File.OpenRead("/home/zampinojosh/src/twcs/Computer/WordNet/dict/index." + pos.ToString()))
         using (var reader = new StreamReader(fidx))
         {
             var qwords = input.Split(' ');
@@ -71,7 +71,7 @@ public class WordNet
                     var matches = Regex.Matches(line, pattern);
                     // Iterate over matches and add them to the synset offsets
 
-                    using (var fverb = File.OpenRead("/home/zampinojosh/src/twcs/Terminal/wn/dict/data." + pos.ToString()))
+                    using (var fverb = File.OpenRead("/home/zampinojosh/src/twcs/Computer/WordNet/dict/data." + pos.ToString()))
                     using (var vreader = new StreamReader(fverb))
                     {
                         foreach (Match match in matches)

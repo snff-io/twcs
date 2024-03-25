@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+      "target": "ESNext",
+      "module": "ESNext",
+      "strict": true,
+      "esModuleInterop": true,
+      "sourceMap": true,
+      "outDir": "./public"
+    },
+    "include": ["src/**/*.ts", "src/**/*.tsx"]
+  }

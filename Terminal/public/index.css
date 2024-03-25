@@ -1,0 +1,105 @@
+body {
+    color: rgb(222, 112, 3);
+    background-color: rgb(19, 19, 19);
+}
+
+.layout {
+    width: 1024px;
+    height: 768px;
+    /* border-width: 1px;
+    border-color: rgb(4, 66, 255);
+    border-style: solid; */
+    overflow: hidden;
+    transform-origin: top left; /* Ensure scaling starts from top left corner */
+    transform: scale(1);
+  
+}
+/* div{
+    border-width: 1px;
+    border-color: rgb(4, 66, 255);
+    border-style: inset; 
+} */
+
+.div_output {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    background-color: rgb(53, 53, 53);
+    width: 250px;
+    height: 680px;
+    z-index: 100;
+  }
+  
+  .div_breadcrumb {
+    position: absolute;
+    left: 10px;
+    top: 694px;
+    background-color: rgb(53, 53, 53);
+    width: 250px;
+    height: 26px;
+    z-index: 10000;
+  }
+  
+  .div_input {
+    position: absolute;
+    left: 10px;
+    top: 724px;
+    background-color: rgb(53, 53, 53);
+    width: 250px;
+    height: 50px;
+    z-index: 100;
+  }
+  
+  .div_upper {
+    position: absolute;
+    left: 264px;
+    top: 10px;
+    background-color: rgb(53, 53, 53);
+    width: 768px;
+    height: 150px;
+  }
+  
+  .div_mid_left {
+    position: absolute;
+    left: 264px;
+    top: 164px;
+    background-color: rgb(53, 53, 53);
+    width: 380px;
+    height: 350px;
+  }
+  
+  .div_mid_right {
+    position: absolute;
+    left: 648px;
+    top: 164px;
+    background-color: rgb(53, 53, 53);
+    width: 384px;
+    height: 350px;
+  }
+  
+  .div_lower_left {
+    position: absolute;
+    left: 264px;
+    top: 518px;
+    background-color: rgb(53, 53, 53);
+    width: 250px;
+    height: 250px;
+  }
+  
+  .div_lower_cent {
+    position: absolute;
+    left: 518px;
+    top:518px;
+    background-color: rgb(53, 53, 53);
+    width: 252px;
+    height: 250px;
+  }
+  
+  .div_lower_right {
+    position: absolute;
+    left: 774px;
+    top: 518px;
+    background-color: rgb(53, 53, 53);
+    width: 250px;
+    height: 250px;
+  }

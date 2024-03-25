@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=1024,height=768 initial-scale=1.0, shrink-to-fit=yes, viewport-fit=cover"> -->
+    <title>Document</title>
+    <!-- Import jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="index.css" />
+
+</head>
+
+<body>
+    <div id="layout" class="layout">
+        <div class="div_output"></div>
+        <div class="div_breadcrumb"></div>
+        <div class="div_input"></div>
+        <div class="div_upper"></div>
+        <div class="div_mid_left"></div>
+        <div class="div_mid_right"></div>
+        <div class="div_lower_left"></div>
+        <div class="div_lower_cent"></div>
+        <div class="div_lower_right"></div>
+
+    </div>
+    <script>
+        currentScale = 1;
+        function adjustScale() {
+            var wrapper = document.getElementById('layout');
+            var viewportWidth = window.innerWidth;
+            var viewportHeight = window.innerHeight;
+
+            var scaleX = viewportWidth / 1084; // Adjust 1024 according to your design
+            var scaleY = viewportHeight / 800; // Adjust 768 according to your design
+
+            var scale = Math.min(scaleX, scaleY);
+
+            if (scale != currentScale) {
+                wrapper.style.transform = 'scale(' + scale + ')';
+                currentScale = scale;
+            }
+        }
+
+        // Initial adjustment
+        adjustScale();
+
+        // Adjust scale on window resize
+        setInterval(adjustScale, 100);
+    </script>
+</body>
+
+</html>
