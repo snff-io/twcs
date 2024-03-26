@@ -32,6 +32,6 @@ public partial class Pair
         return new Pair(x, y, topType, bottomType, magnitude, pressure, layer);
     }
 
-    static Pair none = new Pair(-1,-1,-1,-1,-1,-1,-1);
+    static Pair none = new Pair(-1,-1,0,0,-1,-1,-1);
     public static Pair None => none;
 }

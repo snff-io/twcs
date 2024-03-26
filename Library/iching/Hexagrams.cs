@@ -2,13 +2,47 @@ public static class Hexagrams
 {
     static Dictionary<int[], string> _descriptions;
 
+
+    public class IntArrayEqualityComparer : IEqualityComparer<int[]>
+    {
+        public bool Equals(int[] x, int[] y)
+        {
+            if (x == null || y == null)
+                return false;
+
+            if (x.Length != y.Length)
+                return false;
+
+            for (int i = 0; i < x.Length; i++)
+            {
+                if (x[i] != y[i])
+                    return false;
+            }
+
+            return true;
+        }
+
+        public int GetHashCode(int[] obj)
+        {
+            unchecked
+            {
+                int hash = 17;
+                foreach (var item in obj)
+                {
+                    hash = hash * 23 + item.GetHashCode();
+                }
+                return hash;
+            }
+        }
+    }
+
     public static Dictionary<int[], string> Descriptions
     {
         get
         {
             if (_descriptions == null)
             {
-                _descriptions = new Dictionary<int[], string>(){
+                _descriptions = new Dictionary<int[], string>(new IntArrayEqualityComparer()){
                 { new [] {(int)Domain.Mountain, (int)Domain.Heaven}, "Towers of stone ascend to meet the boundless sky, grounding the ethereal realm in the rugged embrace of earthly majesty."},
                 { new [] {(int)Domain.Thunder, (int)Domain.Heaven}, "Booming echoes resonate through celestial expanse, as the heavens themselves yield to the thunderous applause of nature's symphony."},
                 { new [] {(int)Domain.Fire, (int)Domain.Heaven}, "Celestial flames flicker in homage to the heavens, illuminating the night with the primal dance of cosmic fire and divine radiance."},
@@ -80,5 +114,7 @@ public static class Hexagrams
             }
             return _descriptions;
         }
+
+
     }
 }

@@ -25,15 +25,13 @@ public enum Domain
     Wind = 6,
     Swamp = 7,
     Gorge = 8,
-    Emptyness = -1
+    Emptyness = 0
 
 }
 
 
 public static class Trigrams
 {
-
-
     static Dictionary<Domain, Trigram> _trigrams;
     public static Dictionary<Domain, Trigram> Dictionary
     {

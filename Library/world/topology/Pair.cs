@@ -11,7 +11,22 @@ public partial class Pair
     public int BottomType { get; set; }
     public Trigram TopTrigram => Trigrams.Dictionary[(Domain)TopType];
     public Trigram BottomTrigram => Trigrams.Dictionary[(Domain)BottomType];
-    public string Description => Hexagrams.Descriptions[new[] { TopType, BottomType }];
+    public string Description
+    {
+        get
+        {
+            try 
+            {
+                return Hexagrams.Descriptions[new[] { (int)TopTrigram.Domain, (int)TopTrigram.Domain }];
+            }
+            catch (Exception e) {
+                Console.WriteLine(e.Message + "t"+TopType +"b"+BottomType);
+            }
+
+            return Hexagrams.Descriptions[new[] { (int)Domain.Emptyness, (int)Domain.Emptyness }];
+        }
+    }
+
     public double Magnitude { get; set; } = 1;
     public double MaxMagnitude { get; set; } = 50;
     public double Pressure { get; set; } = 0;
