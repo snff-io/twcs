@@ -12,11 +12,25 @@ socket.onclose = (event) => {
     console.log('WebSocket closed:', event);
 };
 
+socket.onmessage = (event) => {
+    console.log("WebSocket Message", event.data);
+    handleMessage(event.data);
+}
 
+function handleMessage(message: string) {
+    const breadcrumbTextArea = document.getElementById("ta_breadcrumb") as HTMLTextAreaElement;
+    breadcrumbTextArea.value = message;
+}
 
-function sendMessage() {
+function handleInput() {
     const inputTextarea = document.getElementById('ta_input') as HTMLTextAreaElement;
     const message = inputTextarea.value;
-    socket.send(message);
+    if (message.startsWith("'")) {
+        //send to chat
+    }
+    else 
+    {
+        socket.send(message);
+    }
     
 }

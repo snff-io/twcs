@@ -12,7 +12,7 @@ body {
   /* Ensure scaling starts from top left corner */
   transform: scale(1);
   background-color: rgb(53, 53, 53);
-  background-image: url("img/cdj.jpeg");
+  background-image: url("img/energy.jpeg");
   background-size: cover;
   background-position: center;
 
@@ -38,30 +38,44 @@ body {
   background-image: url("img/runerock.jpeg");
   background-size: cover;
   background-position: center;
-  
-  width: 250px;
-  height: 646px;
+  width: 252px;
+  height: 758px;
   z-index: 100;
 }
 
 .div_breadcrumb {
   position: absolute;
-  left: 10px;
-  top: 660px;
+  left: 13px;
+  top: 629px;
   background-color: rgb(53, 53, 53);
-  width: 250px;
-  height: 26px;
+  /* background-color: transparent; */
+  width: 215px;
+  height: 48px;
   z-index: 10000;
+  opacity: .5;
+}
+
+.div_buttonbar {
+  position: absolute;
+  left: 229px;
+  top: 631px;
+  background-color: rgb(53, 53, 53);
+  width: 30px;
+  height: 133px;
+  z-index: 10000000;
+  opacity: .5;
 }
 
 .div_input {
   position: absolute;
-  left: 10px;
-  top: 690px;
+  left: 12px;
+  top: 683px;
   background-color: rgb(53, 53, 53);
-  width: 250px;
-  height: 78px;
+  /* background-color: transparent; */
+  width: 215px;
+  height: 81px;
   z-index: 100;
+  opacity: .7;
 }
 
 .div_upper {
@@ -72,7 +86,7 @@ body {
   /* background-image: url("img/chartt.jpeg"); */
   background-size: cover;
   background-position: center;
-  width: 768px;
+  width: 756px;
   height: 150px;
   opacity: .7;
 }
@@ -93,14 +107,13 @@ body {
 
 .div_mid_right {
   position: absolute;
-  left: 648px;
+  left: 645px;
   top: 164px;
   /* background-image: url("img/energy.jpeg"); */
   background-color: rgb(53, 53, 53);
   opacity: .7;
-
   background-size: cover;
-  width: 384px;
+  width: 377px;
   height: 350px;
 }
 
@@ -190,30 +203,66 @@ body {
   background-size: cover;
 } */
 
+
+
 textarea {
   position: relative;
   resize: none;
   color:whitesmoke;
+  border:none
+}
+
+textarea:focus {
+  border: none;
+  outline: none; /* Remove default focus outline */
+}
+
+textarea:after {
+  border: none;
+  outline: none; /* Remove default focus outline */
 }
 
 .ta_output {
   background-color: transparent;
   width: 243px;
-  height: 639px;
+  height: 605px;
 }
 
 .ta_breadcrumb {
+  color:black;
   font-size: xx-small;
-  background-color: transparent;
-  width: 243px;
-  height: 20px;
-  overflow: hidden; /* Hide overflow */
-  
+  background-color: white;
+  width: 211px;
+  height: 44px;
+  overflow: hidden;
+  opacity: .5;
 }
 
 .ta_input {
+  color:black;
   font-size: smaller;
-  background-color: transparent;
-  width: 243px;
-  height: 71px;
+  background-color: white;
+  width: 211px;
+  height: 74px;
+  opacity: .5;
+  border: none;
+  border-style: none;
+}
+
+.bt_send {
+  /* position: relative; */
+  left: 219px;
+  /* top: -31px; */
+  opacity: .7;
+  font-size: larger;
+  z-index: 10000000;
+  height: 132px;
+  outline: none;
+  border: none;
+}
+
+.bt_send:focus {
+  outline: none;
+  border:none;
+  opacity: 1;
 }
