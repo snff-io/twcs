@@ -12,12 +12,22 @@ public class Grid : IGrid
 
     public Grid()
     {
-        
+
     }
 
     public int LayerSize { get; set; }
+
+
+    public Pair[][][] this[int layer]
+    {
+        get
+        {
+            return this.Layers;
+        }
+    }
+
     public void InitializeGrid(int layerSize = 190, int popLayers = 0)
-    {   
+    {
         LayerSize = layerSize;
         var grid = new Pair[LayerSize][][];
 
