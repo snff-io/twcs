@@ -15,12 +15,13 @@ namespace World.Controllers
     public partial class GridController : ControllerBase
     {
         static object the_grid_lock = new object();
-        static Grid? the_grid = null;
+        static IGrid? the_grid = null;
         private readonly Processor _processor;
         private readonly ILogger<GridController> _logger;
 
-        public GridController(ILogger<GridController> logger, Processor processor)
+        public GridController(ILogger<GridController> logger, Processor processor, IGrid grid)
         {
+            the_grid = grid;
             _processor = processor;
             _logger = logger;
             CreateMetrics();

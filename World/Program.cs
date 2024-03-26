@@ -1,4 +1,5 @@
 using library.worldcomputer.info;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +9,18 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 //builder.Services.AddSwaggerGen();
+
+
+
+
+
+builder.Services.AddSingleton<IGrid, Grid>((services) =>
+{
+    var grid = new Grid();
+    grid.InitializeGrid();
+    return grid;
+});
+
 builder.Services.AddSingleton<Processor>();
 builder.Services.AddSingleton<IWordResolver, WordNet>();
 builder.Services.AddSingleton<IStatus, Status>();

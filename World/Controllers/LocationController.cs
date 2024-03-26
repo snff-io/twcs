@@ -24,14 +24,12 @@ namespace World.Controllers
         }
 
         [HttpGet("/location/{layer}/{x}/{y}/")]
-        public LocationResult GetLocation(int layer, int x, int y) {
+        public IActionResult GetLocation(int layer, int x, int y) {
             
-
             var locr = new LocationResult();
             var pair = _grid[layer][x][y];
             var pg = new PairGroup(_grid, pair);
             
-
             //mire dwellers can only see thier "current" location, and "up"
             if (layer == 0) {
                 pg.South = Pair.None;
@@ -58,21 +56,23 @@ namespace World.Controllers
                 locr.PairGroups.Add(new PairGroup(_grid, down.East));
                 locr.PairGroups.Add(new PairGroup(_grid, down.West));
             }
+            else
+            {
+                return StatusCode(400, "Bad Reqeust. Layer not supported.");
+            }
 
-
-
-
+            return new JsonResult(locr);
         }
-
-        
-
     }
 
     public class LocationResult 
     {
         public List<PairGroup> PairGroups {get;set;}
-        public string Description {get;set;}   
         public Direction[] EgressDirections {get;set;}
 
-
+        public LocationResult()
+        {
+            PairGroups = new List<PairGroup>();
+        }
     }
+}

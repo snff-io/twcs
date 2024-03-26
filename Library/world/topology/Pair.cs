@@ -9,6 +9,9 @@ public partial class Pair
     public int Y { get; set; }
     public int TopType { get; set; }
     public int BottomType { get; set; }
+    public Trigram TopTrigram => Trigrams.Dictionary[(Domain)TopType];
+    public Trigram BottomTrigram => Trigrams.Dictionary[(Domain)BottomType];
+    public string Description => Hexagrams.Descriptions[new[] { TopType, BottomType }];
     public double Magnitude { get; set; } = 1;
     public double MaxMagnitude { get; set; } = 50;
     public double Pressure { get; set; } = 0;

@@ -7,15 +7,10 @@ public class Mover : IMove
     private IGrid _grid;
     private IWordResolver _wordResolver;
 
-    public Mover(IGrid grid)
-    {
-        _grid = grid;
-
-    }
-
-    public Mover(IWordResolver wordResolver)
+    public Mover(IGrid grid,IWordResolver wordResolver)
     {
         _wordResolver = wordResolver;
+        _grid = grid;
     }
 
     public bool TryMove(ILocation location, Direction direction)
