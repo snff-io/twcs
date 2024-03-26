@@ -1,0 +1,49 @@
+// Define an interface for the API response data
+interface ResponseData {
+    // Define properties according to your API response structure
+    // For example:
+    id: number;
+    name: string;
+    // Add more properties as needed
+  }
+  
+  // Function to fetch data from the API
+  async function fetchData(): Promise<ResponseData> {
+    const response = await fetch('https://api.example.com/data');
+    if (!response.ok) {
+      throw new Error('Failed to fetch data');
+    }
+    const data = await response.json();
+    return data;
+  }
+  
+  // Function to update HTML element with data
+  function updateHTMLElement(data: ResponseData): void {
+    // Assuming you have an element with id "result" where you want to display the data
+    const resultElement = document.getElementById('result');
+    if (resultElement) {
+      resultElement.innerHTML = `
+        <p>ID: ${data.id}</p>
+        <p>Name: ${data.name}</p>
+        <!-- Add more HTML elements to display other properties if needed -->
+      `;
+    } else {
+      console.error('Result element not found');
+    }
+  }
+  
+  // Async function to orchestrate fetching data and updating HTML element
+  async function fetchDataAndUpdateHTMLElement(): Promise<void> {
+    try {
+      // Fetch data
+      const data = await fetchData();
+      // Update HTML element with data
+      updateHTMLElement(data);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+      // Handle error appropriately, e.g., display an error message
+    }
+  }
+  
+  // Call the function to initiate fetching data and updating HTML element
+  fetchDataAndUpdateHTMLElement();

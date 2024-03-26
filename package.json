@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "aws-sdk": "^2.1577.0"
+    "aws-sdk": "^2.1577.0",
+    "knockout": "^3.5.1"
   }
 }
