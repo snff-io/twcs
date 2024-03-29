@@ -8,7 +8,7 @@ public class Test_AnsiHelper
         string right = "A\nB\nC";
 
         // Act
-        IEnumerable<string> pairs = AnsiHelper.PairAnsi(left, right);
+        IEnumerable<string> pairs = Ansi.PairAnsi(left, right);
 
         // Assert
         Assert.Equal(3, pairs.Count());
@@ -26,7 +26,7 @@ public class Test_AnsiHelper
         string right = "A\nB";
 
         // Act
-        IEnumerable<string> pairs = AnsiHelper.PairAnsi(left, right);
+        IEnumerable<string> pairs = Ansi.PairAnsi(left, right);
 
         // Assert
         Assert.Equal(2, pairs.Count());
@@ -43,7 +43,7 @@ public class Test_AnsiHelper
         string right = "";
 
         // Act
-        IEnumerable<string> pairs = AnsiHelper.PairAnsi(left, right);
+        IEnumerable<string> pairs = Ansi.PairAnsi(left, right);
 
         // Assert
         Assert.Empty(pairs);
@@ -52,7 +52,7 @@ public class Test_AnsiHelper
     [Fact]
     public void QRCode_Created()
     {
-        var result = AnsiHelper.GenerateQRCode("die scum");
+        var result = Ansi.GenerateQRCode("die scum");
 
 
         Console.WriteLine(result);

@@ -3,9 +3,10 @@ using System.Collections;
 using Microsoft.Extensions.ObjectPool;
 using System.Text;
 using System.Reflection.Emit;
+using System.Drawing;
 
 
-public static class AnsiHelper
+public static class Ansi
 {
 
     public static IEnumerable<string> PairAnsi(string left, string right)
@@ -61,6 +62,56 @@ public static class AnsiHelper
         }
 
         return qrCodeString.ToString();
+    }
+
+    public static string Color(this string message, KnownColor color)
+    {
+        // Get the ANSI color code for the specified KnownColor
+        string colorCode = "";
+        switch (color)
+        {
+            case KnownColor.Black:
+                colorCode = "\u001b[30m"; // Black
+                break;
+            case KnownColor.Red:
+                colorCode = "\u001b[31m"; // Red
+                break;
+            case KnownColor.Green:
+                colorCode = "\u001b[32m"; // Green
+                break;
+            case KnownColor.Yellow:
+                colorCode = "\u001b[33m"; // Yellow
+                break;
+            case KnownColor.Blue:
+                colorCode = "\u001b[34m"; // Blue
+                break;
+            case KnownColor.Magenta:
+                colorCode = "\u001b[35m"; // Magenta
+                break;
+            case KnownColor.Cyan:
+                colorCode = "\u001b[36m"; // Cyan
+                break;
+            case KnownColor.White:
+                colorCode = "\u001b[37m"; // White
+                break;
+            default:
+                colorCode = "\u001b[39m"; // Default color (resets to default)
+                break;
+        }
+
+        // ANSI code for resetting the color
+        string resetCode = "\u001b[0m";
+
+        // Return the message surrounded by ANSI color code and reset code
+        return $"{colorCode}{message}{resetCode}";
+    }
+
+    public static string Clear
+    {
+        get
+        {
+            return "'\u001b[2J";
+        }
     }
 }
 

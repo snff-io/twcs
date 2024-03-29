@@ -16,8 +16,9 @@ public class DynamoDb<T> : IDal<T>
 
     }
 
-    public async Task<T> Get(string table, string key)
+    public async Task<T> Get(string key)
     {
+        var table = typeof(T).Name;
         var keyDict = new Dictionary<string, AttributeValue>
         {
             { "Id", new AttributeValue { S = key } } // Assuming key is of type string
@@ -102,7 +103,35 @@ public class DynamoDb<T> : IDal<T>
         // Take the top 'number' items
         return unboundItems.Take(number).ToArray();
 
-        
+
+    }
+
+    public async Task<T?> GetByAttr<TValue>(string attribute, TValue value)
+    {
+        var table = typeof(T).Name;
+
+        var request = new ScanRequest
+        {
+            TableName = table,
+            FilterExpression = $"{attribute} = :value",
+            ExpressionAttributeValues = new Dictionary<string, AttributeValue>
+            {
+                { ":value", new AttributeValue { S = value.ToString() } }
+            },
+            Limit = 1
+        };
+
+        var response = await _client.ScanAsync(request);
+
+        if (response.Items.Count == 0)
+        {
+            return default; // Not found
+        }
+
+        // Deserialize the item to type T
+        T? ret = JsonSerializer.Deserialize<T>(Document.FromAttributeMap(response.Items[0]).ToJson());
+
+        return ret;
     }
 
 }

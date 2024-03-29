@@ -1,6 +1,6 @@
 
 
-public interface IUxKnownPlayer<TReturn>:IUx<TReturn>
+public interface IUxKnownPlayer<TReturn, T>:IUx<TReturn, T>
 {
 
     

@@ -1,3 +1,4 @@
+using System.Drawing;
 using System.Globalization;
 using System.Net.WebSockets;
 using System.Runtime.CompilerServices;
@@ -31,7 +32,7 @@ public class SocketUxNewPlayer : IUxNewPlayer<Player>
 
         for (var i = 0; i < blist.Length; i++)
         {
-            await $"{i}. {blist[i].FirstName}, {blist[i].LastName}".Send(socket);
+            await $"{i+1}. {blist[i].FirstName}, {blist[i].LastName}".Send(socket);
         }
 
         var choice = await socket.PromptForRx("\nYour choice? [1-5]:", "[1-5]");
@@ -39,9 +40,11 @@ public class SocketUxNewPlayer : IUxNewPlayer<Player>
         var chint = int.Parse(choice) - 1;
 
         var player = new Player();
-        player.Chosen.Add(blist[chint].Id);
+        player.Chosen = blist[chint].Id;
 
-        await $"\n\nOk {blist[chint].FirstName}, let's continue your registration.".Send(socket);
+        await $"\n\nRemember your Chosen's name, you'll need it to login!".Send(socket);
+        await $"{blist[chint].FirstName} {blist[chint].LastName}".Color(KnownColor.Yellow).Send(socket);
+        await $"let's continue your registration...".Send(socket);
 
         return player;
     }

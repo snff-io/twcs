@@ -14,13 +14,15 @@ builder.Services.AddSingleton<IGrid>((services) =>
 
 
 builder.Services.AddSingleton<IStatus, Status>();
+
+builder.Services.AddScoped<ITotp, TotpWrapper>();
 builder.Services.AddScoped<IWordResolver, WordNet>();
 builder.Services.AddScoped<IMove, Mover>();
 builder.Services.AddScoped<ICmdParser, CmdParser>();
 builder.Services.AddScoped<IUxLogin<Player>, SocketUxLogin>();
 builder.Services.AddScoped<IUxNewPlayer<Player>, SocketUxNewPlayer>();
 builder.Services.AddScoped<IUxEnrollTotp<Player, Player>, SocketUxEnrollTotp>();
-builder.Services.AddScoped<IUxKnownPlayer<Player>, SocketUxKnownPlayer>();
+builder.Services.AddScoped<IUxKnownPlayer<Player, string>, SocketUxKnownPlayer>();
 builder.Services.AddScoped<IUxGameLoop<Player, Player>, SocketUxGameLoop>();
 builder.Services.AddScoped<IUxChallengeTotp<bool, Player>, SocketUxTotpChallenge>();
 builder.Services.AddScoped<IDal<Body>, DynamoDb<Body>>();

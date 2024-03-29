@@ -11,13 +11,13 @@ public class SocketUxLogin : IUxLogin<Player>
     private IUxEnrollTotp<Player, Player> _enrollTotpUx;
     private IUxChallengeTotp<bool, Player> _challengeTotp;
     private IUxGameLoop<Player, Player> _gameLoopUx;
-    private IUxKnownPlayer<Player> _knownPlayerUx;
+    private IUxKnownPlayer<Player, string> _knownPlayerUx;
 
     public SocketUxLogin(IWebHostEnvironment env, IWordResolver wordResolver,
-      IUxNewPlayer<Player>           newPlayerUx,
-      IUxEnrollTotp<Player, Player>     enrollTotpUx,
-      IUxKnownPlayer<Player>            knownPlayerUx,
-      IUxGameLoop<Player, Player>       gameLoopUx,
+      IUxNewPlayer<Player> newPlayerUx,
+      IUxEnrollTotp<Player, Player> enrollTotpUx,
+      IUxKnownPlayer<Player, string> knownPlayerUx,
+      IUxGameLoop<Player, Player> gameLoopUx,
       IUxChallengeTotp<bool, Player> challengeTotpUx
        )
     {
@@ -55,10 +55,15 @@ public class SocketUxLogin : IUxLogin<Player>
         }
         else
         {
-            player = await _knownPlayerUx.HandleUx(socket);
+            player = await _knownPlayerUx.HandleUx(socket, input);
+            if (player == null)
+            {
+                player = await _newPlayerUx.HandleUx(socket);
+            }
         }
 
-        if (player.Id == "" || player.Id == null) {
+        if (player.Id == "" || player.Id == null)
+        {
             player = await _enrollTotpUx.HandleUx(socket, player);
         }
 
@@ -72,7 +77,8 @@ public class SocketUxLogin : IUxLogin<Player>
             }
             else
             {
-                await socket.SendAsync("Login failed. :(");
+                await "Login failed. :(".Send(socket);
+                await "Send mail to support@worldcomputer.info for assistance!".Send(socket);
             }
         }
         finally

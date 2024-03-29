@@ -6,14 +6,16 @@ namespace library.worldcomputer.info;
 public class Player : IPlayer
 {
     public string DisplayType => "Player";
- 
-    public string Id { get;set; }
 
-    public List<string> Chosen {get;set;}
+    public string Id { get; set; }
+
+    public string Chosen { get; set; }
+
+    public DateTime LoggedIn { get; set; }
 
     public Player()
     {
-        Chosen = new List<string>();
+        
     }
 
     public string GetHash(int length)
