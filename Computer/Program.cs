@@ -22,14 +22,14 @@ var host = builder.Build();
 
 var serviceProvider = builder.Services.BuildServiceProvider();
 
-var player = serviceProvider.GetRequiredService<IPlayer>();
-player.Name = "joshua";
-player.Location = new Location();
+// var player = serviceProvider.GetRequiredService<IPlayer>();
+// player.Name = "joshua";
+// player.Location = new Location();
 
 var loop = serviceProvider.GetRequiredService<Loop>();
 
 //loop.Run(player);
-var task = Task.Run(() => loop.Run(player));
+//var task = Task.Run(() => loop.Run(player));
 
 
 host.Run(); 

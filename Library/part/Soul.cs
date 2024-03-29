@@ -1,7 +1,7 @@
 namespace library.worldcomputer.info;
-class Soul : IUnit, IPart<Soul>
+public class Soul : IUnit, IPart<Soul>
 {
-    public string _id { get; set; }
+    public string Id { get; set; }
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public string FamilyName { get; set; }
@@ -21,10 +21,14 @@ class Soul : IUnit, IPart<Soul>
     public Pair[] PrivateKey { get; set; }
     public Pair[] PublicKey { get; set; }
 
-    public string DisplayType()
+   public string DisplayType
     {
-        throw new NotImplementedException();
+        get
+        {
+            return "Soul";
+        }
     }
+
 
     public string GetHash(int length)
     {

@@ -22,8 +22,8 @@ public class Loop
 
         while (true)
         {
-            _informer.Inform($"Player is on Layer {player.Location.Layer}");
-            _informer.Inform($"Player X,Y is {player.Location.X},{player.Location.Y}\r\n");
+            // _informer.Inform($"Player is on Layer {player.Location.Layer}");
+            // _informer.Inform($"Player X,Y is {player.Location.X},{player.Location.Y}\r\n");
 
             _informer.Inform(_status["player_prompt"]);
 

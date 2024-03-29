@@ -3,9 +3,12 @@ using System.Reflection.Metadata.Ecma335;
 namespace library.worldcomputer.info;
 class LoaderUnit : IUnit
 {
-    public string DisplayType()
+    public string DisplayType
     {
-        return this.displayTypeString;
+        get
+        {
+            return this.displayTypeString;
+        }
     }
 
     public string GetHash(int length)
@@ -24,7 +27,7 @@ class LoaderUnit : IUnit
 
     public string FirstName { get; set; } = "";
     public string LastName { get; set; } = "";
-    string IUnit._id { get; set; }
+    string IUnit.Id { get; set; }
 
     public LoaderUnit(string displayTypeString)
     {

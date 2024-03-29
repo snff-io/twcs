@@ -1,9 +1,9 @@
 using System.Security.Cryptography.X509Certificates;
 
 namespace library.worldcomputer.info;
-class Body : IUnit, IPart<Body>
+public class Body : IUnit, IPart<Body>
 {
-    public string _id { get; set; }
+    public string Id { get; set; }
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public string FamilyName { get; set; }
@@ -23,9 +23,12 @@ class Body : IUnit, IPart<Body>
     public Pair[] PrivateKey { get; set; }
     public Pair[] PublicKey { get; set; }
 
-    public string DisplayType()
+    public string DisplayType
     {
-        throw new NotImplementedException();
+        get
+        {
+            return "Body";
+        }
     }
 
     public string GetHash(int length)
@@ -36,6 +39,6 @@ class Body : IUnit, IPart<Body>
     public Body(
     )
     {
-        
+
     }
 }

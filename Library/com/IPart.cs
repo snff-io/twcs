@@ -1,6 +1,8 @@
 namespace library.worldcomputer.info;
 interface IPart<T> : IUnit
 {
+    string FirstName { get; set; }
+    string LastName { get; set; }
     string FamilyName { get; set; }
     IAttributes Attributes { get; set; }
     IAbility[] Abilities { get; set; }

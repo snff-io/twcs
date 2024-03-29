@@ -1,7 +1,7 @@
 namespace library.worldcomputer.info;
-class Spirit : IUnit, IPart<Spirit>
+public class Spirit : IUnit, IPart<Spirit>
 {
-    public string _id { get; set; }
+    public string Id { get; set; }
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public string FamilyName { get; set; }
@@ -21,9 +21,12 @@ class Spirit : IUnit, IPart<Spirit>
     public Pair[] PrivateKey { get; set; }
     public Pair[] PublicKey { get; set; }
 
-    public string DisplayType()
+   public string DisplayType
     {
-        throw new NotImplementedException();
+        get
+        {
+            return "Spirit";
+        }
     }
 
     public string GetHash(int length)

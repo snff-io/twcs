@@ -1,4 +1,6 @@
-const socket = new WebSocket('ws://100.115.92.204:5000'); // Adjust URL as per your server configuration
+const WebSocket = require('ws');
+
+const socket = new WebSocket('ws://100.115.92.204:5260'); // Adjust URL as per your server configuration
 
 socket.onopen = (event) => {
     console.log('WebSocket connected');

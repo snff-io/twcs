@@ -33,6 +33,7 @@
     <ProjectReference Include="..\Computer\Computer.csproj" />
     <ProjectReference Include="..\Library\Library.csproj" />
     <ProjectReference Include="..\World\World.csproj" />
+    <ProjectReference Include="..\Terminal\Terminal.csproj" />
   </ItemGroup>
 
   <ItemGroup>

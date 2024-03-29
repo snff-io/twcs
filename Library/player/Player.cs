@@ -5,33 +5,19 @@ namespace library.worldcomputer.info;
 
 public class Player : IPlayer
 {
-    IMove _mover;
-    private IStatus _status;
-    private IInformer _informer;
+    public string DisplayType => "Player";
+ 
+    public string Id { get;set; }
 
-    public ILocation Location { get; set; }
+    public List<string> Chosen {get;set;}
 
-    public string Name
+    public Player()
     {
-        get; set;
+        Chosen = new List<string>();
     }
 
-    public Player(IMove mover, IStatus status, IInformer informer)
+    public string GetHash(int length)
     {
-        _mover = mover;
-        _status = status;
-        _informer = informer;
+        throw new NotImplementedException();
     }
-
-    public bool Move(Direction direction)
-    {
-        var moved = _mover.TryMove(Location, direction);
-        if (!moved) {
-            _informer.Inform(_status[0]);
-            return false;
-        }
-
-        return true;
-    }
-
 }

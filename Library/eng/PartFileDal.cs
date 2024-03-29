@@ -1,5 +1,5 @@
 namespace library.worldcomputer.info;
-class PartFileDal<T> : IDal<T>
+class PartFileDal<T> //: IDal<T>
 {
     public T[] Items { get; set; }
 

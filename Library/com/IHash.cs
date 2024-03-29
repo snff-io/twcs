@@ -1,4 +1,4 @@
 namespace library.worldcomputer.info;
-interface IHash {
+public interface IHash {
     string GetHash(int length);
 }

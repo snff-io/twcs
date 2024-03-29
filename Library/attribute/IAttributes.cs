@@ -1,5 +1,5 @@
 namespace library.worldcomputer.info;
-interface IAttributes {
+public interface IAttributes {
     int[] Roll(string[] against);
     int Get(string key);     
 }

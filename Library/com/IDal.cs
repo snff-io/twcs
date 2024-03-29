@@ -1,12 +1,10 @@
 namespace library.worldcomputer.info;
-interface IDal<T> {
-    
-    T[] Items {get;set;}
+public interface IDal<T> {
 
-    void Load(string path);
-    T Reload(T item);
+    Task Put(T item);
 
-    void SaveAll();
-    void Save(T item);
+    Task<T> Get(string table, string key);
+
+    Task<T[]> GetRandomUnbound(int number = 5);
 
 }

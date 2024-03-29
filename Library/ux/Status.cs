@@ -8,7 +8,7 @@ public class Status : IStatus
         _statuses = new[] {
             "You can't move in that direction.",
             "You didn't specifiy a direction.",
-            "You are typing non-sense",
+            "You are typing nonsense",
 
 
         };

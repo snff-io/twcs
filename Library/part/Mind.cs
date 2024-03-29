@@ -1,7 +1,7 @@
 namespace library.worldcomputer.info;
-class Mind : IUnit, IPart<Mind>
+public class Mind : IUnit, IPart<Mind>
 {
-    public string _id { get; set; }
+    public string Id { get; set; }
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public string FamilyName { get; set; }
@@ -21,10 +21,14 @@ class Mind : IUnit, IPart<Mind>
     public Pair[] PrivateKey { get; set; }
     public Pair[] PublicKey { get; set; }
 
-    public string DisplayType()
+    public string DisplayType
     {
-        throw new NotImplementedException();
+        get
+        {
+            return "Mind";
+        }
     }
+
 
     public string GetHash(int length)
     {
