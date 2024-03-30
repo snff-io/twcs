@@ -21,6 +21,7 @@ public class SocketUxGameLoop:IUxGameLoop<Player, Player>
         await socket.SendAsync(File.ReadAllText(filePath));
         while (socket.State == SocketState.Open)
         {
+            await "Silence echoes through the void, defining an infinite vista of emptiness.".Send(socket);
             var input = await socket.ReceiveAsync();
 
             var output = _cmdParser.ParseCommand(input);

@@ -14,6 +14,9 @@ public class SocketUxEnrollTotp : IUxEnrollTotp<Player,Player>
         _totp = totp;
         _dal = dal;
     }
+
+    
+
     public async Task<Player> HandleUx(Socket socket, Player player)
     {
         await "For simplicity and enhanced security, we exclusively utilize one-time passwords.".Send(socket);

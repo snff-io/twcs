@@ -1,0 +1,1 @@
+Towering cliffs overlook the rugged gorge, where mountain peaks frame the breathtaking spectacle of nature's erosive power.

@@ -1,0 +1,1 @@
+The thunder's roar echoes through the depths of the gorge, as the celestial spectacle illuminates the rugged terrain.

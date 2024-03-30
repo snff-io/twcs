@@ -1,0 +1,1 @@
+The earth's strength frames the rugged gorge, standing as a testament to the enduring power of nature's geological forces.

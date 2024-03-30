@@ -1,0 +1,1 @@
+Fiery tendrils embrace the earth, forging landscapes of molten beauty amidst the elemental crucible.

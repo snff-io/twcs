@@ -1,0 +1,1 @@
+Celestial mists descend to shroud the murky depths, veiling the secrets of the swamp in an otherworldly embrace.

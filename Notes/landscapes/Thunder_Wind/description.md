@@ -1,0 +1,1 @@
+Winds carry the thunder's call across the land, as the celestial tempest orchestrates the dance of the elements.

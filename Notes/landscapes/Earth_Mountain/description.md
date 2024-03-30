@@ -1,0 +1,1 @@
+Foundations of stone anchor the land in timeless strength, where mountains rise as sentinels of the earth's enduring power.

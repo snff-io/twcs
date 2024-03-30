@@ -1,0 +1,1 @@
+The fiery spectacle illuminates the rugged gorge, casting shadows that dance upon the sheer cliffs of nature's forge.

@@ -1,0 +1,1 @@
+Tremors reverberate through the land, echoing the thunder's call to arms amidst the elemental clash of earth and sky.

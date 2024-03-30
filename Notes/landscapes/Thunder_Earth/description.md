@@ -1,0 +1,1 @@
+The thunder's resonance reverberates through the earth, embodying the raw power of nature's elemental forces.

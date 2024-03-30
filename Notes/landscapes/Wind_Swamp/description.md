@@ -1,0 +1,1 @@
+The wind's whispers mingle with the swamp's eerie silence, as nature's elements converge in an otherworldly embrace.

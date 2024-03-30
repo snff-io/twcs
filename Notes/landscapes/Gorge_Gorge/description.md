@@ -1,0 +1,1 @@
+Cliffs of stone plunge into chasms deep, where the rugged gorge echoes its own rugged beauty in an unyielding testament to nature's erosive power.

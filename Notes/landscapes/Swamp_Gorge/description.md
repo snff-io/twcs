@@ -1,0 +1,1 @@
+Murky waters carve through rugged cliffs, as the swamp's mysterious depths reveal the hidden wonders of the gorge's ancient embrace.

@@ -1,0 +1,1 @@
+Celestial breath shapes landscapes of rugged beauty, as the wind's gentle caress molds the gorge in the dance of nature's elemental forces.

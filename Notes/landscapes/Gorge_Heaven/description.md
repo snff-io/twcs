@@ -1,0 +1,1 @@
+Cliffs of stone soar to kiss the heavens, framing the celestial vista in the rugged beauty of nature's grand design.

@@ -1,0 +1,1 @@
+Celestial cliffs rise to meet the heavens, framing the majestic gorge in a divine tableau of nature's grand design.

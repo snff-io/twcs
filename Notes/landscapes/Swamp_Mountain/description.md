@@ -1,0 +1,1 @@
+Streams cascade from lofty summits to murky depths below, nurturing life amidst the rugged terrain and swampy wilderness.

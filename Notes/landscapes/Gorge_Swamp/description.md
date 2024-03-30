@@ -1,0 +1,1 @@
+Cliffs of stone give way to murky depths below, as the rugged gorge descends into the hidden wonders of the swamp's mysterious embrace.

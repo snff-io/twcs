@@ -11,8 +11,6 @@ builder.Services.AddSingleton<IGrid>((services) =>
     return grid;
 });
 
-
-
 builder.Services.AddSingleton<IStatus, Status>();
 
 builder.Services.AddScoped<ITotp, TotpWrapper>();

@@ -1,0 +1,1 @@
+A celestial refuge where towering peaks meet the endless sky, invoking a sense of divine serenity and grandeur.
