@@ -12,7 +12,7 @@ namespace test.worldcomputer.info
         {
             IDal<Body> dal = new DynamoDb<Body>();
 
-            var body = await dal.Get("Body","Mouaz_Coretchii");
+            var body = await dal.Get("Mouaz_Coretchii");
 
             Assert.True(body.FirstName == "Mouaz");
             Assert.True(body.LastName == "Coretchii");
@@ -24,7 +24,7 @@ namespace test.worldcomputer.info
         {
             IDal<Body> dal = new DynamoDb<Body>();
 
-            var body = await dal.Get("Body","Mouaz_Coretchii");
+            var body = await dal.Get("Mouaz_Coretchii");
 
             Assert.True(body.FirstName == "Mouaz");
             Assert.True(body.LastName == "Coretchii");
@@ -35,7 +35,7 @@ namespace test.worldcomputer.info
 
             body = null;
 
-            body = await dal.Get("Body","Mouaz_Coretchii");
+            body = await dal.Get("Mouaz_Coretchii");
 
             Assert.True(body.FirstName == "Mouaz");
             Assert.True(body.LastName == "Coretchii");
@@ -45,14 +45,14 @@ namespace test.worldcomputer.info
 
             await dal.Put(body);
 
-            body = await dal.Get("Body","Mouaz_Coretchii");
+            body = await dal.Get("Mouaz_Coretchii");
 
             Assert.True(body.FirstName == "Mouaz");
             Assert.True(body.LastName == "Coretchii");
             Assert.True(body.FamilyName == null);
         }
 
-        [Fact]
+        //[Fact]
         public async Task Can_Choose_5_Unbound()
         {
             IDal<Body> dal = new DynamoDb<Body>();

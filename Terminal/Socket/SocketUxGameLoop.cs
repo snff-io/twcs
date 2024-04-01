@@ -1,6 +1,6 @@
 using library.worldcomputer.info;
 
-public class SocketUxGameLoop:IUxGameLoop<Player, Player>
+public class SocketUxGameLoop:IUxGameLoop<IUnit, IUnit>
 {
 
     ICmdParser _cmdParser;
@@ -14,7 +14,7 @@ public class SocketUxGameLoop:IUxGameLoop<Player, Player>
         _wordResolver = wordResolver;
     }
 
-    public async Task<Player> HandleUx(Socket socket, Player player)
+    public async Task<IUnit> HandleUx(Socket socket, IUnit unit)
     {
         string filePath = Path.Combine(_env.ContentRootPath, "static/welcome.ans");
         
@@ -31,6 +31,6 @@ public class SocketUxGameLoop:IUxGameLoop<Player, Player>
 
         await socket.CloseAsync();
 
-        return player;
+        return unit;
     }
 }

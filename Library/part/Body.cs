@@ -23,15 +23,8 @@ public class Body : IUnit, IPart<Body>
     public string[] Memories { get; set; }
     public Pair[] PrivateKey { get; set; }
     public Pair[] PublicKey { get; set; }
-
-    public string DisplayType
-    {
-        get
-        {
-            return "Body";
-        }
-    }
-
+ public string Secret { get;set; }
+ public DateTime LastLogin { get;set; }
     public string GetHash(int length)
     {
         throw new NotImplementedException();

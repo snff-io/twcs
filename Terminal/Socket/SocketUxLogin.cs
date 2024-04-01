@@ -1,24 +1,27 @@
 using System.Net.WebSockets;
 using library.worldcomputer.info;
 using System.Text;
+using Microsoft.Recognizers.Text.NumberWithUnit;
 
 
-public class SocketUxLogin : IUxLogin<Player>
+public class SocketUxLogin : IUxLogin<IUnit>
 {
     private IWebHostEnvironment _env;
     private IWordResolver _wordResolver;
-    private IUxNewPlayer<Player> _newPlayerUx;
-    private IUxEnrollTotp<Player, Player> _enrollTotpUx;
-    private IUxChallengeTotp<bool, Player> _challengeTotp;
-    private IUxGameLoop<Player, Player> _gameLoopUx;
-    private IUxKnownPlayer<Player, string> _knownPlayerUx;
+    private IUxNewPlayer<IUnit> _newPlayerUx;
+    private IUxEnrollTotp<IUnit, IUnit> _enrollTotpUx;
+    private IUxChallengeTotp<bool, IUnit> _challengeTotp;
+    private IUxGameLoop<IUnit, IUnit> _gameLoopUx;
+    private IUxKnownPlayer<IUnit, string> _knownPlayerUx;
+    private IImageHandler _imageHandler;
 
     public SocketUxLogin(IWebHostEnvironment env, IWordResolver wordResolver,
-      IUxNewPlayer<Player> newPlayerUx,
-      IUxEnrollTotp<Player, Player> enrollTotpUx,
-      IUxKnownPlayer<Player, string> knownPlayerUx,
-      IUxGameLoop<Player, Player> gameLoopUx,
-      IUxChallengeTotp<bool, Player> challengeTotpUx
+      IUxNewPlayer<IUnit> newPlayerUx,
+      IUxEnrollTotp<IUnit, IUnit> enrollTotpUx,
+      IUxKnownPlayer<IUnit, string> knownPlayerUx,
+      IUxGameLoop<IUnit, IUnit> gameLoopUx,
+      IUxChallengeTotp<bool, IUnit> challengeTotpUx,
+      IImageHandler imageHandler
        )
     {
         _env = env;
@@ -28,18 +31,19 @@ public class SocketUxLogin : IUxLogin<Player>
         _challengeTotp = challengeTotpUx;
         _gameLoopUx = gameLoopUx;
         _knownPlayerUx = knownPlayerUx;
+        _imageHandler = imageHandler;
     }
 
-    public async Task<Player> HandleUx(Socket socket)
+    public async Task<IUnit> HandleUx(Socket socket)
     {
         var input = "";
-        Player player = new Player();
-
+        IUnit unit;
         try
         {
-            string filePath = Path.Combine(_env.ContentRootPath, "static/login.ans");
-            await socket.SendAsync(File.ReadAllText(filePath));
-            await socket.SendAsync("Hello, who are you? New?: ");
+            var ansi = await _imageHandler.GetMappedAnsi("login");
+            await ansi.Send(socket);
+            await "Hello, who are you? New?: ".Send(socket);
+            
             input = await socket.ReceiveAsync();
         }
         catch
@@ -51,29 +55,29 @@ public class SocketUxLogin : IUxLogin<Player>
 
         if (input.Split(' ').Count() != 2 && isNew != null && isNew != "" && isNew == "new")
         {
-            player = await _newPlayerUx.HandleUx(socket);
+            unit = await _newPlayerUx.HandleUx(socket);
         }
         else
         {
-            player = await _knownPlayerUx.HandleUx(socket, input);
-            if (player == null)
+            unit = await _knownPlayerUx.HandleUx(socket, input);
+            if (unit == null)
             {
-                player = await _newPlayerUx.HandleUx(socket);
+                unit = await _newPlayerUx.HandleUx(socket);
             }
         }
 
-        if (player.Id == "" || player.Id == null)
+        if (unit.Secret == "" || unit.Secret == null)
         {
-            player = await _enrollTotpUx.HandleUx(socket, player);
+            unit = await _enrollTotpUx.HandleUx(socket, unit);
         }
 
         try
         {
-            var sucess = await _challengeTotp.HandleUx(socket, player);
+            var success = await _challengeTotp.HandleUx(socket, unit);
 
-            if (sucess)
+            if (success)
             {
-                return await _gameLoopUx.HandleUx(socket, player);
+                return await _gameLoopUx.HandleUx(socket, unit);
             }
             else
             {
@@ -86,7 +90,7 @@ public class SocketUxLogin : IUxLogin<Player>
             await socket.CloseAsync();
         }
 
-        return player;
+        return unit;
 
     }
 

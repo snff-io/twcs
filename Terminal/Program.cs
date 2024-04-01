@@ -17,14 +17,15 @@ builder.Services.AddScoped<ITotp, TotpWrapper>();
 builder.Services.AddScoped<IWordResolver, WordNet>();
 builder.Services.AddScoped<IMove, Mover>();
 builder.Services.AddScoped<ICmdParser, CmdParser>();
-builder.Services.AddScoped<IUxLogin<Player>, SocketUxLogin>();
-builder.Services.AddScoped<IUxNewPlayer<Player>, SocketUxNewPlayer>();
-builder.Services.AddScoped<IUxEnrollTotp<Player, Player>, SocketUxEnrollTotp>();
-builder.Services.AddScoped<IUxKnownPlayer<Player, string>, SocketUxKnownPlayer>();
-builder.Services.AddScoped<IUxGameLoop<Player, Player>, SocketUxGameLoop>();
-builder.Services.AddScoped<IUxChallengeTotp<bool, Player>, SocketUxTotpChallenge>();
-builder.Services.AddScoped<IDal<Body>, DynamoDb<Body>>();
-builder.Services.AddScoped<IDal<Player>, DynamoDb<Player>>();
+builder.Services.AddScoped<IUxLogin<IUnit>, SocketUxLogin>();
+builder.Services.AddScoped<IUxNewPlayer<IUnit>, SocketUxNewPlayer>();
+builder.Services.AddScoped<IUxEnrollTotp<IUnit, IUnit>, SocketUxEnrollTotp>();
+builder.Services.AddScoped<IUxKnownPlayer<IUnit, string>, SocketUxKnownPlayer>();
+builder.Services.AddScoped<IUxGameLoop<IUnit, IUnit>, SocketUxGameLoop>();
+builder.Services.AddScoped<IUxChallengeTotp<bool, IUnit>, SocketUxTotpChallenge>();
+builder.Services.AddScoped<IDal<Body>, FlatFileDb<Body>>();
+builder.Services.AddScoped<IDal<IUnit>, FlatFileDb<IUnit>>();
+builder.Services.AddSingleton<IImageHandler, AnsiImageHandler>();
 
 var app = builder.Build();
 
@@ -43,7 +44,7 @@ app.Use(async (context, next) =>
             var wordResolver = scope.ServiceProvider.GetRequiredService<IWordResolver>();
             var socket = new Socket(webSocket, wordResolver);
 
-            var handler = scope.ServiceProvider.GetRequiredService<IUxLogin<Player>>();
+            var handler = scope.ServiceProvider.GetRequiredService<IUxLogin<IUnit>>();
 
             await handler.HandleUx(socket);
         }
@@ -55,3 +56,4 @@ app.Use(async (context, next) =>
 });
 
 app.Run("http://100.115.92.204:5260");
+//app.Run();

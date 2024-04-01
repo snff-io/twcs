@@ -8,7 +8,7 @@ using System.Text.RegularExpressions;
 
 public class WordNet : IWordResolver
 {
-    const string BASE_PATH = "/home/zampinojosh/src/twcs/Library/ux/WordNet/dict/";
+    const string BASE_PATH = "/srv/wordnet/dict/";
 
     string[] cmd_verbs = {
         "travel",

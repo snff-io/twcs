@@ -166,3 +166,75 @@ const response = await openai.createImage({
     size: "1024x1024",
   });
   image_url = response.data.data[0].url;
+
+#!csharp
+
+#r "nuget: System.IO.FileSystem"
+
+#!csharp
+
+using System.IO;
+
+void Main()
+{
+    string inputFilePath = "names_body.txt";
+    string outputFilePath = "names_body.tmp";
+
+    using (StreamReader reader = new StreamReader(inputFilePath))
+    {
+        using (StreamWriter writer = new StreamWriter(outputFilePath))
+        {
+            string line;
+            while ((line = reader.ReadLine()) != null)
+            {
+                
+                if (!line.StartsWith("-"))
+                {
+                    line = "-" + line;
+                }
+                // Write the modified line to the output file
+                writer.WriteLine(line);
+            }
+        }
+    }
+}
+
+Main();
+
+#!csharp
+
+using System;
+using System.IO;
+using System.IO.Compression;
+
+
+    public static void ZipExper()
+    {
+        string zipFilePath = "/srv/filedb.zip";
+
+        // Extract files from the ZIP archive
+        using (ZipArchive archive = ZipFile.OpenRead(zipFilePath))
+        {
+            foreach (ZipArchiveEntry entry in archive.Entries)
+            {
+                // If the entry is a file
+                if (!string.IsNullOrEmpty(entry.Name))
+                {
+                    Console.WriteLine("File: " + entry.FullName);
+
+                    // Open the file
+                    using (Stream stream = entry.Open())
+                    using (StreamReader reader = new StreamReader(stream))
+                    {
+                        // Read the contents of the file
+                        string content = reader.ReadToEnd();
+                        Console.WriteLine("Content: " + content);
+
+                        break;
+                    }
+                }
+            }
+        }
+    }
+
+ZipExper();

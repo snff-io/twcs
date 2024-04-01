@@ -74,7 +74,7 @@ public class DalMock<T> : Mock<IDal<T>> where T : class
         Setup(x => x.Put(It.IsAny<T>()))
             .Returns(Task.CompletedTask);
 
-        Setup(x => x.Get(It.IsAny<string>(), It.IsAny<string>()))
+        Setup(x => x.Get( It.IsAny<string>()))
             .ReturnsAsync((string table, string key) => null); // Adjust this to return a specific result if needed
     }
 }

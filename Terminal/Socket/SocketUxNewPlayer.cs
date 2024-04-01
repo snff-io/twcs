@@ -4,24 +4,25 @@ using System.Net.WebSockets;
 using System.Runtime.CompilerServices;
 using library.worldcomputer.info;
 namespace terminal.worldcomputer.info;
-public class SocketUxNewPlayer : IUxNewPlayer<Player>
+public class SocketUxNewPlayer : IUxNewPlayer<IUnit>
 {
     private IDal<Body> _bodyDal;
-    private IDal<Player> _playerDal;
     private WebSocket _socket;
     private IWebHostEnvironment _env;
+    private IImageHandler _imageHandler;
 
-    public SocketUxNewPlayer(IDal<Body> bodyDal, IDal<Player> playerDal, IWebHostEnvironment env)
+    public SocketUxNewPlayer(IDal<Body> bodyDal, IWebHostEnvironment env, IImageHandler imageHandler)
     {
         _bodyDal = bodyDal;
-        _playerDal = playerDal;
         _env = env;
+        _imageHandler = imageHandler;
     }
 
-    public async Task<Player> HandleUx(Socket socket)
+    public async Task<IUnit> HandleUx(Socket socket)
     {
-        await File.ReadAllText(Path.Combine(_env.ContentRootPath, "static/aepherum_male.ans")).Send(socket);
-        await File.ReadAllText(Path.Combine(_env.ContentRootPath, "static/aepherum_female.ans")).Send(socket);
+
+        await _imageHandler.GetMappedAnsi("newuser1").Result.Send(socket);
+        await _imageHandler.GetMappedAnsi("newuser2").Result.Send(socket);
 
         await "\nYou're about to embark on an exciting journey!".Send(socket);        
         await "Before you dive in, you have the unique opportunity to choose".Send(socket);
@@ -39,11 +40,10 @@ public class SocketUxNewPlayer : IUxNewPlayer<Player>
 
         var chint = int.Parse(choice) - 1;
 
-        var player = new Player();
-        player.Chosen = blist[chint].Id;
+        var player = blist[chint];
 
         await $"\n\nRemember your Chosen's name, you'll need it to login!".Send(socket);
-        await $"{blist[chint].FirstName} {blist[chint].LastName}".Color(KnownColor.Yellow).Send(socket);
+        await $"{player.FirstName} {player.LastName}".Color(KnownColor.Yellow).Send(socket);
         await $"let's continue your registration...".Send(socket);
 
         return player;

@@ -5,6 +5,7 @@ public class Spirit : IUnit, IPart<Spirit>
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public string FamilyName { get; set; }
+    public bool Bound { get; set; }
     public IAttributes Attributes { get; set; }
     public IAbility[] Abilities { get; set; }
     public Pair[] Key { get; set; }
@@ -20,15 +21,8 @@ public class Spirit : IUnit, IPart<Spirit>
     public string[] Memories { get; set; }
     public Pair[] PrivateKey { get; set; }
     public Pair[] PublicKey { get; set; }
-
-   public string DisplayType
-    {
-        get
-        {
-            return "Spirit";
-        }
-    }
-
+    public DateTime LastLogin { get;set; }
+ public string Secret { get;set; }
     public string GetHash(int length)
     {
         throw new NotImplementedException();

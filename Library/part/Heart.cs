@@ -4,6 +4,7 @@ public class Heart : IUnit, IPart<Heart>
     public string Id { get; set; }
     public string FirstName { get; set; }
     public string LastName { get; set; }
+        public bool Bound {get;set;}
     public string FamilyName { get; set; }
     public IAttributes Attributes { get; set; }
     public IAbility[] Abilities { get; set; }
@@ -20,15 +21,8 @@ public class Heart : IUnit, IPart<Heart>
     public string[] Memories { get; set; }
     public Pair[] PrivateKey { get; set; }
     public Pair[] PublicKey { get; set; }
-
-   public string DisplayType
-    {
-        get
-        {
-            return "Heart";
-        }
-    }
-
+    public string Secret { get;set; }
+    public DateTime LastLogin { get;set; }
 
     public string GetHash(int length)
     {

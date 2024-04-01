@@ -8,6 +8,7 @@ using System.Text;
 using Microsoft.AspNetCore.Builder;
 using System.Text.RegularExpressions;
 using Amazon.Runtime.Credentials.Internal;
+using Microsoft.AspNetCore.Mvc;
 
 public class Socket : ISocket
 {
@@ -28,8 +29,23 @@ public class Socket : ISocket
         }
     }
 
-    public async Task SendAsync(string message)
+    public async Task SendAsync(string message, Header mHeader = Header.Text, string mHeaderArg = "" )
     {
+
+        if (mHeader != Header.None)
+        {
+            switch (mHeader)
+            {
+                case Header.Image:
+                var h = ("h_image:" + mHeaderArg + "\n").Color(System.Drawing.KnownColor.Black);
+                message = h + message;                
+                break;
+                case(Header.Text):
+                default:
+                break;
+            }
+        }
+
         var buffer = System.Text.Encoding.UTF8.GetBytes(message);
         await _webSocket.SendAsync(new ArraySegment<byte>(buffer), WebSocketMessageType.Text, true, CancellationToken.None);
     }
@@ -85,16 +101,13 @@ public class Socket : ISocket
         }
         return response;
     }
-
-
 }
 
 public static class SocketEx
 {
-    public async static Task Send(this string message, Socket socket)
+    public async static Task Send(this string message, Socket socket, Header mHeader = Header.Text, string mHeaderArg = "")
     {
-        await socket.SendAsync(message);
+        await socket.SendAsync(message, mHeader, mHeaderArg);
     }
-
-
 }
+

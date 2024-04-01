@@ -49,7 +49,7 @@ public class DynamoDb<T> : IDal<T>
         var document = Document.FromJson(JsonSerializer.Serialize(item));
 
         // Create a Table object using the display type of the item
-        var table = Table.LoadTable(_client, item.DisplayType);
+        var table = Table.LoadTable(_client, typeof(T).Name);
 
         // Save the document to the table
         await table.PutItemAsync(document);
@@ -106,7 +106,7 @@ public class DynamoDb<T> : IDal<T>
 
     }
 
-    public async Task<T?> GetByAttr<TValue>(string attribute, TValue value)
+    public async Task<IEnumerable<T>> GetByAttr<TValue>(string attribute, TValue value)
     {
         var table = typeof(T).Name;
 
@@ -131,7 +131,7 @@ public class DynamoDb<T> : IDal<T>
         // Deserialize the item to type T
         T? ret = JsonSerializer.Deserialize<T>(Document.FromAttributeMap(response.Items[0]).ToJson());
 
-        return ret;
+        return new T[] { ret };
     }
 
 }

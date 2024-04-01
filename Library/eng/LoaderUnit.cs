@@ -28,6 +28,10 @@ class LoaderUnit : IUnit
     public string FirstName { get; set; } = "";
     public string LastName { get; set; } = "";
     string IUnit.Id { get; set; }
+    
+    bool IUnit.Bound {get;set;}
+    public string Secret { get;set; }
+    public DateTime LastLogin { get;set; }
 
     public LoaderUnit(string displayTypeString)
     {
