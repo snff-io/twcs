@@ -89,19 +89,19 @@ public class Mover : IMove
     }
 
 
-    public async Task<TryParseResult> TryParse(string arguments)
+    public async Task<TryParseResult> TryParse(string input)
     {
         var tpr = new TryParseResult();
     
         tpr.IntentPath = "";
-        var travel = await _wordResolver.Resolve(arguments, PartOfSpeech.verb, "travel" );
+        var travel = await _wordResolver.Resolve(input, PartOfSpeech.verb, "travel","north","south", "east","west","up","down" );
 
         if (travel != "")
         {
             tpr.IntentPath = "travel";
 
             //extract Direction
-            var direction = await _wordResolver.Resolve(arguments, PartOfSpeech.noun, "north","south", "east","west","up","down");
+            var direction = await _wordResolver.Resolve(input, PartOfSpeech.noun, "north","south", "east","west","up","down");
             
             if (direction != "")
                 tpr.IntentPath += "." + direction;
