@@ -24,7 +24,7 @@ public class SocketUxGameLoop:IUxGameLoop<IUnit, IUnit>
             await "Silence echoes through the void, defining an infinite vista of emptiness.".Send(socket);
             var input = await socket.ReceiveAsync();
 
-            var output = _cmdParser.ParseCommand(input);
+            var output = await _cmdParser.ParseCommand(input);
 
             await socket.SendAsync(output);
         }

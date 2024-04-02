@@ -1,12 +1,4 @@
 using library.worldcomputer.info;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.Recognizers.Text;
-using Microsoft.Recognizers.Text.Sequence;
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
 
 public class CmdParser : ICmdParser
 {
@@ -23,14 +15,14 @@ public class CmdParser : ICmdParser
         _status = status;
     }
 
-    public string ParseCommand(string input)
+    public async Task<string> ParseCommand(string input)
     {
         foreach (var intent in _intents)
         {
-            string intentPath = "";
-            if (intent.TryParse(input, out intentPath))
+            var tpr = await intent.TryParse(input);
+            if (tpr.Success)
             {
-                return intentPath;
+                return tpr.IntentPath;
             }
         }
 

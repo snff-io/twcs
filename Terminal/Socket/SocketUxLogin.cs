@@ -1,7 +1,4 @@
-using System.Net.WebSockets;
 using library.worldcomputer.info;
-using System.Text;
-using Microsoft.Recognizers.Text.NumberWithUnit;
 
 
 public class SocketUxLogin : IUxLogin<IUnit>
@@ -51,7 +48,7 @@ public class SocketUxLogin : IUxLogin<IUnit>
             throw new Exception("Socket problems...");
         }
 
-        var isNew = _wordResolver.Resolve(input, PartOfSpeech.adj, "new");
+        var isNew = await _wordResolver.Resolve(input, PartOfSpeech.adj, "new");
 
         if (input.Split(' ').Count() != 2 && isNew != null && isNew != "" && isNew == "new")
         {

@@ -1,6 +1,6 @@
 public interface IIntent
 {
-    public bool TryParse(string arguments, out string intentPath);
+    public Task<TryParseResult> TryParse(string arguments);
 
 }
 

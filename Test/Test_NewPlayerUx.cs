@@ -1,14 +1,6 @@
-
-using Xunit;
 using library.worldcomputer.info;
-using Microsoft.OpenApi.Expressions;
 using System.Net.WebSockets;
 using Moq;
-using System;
-using System.Threading;
-using System.Threading.Tasks;
-using terminal.worldcomputer.info;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.FileProviders;
 
 namespace test.worldcomputer.info;
@@ -71,11 +63,11 @@ public class DalMock<T> : Mock<IDal<T>> where T : class
 
     private void SetupAll()
     {
-        Setup(x => x.Put(It.IsAny<T>()))
-            .Returns(Task.CompletedTask);
+        // Setup(x => x.Put(It.IsAny<T>()))
+        //     .Returns(Task.CompletedTask);
 
-        Setup(x => x.Get( It.IsAny<string>()))
-            .ReturnsAsync((string table, string key) => null); // Adjust this to return a specific result if needed
+        // Setup(x => x.Get( It.IsAny<string>()))
+        //     .ReturnsAsync((string table, string key) => null); // Adjust this to return a specific result if needed
     }
 }
 public interface IWebHostEnvironment 
@@ -100,7 +92,7 @@ public class Test_NewPlayerUx
 
 
     [Fact]
-    public async void Says_Welcome()
+    public void Says_Welcome()
     {
         ///var npux = new SocketNewPlayerUx((IDal<Body>)new DalMock<Body>(), (IDal<Player>) new DalMock<Player>(), new WebSocketMock(), new WebHostEnvironmentMock());
         

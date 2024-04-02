@@ -1,6 +1,6 @@
 public interface ICmdParser
 {
-    public string ParseCommand(string input);
+    public Task<string> ParseCommand(string input);
 
 
 }

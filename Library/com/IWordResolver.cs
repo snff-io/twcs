@@ -1,5 +1,5 @@
 public interface IWordResolver 
 {
-    public string Resolve(string input, PartOfSpeech pos, params string[] cmd_words);
+    public Task<string> Resolve(string input, PartOfSpeech pos, params string[] cmd_words);
 
 }

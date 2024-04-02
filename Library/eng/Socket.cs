@@ -91,7 +91,7 @@ public class Socket : ISocket
             await SendAsync(prompt);
             response = await ReceiveAsync();
             
-            string word = _wordResolver.Resolve(response, pos, words );
+            string word = await _wordResolver.Resolve(response, pos, words );
 
             if (word != null && word != "" && words.Contains(word))
             {

@@ -88,28 +88,38 @@ public class Mover : IMove
         }
     }
 
-    public bool TryParse(string arguments, out string intentPath)
+
+    public async Task<TryParseResult> TryParse(string arguments)
     {
+        var tpr = new TryParseResult();
     
-        intentPath = "";
-        var travel = _wordResolver.Resolve(arguments, PartOfSpeech.verb, "travel" );
+        tpr.IntentPath = "";
+        var travel = await _wordResolver.Resolve(arguments, PartOfSpeech.verb, "travel" );
 
         if (travel != "")
         {
-            intentPath = "travel";
+            tpr.IntentPath = "travel";
 
             //extract Direction
-            var direction = _wordResolver.Resolve(arguments, PartOfSpeech.noun, "north","south", "east","west","up","down");
+            var direction = await _wordResolver.Resolve(arguments, PartOfSpeech.noun, "north","south", "east","west","up","down");
             
             if (direction != "")
-                intentPath += "." + direction;
+                tpr.IntentPath += "." + direction;
 
             
             //TODO:
             //extract optional number from arguments
         }
 
-        return intentPath != ""; 
+        tpr.Success = tpr.IntentPath != "";
+
+        return tpr;  
         
     }
+}
+
+public class TryParseResult
+{
+    public bool Success {get;set;}
+    public string IntentPath{get;set;}
 }

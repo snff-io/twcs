@@ -29,7 +29,7 @@ public class WordNet : IWordResolver
         "vibration"
     };
 
-    public string Resolve(string input, PartOfSpeech pos, params string[] cmd_words)
+    public async Task<string> Resolve(string input, PartOfSpeech pos, params string[] cmd_words)
     {
 
         using (var fidx = File.OpenRead(($"{BASE_PATH}/index.{pos}")))
@@ -45,8 +45,9 @@ public class WordNet : IWordResolver
 
             while (!reader.EndOfStream)
             {
-                var line = reader.ReadLine();
-                var words = input.Split(' ');
+                var line = await reader.ReadLineAsync();
+                line = line?.ToLower();
+                var words = input.ToLower().Split(' ');
                 foreach (var word in words)
                 {
                     if (line == null)
