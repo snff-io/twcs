@@ -1,0 +1,51 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "World",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "world",
+            "program": "${workspaceFolder}/World/bin/Debug/net8.0/World.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/World",
+            "stopAtEntry": false,
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+            },
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            }
+        },
+        {
+            "name": "Computer",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "${workspaceFolder}/Computer/bin/Debug/net8.0/Computer.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "stopAtEntry": true,
+        },
+        {
+            "name": "Terminal",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "terminal",
+            "program": "${workspaceFolder}/bin/Debug/net8.0/Terminal.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "stopAtEntry": false,
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+            },
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            }
+        },
+    ]
+}

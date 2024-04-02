@@ -1,4 +1,8 @@
+namespace library.worldcomputer.info;
+
 public interface IImageHandler
 {
-    Task<string> GetMappedAnsi(string map);
+    Image GetNamedImage(string map);
+
+    Image this[string map] {get;}
 }

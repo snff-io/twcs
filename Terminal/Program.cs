@@ -26,8 +26,10 @@ builder.Services.AddScoped<IUxChallengeTotp<bool, IUnit>, SocketUxTotpChallenge>
 builder.Services.AddScoped<IDal<Body>, FlatFileDb<Body>>();
 builder.Services.AddScoped<IDal<IUnit>, FlatFileDb<IUnit>>();
 builder.Services.AddSingleton<IImageHandler, AnsiImageHandler>();
+builder.Services.AddHttpClient();
 
 var app = builder.Build();
+
 
 app.UseStaticFiles();
 

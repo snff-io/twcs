@@ -66,38 +66,14 @@ public static class Ansi
 
     public static string Color(this string message, KnownColor color)
     {
-        // Get the ANSI color code for the specified KnownColor
-        string colorCode = "";
-        switch (color)
-        {
-            case KnownColor.Black:
-                colorCode = "\u001b[30m"; // Black
-                break;
-            case KnownColor.Red:
-                colorCode = "\u001b[31m"; // Red
-                break;
-            case KnownColor.Green:
-                colorCode = "\u001b[32m"; // Green
-                break;
-            case KnownColor.Yellow:
-                colorCode = "\u001b[33m"; // Yellow
-                break;
-            case KnownColor.Blue:
-                colorCode = "\u001b[34m"; // Blue
-                break;
-            case KnownColor.Magenta:
-                colorCode = "\u001b[35m"; // Magenta
-                break;
-            case KnownColor.Cyan:
-                colorCode = "\u001b[36m"; // Cyan
-                break;
-            case KnownColor.White:
-                colorCode = "\u001b[37m"; // White
-                break;
-            default:
-                colorCode = "\u001b[39m"; // Default color (resets to default)
-                break;
-        }
+        // Get the RGB values for the specified KnownColor
+        Color knownColor = System.Drawing.Color.FromKnownColor(color);
+        int r = knownColor.R;
+        int g = knownColor.G;
+        int b = knownColor.B;
+
+        // Generate the ANSI color code with RGB values
+        string colorCode = $"\u001b[38;2;{r};{g};{b}m";
 
         // ANSI code for resetting the color
         string resetCode = "\u001b[0m";

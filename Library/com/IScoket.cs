@@ -1,20 +1,16 @@
+using System.Drawing;
+using System.Text;
 using library.worldcomputer.info;
 
 public interface ISocket
 {
     SocketState State { get; }
-    Task SendAsync(string message, Header mHeader = Header.Text, string mHeaderArg = "");
+    Task SendAsync(string message);
     Task<string> ReceiveAsync();
     Task CloseAsync();
 }
 
-public enum Header
-{
-    None,
-    Text,
-    Image,
-    Location
-}
+
 
 public enum SocketState
 {

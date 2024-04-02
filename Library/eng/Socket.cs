@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Builder;
 using System.Text.RegularExpressions;
 using Amazon.Runtime.Credentials.Internal;
 using Microsoft.AspNetCore.Mvc;
+using System.Drawing;
 
 public class Socket : ISocket
 {
@@ -29,23 +30,8 @@ public class Socket : ISocket
         }
     }
 
-    public async Task SendAsync(string message, Header mHeader = Header.Text, string mHeaderArg = "" )
+    public async Task SendAsync(string message)
     {
-
-        if (mHeader != Header.None)
-        {
-            switch (mHeader)
-            {
-                case Header.Image:
-                var h = ("h_image:" + mHeaderArg + "\n").Color(System.Drawing.KnownColor.Black);
-                message = h + message;                
-                break;
-                case(Header.Text):
-                default:
-                break;
-            }
-        }
-
         var buffer = System.Text.Encoding.UTF8.GetBytes(message);
         await _webSocket.SendAsync(new ArraySegment<byte>(buffer), WebSocketMessageType.Text, true, CancellationToken.None);
     }
@@ -75,7 +61,7 @@ public class Socket : ISocket
             response = await ReceiveAsync();
             if (rx.IsMatch(response))
             {
-                matched=true;
+                matched = true;
                 break;
             }
         }
@@ -90,12 +76,12 @@ public class Socket : ISocket
         {
             await SendAsync(prompt);
             response = await ReceiveAsync();
-            
-            string word = await _wordResolver.Resolve(response, pos, words );
+
+            string word = await _wordResolver.Resolve(response, pos, words);
 
             if (word != null && word != "" && words.Contains(word))
             {
-                matched=true;
+                matched = true;
                 break;
             }
         }
@@ -103,11 +89,4 @@ public class Socket : ISocket
     }
 }
 
-public static class SocketEx
-{
-    public async static Task Send(this string message, Socket socket, Header mHeader = Header.Text, string mHeaderArg = "")
-    {
-        await socket.SendAsync(message, mHeader, mHeaderArg);
-    }
-}
 

@@ -1,3 +1,5 @@
+using System.Drawing;
+using System.Globalization;
 using library.worldcomputer.info;
 
 
@@ -10,7 +12,7 @@ public class SocketUxLogin : IUxLogin<IUnit>
     private IUxChallengeTotp<bool, IUnit> _challengeTotp;
     private IUxGameLoop<IUnit, IUnit> _gameLoopUx;
     private IUxKnownPlayer<IUnit, string> _knownPlayerUx;
-    private IImageHandler _imageHandler;
+    private IImageHandler _image;
 
     public SocketUxLogin(IWebHostEnvironment env, IWordResolver wordResolver,
       IUxNewPlayer<IUnit> newPlayerUx,
@@ -28,7 +30,7 @@ public class SocketUxLogin : IUxLogin<IUnit>
         _challengeTotp = challengeTotpUx;
         _gameLoopUx = gameLoopUx;
         _knownPlayerUx = knownPlayerUx;
-        _imageHandler = imageHandler;
+        _image = imageHandler;
     }
 
     public async Task<IUnit> HandleUx(Socket socket)
@@ -37,10 +39,9 @@ public class SocketUxLogin : IUxLogin<IUnit>
         IUnit unit;
         try
         {
-            var ansi = await _imageHandler.GetMappedAnsi("login");
-            await ansi.Send(socket);
-            await "Hello, who are you? New?: ".Send(socket);
-            
+            await _image["login"].Send(socket);
+            await "Hello, who are you? New?: ".Text().Send(socket);
+
             input = await socket.ReceiveAsync();
         }
         catch
@@ -78,8 +79,8 @@ public class SocketUxLogin : IUxLogin<IUnit>
             }
             else
             {
-                await "Login failed. :(".Send(socket);
-                await "Send mail to support@worldcomputer.info for assistance!".Send(socket);
+                await "Login failed. :(".Error().Send(socket);
+                await "Send mail to support@worldcomputer.info for assistance!".Text().Send(socket);
             }
         }
         finally

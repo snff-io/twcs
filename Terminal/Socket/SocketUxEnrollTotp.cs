@@ -1,3 +1,4 @@
+using System.Drawing;
 using library.worldcomputer.info;
 namespace terminal.worldcomputer.info;
 public class SocketUxEnrollTotp : IUxEnrollTotp<IUnit,IUnit>
@@ -11,15 +12,13 @@ public class SocketUxEnrollTotp : IUxEnrollTotp<IUnit,IUnit>
         _dal = dal;
     }
 
-    
-
     public async Task<IUnit> HandleUx(Socket socket, IUnit unit)
     {
-        await "For simplicity and enhanced security, we exclusively utilize one-time passwords.".Send(socket);
-        await "They serve as both a safeguard and a form of captcha. To access, you'll require an".Send(socket);
-        await "authenticator app capable of scanning a QR code. Stay protected!\n".Send(socket);
-        await "Let's setup your Authenticator App\n\n".Send(socket);
-        await "Scan this code with your authenticator app...".Send(socket);
+        await "For simplicity and enhanced security, we exclusively utilize one-time passwords.".Text().Send(socket);
+        await "They serve as both a safeguard and a form of captcha. To access, you'll require an".Text().Send(socket);
+        await "authenticator app capable of scanning a QR code. Stay protected!\n".Text().Send(socket);
+        await "Let's setup your Authenticator App\n\n".Text().Send(socket);
+        await "Scan this code with your authenticator app...".Emph().Send(socket);
 
 
         unit.Secret = _totp.GenerateSecret();
@@ -27,7 +26,7 @@ public class SocketUxEnrollTotp : IUxEnrollTotp<IUnit,IUnit>
         await data.Send(socket);
         
 
-        await socket.PromptForRx("Press enter to continue. . .", ".*");
+        await socket.PromptForRx("Press enter to continue. . .".Text(), ".*");
         await Ansi.Clear.Send(socket);
         
         return unit;

@@ -1,3 +1,4 @@
+using System.Drawing;
 using System.Runtime.InteropServices;
 using library.worldcomputer.info;
 using OtpNet;
@@ -15,7 +16,7 @@ public class SocketUxTotpChallenge : IUxChallengeTotp<bool, IUnit>
     }
     public async Task<bool> HandleUx( Socket socket, IUnit unit)
     {
-        await "Enter the 6 digits from your authentictor:".Send(socket);
+        await "Enter the 6 digits from your authentictor:".Text().Send(socket);
 
         var tries = 10;
         while (tries > 0)
@@ -24,13 +25,14 @@ public class SocketUxTotpChallenge : IUxChallengeTotp<bool, IUnit>
 
             var secRemain = _totp.RemainingSeconds(unit.Secret);
             
-            var value = await socket.PromptForRx($"{secRemain} seconds: ", "\\d{6}" );
+            var value = await socket.PromptForRx($": ", "\\d{6}" );
             var valid = _totp.ValidateTotp(unit.Secret, value);
             
             if (valid) 
             {
-                await $"success! saving...".Send(socket);   
-                await $"you are : {unit.FirstName} {unit.LastName}".Color(System.Drawing.KnownColor.Yellow).Send(socket);             
+                await $"Success! Saving...".Text().Send(socket);   
+                await "\n".Send(socket);
+                await $"You are : {unit.FirstName} {unit.LastName}".Info().Send(socket);             
                 unit.Bound = true;
                 unit.LastLogin = DateTime.Now;
                 await _bodyDal.Put((Body)unit);
@@ -39,7 +41,7 @@ public class SocketUxTotpChallenge : IUxChallengeTotp<bool, IUnit>
             }
             else
             {
-                await $"invalid otp, {tries.ToString()} remaining)".Send(socket);
+                await $"invalid otp, {tries.ToString()} remaining)".Error().Send(socket);
             }
 
         }

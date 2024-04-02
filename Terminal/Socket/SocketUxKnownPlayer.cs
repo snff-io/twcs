@@ -1,3 +1,4 @@
+using System.Drawing;
 using library.worldcomputer.info;
 
 public class SocketUxKnownPlayer : IUxKnownPlayer<IUnit, string>
@@ -11,19 +12,19 @@ public class SocketUxKnownPlayer : IUxKnownPlayer<IUnit, string>
 
     public async Task<IUnit> HandleUx(Socket socket, string unit)
     {
-        await $"Looking for {unit}, one moment please.,,".Send(socket);
+        await $"Looking for {unit}, one moment please.,,".Text().Send(socket);
 
         var body = await _bodyDal.Get(IUnit.ToId(unit));
 
         //player nor body exist
         if (body == null)
         {
-            await "I don't know anyone by that name.".Send(socket);
+            await "I don't know anyone by that name.".Error().Send(socket);
             return null;
         }
         else
         {
-            await $"found them.".Send(socket);
+            await $"found them.".Text().Send(socket);
             return body;
         }
     }

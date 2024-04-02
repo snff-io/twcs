@@ -10,10 +10,6 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 //builder.Services.AddSwaggerGen();
 
-
-
-
-
 builder.Services.AddSingleton<IGrid, Grid>((services) =>
 {
     var grid = new Grid();

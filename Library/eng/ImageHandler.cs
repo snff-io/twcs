@@ -1,6 +1,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Net;
 using System.Runtime.CompilerServices;
+using library.worldcomputer.info;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Hosting.Server.Features;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
@@ -10,10 +11,14 @@ using MongoDB.Bson.IO;
 public class AnsiImageHandler : IImageHandler
 {
     Dictionary<string, string> _map;
+    private HttpClient _client;
     private string _server;
 
-    public AnsiImageHandler(string server = "https://worldcomputer.info/pic/")
+
+
+    public AnsiImageHandler(HttpClient client, string server = "https://worldcomputer.info/pic/")
     {
+        _client = client;
         _server = server;
 
 
@@ -25,25 +30,16 @@ public class AnsiImageHandler : IImageHandler
         };
     }
 
-    public async Task<string> GetMappedAnsi(string map)
+    public Image this[string map] => GetNamedImage(map);
+    
+
+    public Image GetNamedImage(string map)
     {
-        var hc = new HttpClient();
-        var path = _map[map].Replace("_", "ans/_").Replace(".jpeg",".ans");
-        var uri = _server + path;
-
-        var ansi = await hc.GetStringAsync(_server + path);
-
-        ansi = ("\n" + _server + _map[map] + "\n").Color(System.Drawing.KnownColor.Black) + ansi;
-
-        return ansi;
+       
+        var ansipath = _server + _map[map].Replace("_", "ans/_").Replace(".jpeg",".ans"); 
+        var imagepath = _server + _map[map];
+    
+        return new Image(ansipath, imagepath, _client);
     }
-
-    public async Task<byte[]> GetMappedImage(string map)
-    {
-        var hc  = new HttpClient();
-        var image = await hc.GetByteArrayAsync(_server + _map[map]);
-        return image;
-    }
-
 }
 
