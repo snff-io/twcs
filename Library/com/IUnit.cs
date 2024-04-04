@@ -11,11 +11,14 @@ public interface IUnit : IHash
     string FirstName {get;set;}
     string LastName {get;set;}
 
+    Location Location {get;set;}
+
     bool Bound {get;set;}
 
     static string ToId(string value)
     {
         return value.Trim().Replace(" ", "_");
     }
-    
+
+
 }

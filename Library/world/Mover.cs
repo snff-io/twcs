@@ -121,5 +121,7 @@ public class Mover : IMove
 public class TryParseResult
 {
     public bool Success {get;set;}
+
+    public string Intent {get;set;}
     public string IntentPath{get;set;}
 }

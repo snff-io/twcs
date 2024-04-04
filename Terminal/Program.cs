@@ -6,17 +6,22 @@ using terminal.worldcomputer.info;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddSingleton<IGrid>((services) =>
 {
-    var grid = new GridShell();
+    var grid = new Grid(){
+        LayerSize = 190
+    };
+
+    grid.InitializeGrid();
 
     return grid;
 });
 
 builder.Services.AddSingleton<IStatus, Status>();
 
+builder.Services.AddHttpClient();
+
 builder.Services.AddScoped<ITotp, TotpWrapper>();
-builder.Services.AddScoped<IWordResolver, WordNet>();
-builder.Services.AddScoped<IMove, Mover>();
-builder.Services.AddScoped<ICmdParser, CmdParser>();
+builder.Services.AddSingleton<IWordResolver, WordNet>();
+
 builder.Services.AddScoped<IUxLogin<IUnit>, SocketUxLogin>();
 builder.Services.AddScoped<IUxNewPlayer<IUnit>, SocketUxNewPlayer>();
 builder.Services.AddScoped<IUxEnrollTotp<IUnit, IUnit>, SocketUxEnrollTotp>();
@@ -24,9 +29,21 @@ builder.Services.AddScoped<IUxKnownPlayer<IUnit, string>, SocketUxKnownPlayer>()
 builder.Services.AddScoped<IUxGameLoop<IUnit, IUnit>, SocketUxGameLoop>();
 builder.Services.AddScoped<IUxChallengeTotp<bool, IUnit>, SocketUxTotpChallenge>();
 builder.Services.AddScoped<IDal<Body>, FlatFileDb<Body>>();
+
+builder.Services.AddScoped<IDal<Spirit>, FlatFileDb<Spirit>>();
 builder.Services.AddScoped<IDal<IUnit>, FlatFileDb<IUnit>>();
 builder.Services.AddSingleton<IImageHandler, AnsiImageHandler>();
-builder.Services.AddHttpClient();
+
+
+builder.Services.AddScoped<IIntentAction, MarketIntentAction>();
+builder.Services.AddScoped<IIntentAction, TravelIntentAction>();
+builder.Services.AddScoped<IIntentAction, LocationIntentAction>();
+
+builder.Services.AddSingleton<IIntent, MarketIntent>();
+builder.Services.AddSingleton<IIntent, TravelIntent>();
+builder.Services.AddSingleton<IIntent, LocationIntent>();
+
+
 
 var app = builder.Build();
 

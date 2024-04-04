@@ -10,6 +10,7 @@ using System.Text.RegularExpressions;
 using Amazon.Runtime.Credentials.Internal;
 using Microsoft.AspNetCore.Mvc;
 using System.Drawing;
+using Microsoft.AspNetCore.Authentication;
 
 public class Socket : ISocket
 {
@@ -67,6 +68,39 @@ public class Socket : ISocket
         }
         return response;
     }
+    public async Task<int> PromptForNumber(string prompt, int max, int min = 1)
+    {
+        var rx = new Regex($"[{min}-{max}]|[x]");
+
+        var matched = false;
+        var response = 0;
+
+        while (!matched)
+        {
+            await prompt.Option().Send(this);
+
+            var input = await ReceiveAsync();
+
+            if (rx.IsMatch(input))
+            {
+                var match = rx.Match(input);
+
+                if (match.Value == "x")
+                {
+                    response = -1;
+                    matched = true;
+                }
+                else
+                {
+                    response = int.Parse(match.Value);
+                    matched = true;
+                }
+            }
+        }
+
+        return response;
+    }
+
 
     public async Task<string> PromptForWord(string prompt, PartOfSpeech pos, params string[] words)
     {

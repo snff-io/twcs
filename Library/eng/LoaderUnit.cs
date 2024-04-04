@@ -24,7 +24,7 @@ class LoaderUnit : IUnit
         }
     }
     string displayTypeString = "";
-
+public Location Location {get;set;}
     public string FirstName { get; set; } = "";
     public string LastName { get; set; } = "";
     string IUnit.Id { get; set; }

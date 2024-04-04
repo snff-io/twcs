@@ -80,7 +80,7 @@ public class WordNet : IWordResolver
                                     // Check if the captured word matches a specific word
                                     if (capture.Value.ToLower() == fword.ToLower())
                                     {
-                                        return capture.Value;
+                                        return fword;
                                     }
                                 }
                             }

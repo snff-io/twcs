@@ -21,7 +21,7 @@ builder.Services.AddSingleton<Processor>();
 builder.Services.AddSingleton<IWordResolver, WordNet>();
 builder.Services.AddSingleton<IStatus, Status>();
 builder.Services.AddSingleton<IMove, Mover>();
-builder.Services.AddSingleton<ICmdParser, CmdParser>();
+
 
 
 

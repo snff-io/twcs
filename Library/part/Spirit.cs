@@ -6,6 +6,7 @@ public class Spirit : IUnit, IPart<Spirit>
     public string LastName { get; set; }
     public string FamilyName { get; set; }
     public bool Bound { get; set; }
+    public Location Location {get;set;} = new Location();
     public IAttributes Attributes { get; set; }
     public IAbility[] Abilities { get; set; }
     public Pair[] Key { get; set; }

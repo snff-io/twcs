@@ -8,6 +8,7 @@ public class Soul : IUnit, IPart<Soul>
         public bool Bound {get;set;}
     public IAttributes Attributes { get; set; }
     public IAbility[] Abilities { get; set; }
+    public Location Location {get;set;} = new Location();
     public Pair[] Key { get; set; }
     public Pair[] Aura { get; set; }
     public string Type { get; set; }

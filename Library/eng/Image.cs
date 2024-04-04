@@ -4,9 +4,9 @@ namespace library.worldcomputer.info;
 
 public class Image
 {
-    public string AnsiUri { get; private set; }
+    public string AnsiUri { get; set; }
 
-    public string JpegUri { get; private set; }
+    public string JpegUri { get; set; }
 
     HttpClient _httpClient;
 

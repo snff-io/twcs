@@ -10,12 +10,14 @@ public class SocketUxNewPlayer : IUxNewPlayer<IUnit>
     private WebSocket _socket;
     private IWebHostEnvironment _env;
     private IImageHandler _image;
+    private IGrid _grid;
 
-    public SocketUxNewPlayer(IDal<Body> bodyDal, IWebHostEnvironment env, IImageHandler imageHandler)
+    public SocketUxNewPlayer(IDal<Body> bodyDal, IWebHostEnvironment env, IImageHandler imageHandler, IGrid grid)
     {
         _bodyDal = bodyDal;
         _env = env;
         _image = imageHandler;
+        _grid = grid;
     }
 
     public async Task<IUnit> HandleUx(Socket socket)
@@ -37,7 +39,12 @@ public class SocketUxNewPlayer : IUxNewPlayer<IUnit>
 
         var chint = int.Parse(choice) - 1;
 
-        var player = blist[chint];
+        var player = (IUnit)blist[chint];
+
+        var pg = _grid.GetRandomPoistion(0);
+        player.Location.Layer = 0;
+        player.Location.X = pg.Current.X;
+        player.Location.Y = pg.Current.Y;
 
         await $"\n\n{player.FirstName} {player.LastName}\n\n".Info().Send(socket);
         await $"Remember your name, you'll need it to login!".Emph().Send(socket);

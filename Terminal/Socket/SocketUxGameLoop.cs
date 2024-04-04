@@ -1,32 +1,60 @@
+using System.Globalization;
+using System;
 using library.worldcomputer.info;
 
-public class SocketUxGameLoop:IUxGameLoop<IUnit, IUnit>
+public class SocketUxGameLoop : IUxGameLoop<IUnit, IUnit>
 {
 
-    ICmdParser _cmdParser;
     private IWebHostEnvironment _env;
     private IWordResolver _wordResolver;
+    private IImageHandler _image;
+    private IServiceProvider _serviceProvider;
 
-    public SocketUxGameLoop(ICmdParser cmdParser, IWebHostEnvironment env, IWordResolver wordResolver)
+    public SocketUxGameLoop(IWebHostEnvironment env, IWordResolver wordResolver, IImageHandler imageHandler, IServiceProvider serviceProvider)
     {
-        _cmdParser = cmdParser;
         _env = env;
         _wordResolver = wordResolver;
+        _image = imageHandler;
+        _serviceProvider = serviceProvider;
     }
 
     public async Task<IUnit> HandleUx(Socket socket, IUnit unit)
     {
-        string filePath = Path.Combine(_env.ContentRootPath, "static/welcome.ans");
-        
-        await socket.SendAsync(File.ReadAllText(filePath));
+        await "[wecome / motd / etc]".Text().Send(socket);
+
+        var intents = _serviceProvider.GetServices<IIntent>();
+        var intentActions = _serviceProvider.GetServices<IIntentAction>();
+
+        var locationIntentAction = intentActions.Where(x=>x.Intent == "location").FirstOrDefault();
+
+        if (locationIntentAction == null)
+        {
+            throw new Exception("Problem with location intent action!");
+        }
+
         while (socket.State == SocketState.Open)
         {
-            await "Silence echoes through the void, defining an infinite vista of emptiness.".Send(socket);
+            await "Main".Emph().Send(socket);
+            await locationIntentAction.Exec("location", unit, socket);
             var input = await socket.ReceiveAsync();
 
-            var output = await _cmdParser.ParseCommand(input);
+            foreach (var intent in intents)
+            {
+                var tpr = await intent.TryParse(input);
 
-            await socket.SendAsync(output);
+                if (tpr.Success)
+                {
+                    var ia = intentActions.Where(x => x.Intent == tpr.Intent).FirstOrDefault();
+
+                    if (ia == null)
+                    {
+                        var ilist = string.Join(", ", intentActions.Select(x => x.Intent));
+                        await $"That action seems unavailable. Try {ilist}".Error().Send(socket);
+                    }
+
+                    await ia.Exec(tpr.IntentPath, unit, socket);
+                }
+            }
         }
 
         await socket.CloseAsync();
