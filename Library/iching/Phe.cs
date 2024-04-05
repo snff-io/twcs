@@ -1,6 +1,11 @@
 public static class Phe
 {
 
+    /*
+        Elements converge,
+        Verses flow, nature's dance told—
+        Creation's symphony. -NVgpt 2024
+    */
 
     static Dictionary<string, string[]> phe = new Dictionary<string, string[]>
     {
