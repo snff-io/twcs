@@ -83,7 +83,7 @@ public class MarketIntentAction : IIntentAction
             await $"{i + 1}. {_operations[i]}".Option().Send(socket);
         }
 
-        var result = await socket.PromptForNumber($"Your Choice? [1-{_operations.Count()}]", _operations.Count, 1);
+        var result = await socket.PromptForNumber($"Your Choice? [1-{_operations.Count()}]".Emph(), _operations.Count, 1);
 
         return result;
 
