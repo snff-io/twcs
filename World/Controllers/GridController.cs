@@ -112,8 +112,8 @@ namespace World.Controllers
             return new JsonResult(the_grid.Layers[layer][x][y]);
         }
 
-        [HttpGet("/grid/metrics")]
-        public async Task<IActionResult> StatMetrics(int startLayer = 0, int endLayer = 2)
+        [HttpGet("/grid/metrics")] 
+        public async Task<IActionResult> StatMetrics(int startLayer = 0, int endLayer= 2)
         {
             if (the_grid == null)
             {
@@ -140,6 +140,25 @@ namespace World.Controllers
 
             await _grid_registry.CollectAndExportAsTextAsync(Response.Body);
             return new EmptyResult();
+        }
+
+        [HttpGet("/grid/stability/{endLayer}/{startLayer}")]
+        public async Task<IActionResult> StatStability(int startLayer = 0, int endLayer= 1)
+        {
+            if (the_grid == null)
+            {
+                return StatusCode(400, "Bad Reqeust. Grid not initialized.");
+            }
+
+            var allPairs = the_grid.Layers
+                .Where((layer, index) => index >= startLayer && index <= endLayer) // Filter layers within the specified range
+                .SelectMany(layer => layer.SelectMany(row => row));
+
+            var stablePairs = allPairs.Sum(x=>x.Stability);
+
+            return new JsonResult(new { Count=allPairs.Count(), Stable=stablePairs });
+
+
         }
 
         private void EnsureGridInitialized()

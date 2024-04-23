@@ -32,10 +32,12 @@ public class SocketUxGameLoop : IUxGameLoop<IUnit, IUnit>
             throw new Exception("Problem with location intent action!");
         }
 
+         await locationIntentAction.Exec("location", unit, socket);
+
         while (socket.State == SocketState.Open)
         {
             await "Main".Emph().Send(socket);
-            await locationIntentAction.Exec("location", unit, socket);
+           
             var input = await socket.ReceiveAsync();
 
             foreach (var intent in intents)
@@ -50,9 +52,15 @@ public class SocketUxGameLoop : IUxGameLoop<IUnit, IUnit>
                     {
                         var ilist = string.Join(", ", intentActions.Select(x => x.Intent));
                         await $"That action seems unavailable. Try {ilist}".Error().Send(socket);
+                        continue;
                     }
+                    await tpr.IntentPath.Emph().Send(socket);
+                    var iar = await ia.Exec(tpr.IntentPath, unit, socket);
 
-                    await ia.Exec(tpr.IntentPath, unit, socket);
+                    if (iar.Success && iar.Next == "location")
+                    {
+                        await locationIntentAction.Exec("location", unit, socket);
+                    }
                 }
             }
         }

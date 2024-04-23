@@ -6,13 +6,6 @@ namespace library.worldcomputer.info;
 public class LocationIntent : IIntent
 {
 
-    string[] _operations = new[] {
-        "buy",
-        "sell",
-        "check",
-        "withdraw",
-    };
-
     string _numberRegexPattern = "(/d*)";
     Regex _numberRegex;
     private IWordResolver _wordResolver;

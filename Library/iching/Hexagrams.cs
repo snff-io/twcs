@@ -1,6 +1,6 @@
 public static class Hexagrams
 {
-    static Dictionary<int[], string> _descriptions;
+    static Dictionary<string, string> _descriptions;
 
 
     public class IntArrayEqualityComparer : IEqualityComparer<int[]>
@@ -34,87 +34,5 @@ public static class Hexagrams
                 return hash;
             }
         }
-    }
-
-    public static Dictionary<int[], string> Descriptions
-    {
-        get
-        {
-            if (_descriptions == null)
-            {
-                _descriptions = new Dictionary<int[], string>(new IntArrayEqualityComparer()){
-                { new [] {(int)Domain.Mountain, (int)Domain.Heaven}, "Towers of stone ascend to meet the boundless sky, grounding the ethereal realm in the rugged embrace of earthly majesty."},
-                { new [] {(int)Domain.Thunder, (int)Domain.Heaven}, "Booming echoes resonate through celestial expanse, as the heavens themselves yield to the thunderous applause of nature's symphony."},
-                { new [] {(int)Domain.Fire, (int)Domain.Heaven}, "Celestial flames flicker in homage to the heavens, illuminating the night with the primal dance of cosmic fire and divine radiance."},
-                { new [] {(int)Domain.Earth, (int)Domain.Heaven}, "Firmament and soil intertwine in a dance of cosmic union, where earthly wonders ascend to touch the very fabric of the celestial sphere."},
-                { new [] {(int)Domain.Wind, (int)Domain.Heaven}, "Celestial whispers carry tales of distant realms, as the breath of the heavens whispers secrets of the cosmos to the waiting earth."},
-                { new [] {(int)Domain.Swamp, (int)Domain.Heaven}, "Veils of mist rise to meet the stars, as the murky depths of the swamp find solace in the embrace of celestial mist and ethereal light."},
-                { new [] {(int)Domain.Gorge, (int)Domain.Heaven}, "Cliffs of stone soar to kiss the heavens, framing the celestial vista in the rugged beauty of nature's grand design."},
-                { new [] {(int)Domain.Thunder, (int)Domain.Mountain}, "Rumbling echoes resound amidst craggy peaks, as mountains bear witness to the thunder's proclamation of nature's might."},
-                { new [] {(int)Domain.Fire, (int)Domain.Mountain}, "Fiery hearts burn bright amidst rocky slopes, casting the mountain's silhouette in the fiery glow of primal energy and volcanic fervor."},
-                { new [] {(int)Domain.Earth, (int)Domain.Mountain}, "Foundations of stone anchor the land in timeless strength, where mountains rise as sentinels of the earth's enduring power."},
-                { new [] {(int)Domain.Wind, (int)Domain.Mountain}, "Whispers of ancient journeys echo through alpine heights, as the mountain's silhouette dances in the embrace of celestial breezes."},
-                { new [] {(int)Domain.Swamp, (int)Domain.Mountain}, "Streams cascade from lofty summits to murky depths below, nurturing life amidst the rugged terrain and swampy wilderness."},
-                { new [] {(int)Domain.Gorge, (int)Domain.Mountain}, "Towering cliffs overlook chasms deep, as mountains stand sentinel over the breathtaking spectacle of nature's erosive forces."},
-                { new [] {(int)Domain.Fire, (int)Domain.Thunder}, "Crackling flames mirror the thunder's roar, intertwining in a symphony of elemental chaos and celestial fury."},
-                { new [] {(int)Domain.Earth, (int)Domain.Thunder}, "Tremors reverberate through the land, echoing the thunder's call to arms amidst the elemental clash of earth and sky."},
-                { new [] {(int)Domain.Wind, (int)Domain.Thunder}, "Celestial tempests ride the winds of change, as the thunder's roar heralds the coming storm and the dance of nature's elements."},
-                { new [] {(int)Domain.Swamp, (int)Domain.Thunder}, "Fury of the tempest meets the eerie calm of the swamp, as the thunder's roar echoes through the murky depths in a symphony of chaos."},
-                { new [] {(int)Domain.Gorge, (int)Domain.Thunder}, "Roaring echoes reverberate through rugged terrain, as the thunder's proclamation illuminates the depths of the gorge in a celestial spectacle."},
-                { new [] {(int)Domain.Earth, (int)Domain.Fire}, "Fiery tendrils entwine with the earth's embrace, forging landscapes of molten beauty amidst the crucible of elemental creation."},
-                { new [] {(int)Domain.Wind, (int)Domain.Fire}, "Gentle zephyrs fan the flames of celestial inferno, casting dancing shadows in the fiery glow of the windswept night."},
-                { new [] {(int)Domain.Swamp, (int)Domain.Fire}, "Flames flicker amidst murky waters, illuminating the swamp's mysterious depths in the primal dance of elemental chaos."},
-                { new [] {(int)Domain.Gorge, (int)Domain.Fire}, "Fiery spectacle illuminates rugged cliffs, casting shadows that dance upon sheer precipices in the celestial forge of nature's fury."},
-                { new [] {(int)Domain.Wind, (int)Domain.Earth}, "Celestial whispers shape the earth's contours, as landscapes shift and change beneath the gentle touch of the wind's ethereal breath."},
-                { new [] {(int)Domain.Swamp, (int)Domain.Earth}, "Verdant valleys merge with murky waters, nurturing life amidst the swamp's primordial embrace of earthly bounty."},
-                { new [] {(int)Domain.Gorge, (int)Domain.Earth}, "Rugged cliffs stand as testament to the earth's enduring strength, framing the gorge in a tableau of geological grandeur and celestial design."},
-                { new [] {(int)Domain.Swamp, (int)Domain.Wind}, "Eerie silence yields to the whispers of the wind, as the swamp's murky depths embrace the celestial symphony of the gentle breeze."},
-                { new [] {(int)Domain.Gorge, (int)Domain.Wind}, "Celestial breath shapes landscapes of rugged beauty, as the wind's gentle caress molds the gorge in the dance of nature's elemental forces."},
-                { new [] {(int)Domain.Gorge, (int)Domain.Swamp}, "Cliffs of stone give way to murky depths below, as the rugged gorge descends into the hidden wonders of the swamp's mysterious embrace."},
-                { new [] {(int)Domain.Heaven, (int)Domain.Mountain}, "A celestial refuge where towering peaks meet the endless sky, invoking a sense of divine serenity and grandeur."},
-                { new [] {(int)Domain.Heaven, (int)Domain.Thunder}, "The celestial symphony intertwining with the booming echoes of thunder, painting the sky with awe and reverence."},
-                { new [] {(int)Domain.Heaven, (int)Domain.Fire}, "Celestial flames dance upon the heavens, illuminating the night with a divine spectacle of cosmic energy and primal beauty."},
-                { new [] {(int)Domain.Heaven, (int)Domain.Earth}, "The ethereal connection between sky and land, where celestial wonders meet earthly marvels, forging a harmonious union of the cosmos."},
-                { new [] {(int)Domain.Heaven, (int)Domain.Wind}, "The celestial zephyr whispers secrets of the heavens, gently caressing the earth with its divine breath, weaving tales of ancient journeys."},
-                { new [] {(int)Domain.Heaven, (int)Domain.Swamp}, "Celestial mists descend to shroud the murky depths, veiling the secrets of the swamp in an otherworldly embrace."},
-                { new [] {(int)Domain.Heaven, (int)Domain.Gorge}, "Celestial cliffs rise to meet the heavens, framing the majestic gorge in a divine tableau of nature's grand design."},
-                { new [] {(int)Domain.Mountain, (int)Domain.Thunder}, "Rugged peaks echo the thunder's roar, as nature's orchestra performs amidst the towering majesty of the mountains."},
-                { new [] {(int)Domain.Mountain, (int)Domain.Fire}, "The mountain's heart ignites with fiery passion, casting its rugged silhouette against the backdrop of the celestial inferno."},
-                { new [] {(int)Domain.Mountain, (int)Domain.Earth}, "A union of strength and stability, where mountains stand as pillars of the earth, embodying the timeless endurance of nature."},
-                { new [] {(int)Domain.Mountain, (int)Domain.Wind}, "Windswept peaks whisper tales of ancient journeys, as the mountain's silhouette dances in the embrace of the celestial breeze."},
-                { new [] {(int)Domain.Mountain, (int)Domain.Swamp}, "Rugged terrain meets murky waters, where mountain streams flow into the swamp's depths, nurturing life amidst the wilderness."},
-                { new [] {(int)Domain.Mountain, (int)Domain.Gorge}, "Towering cliffs overlook the rugged gorge, where mountain peaks frame the breathtaking spectacle of nature's erosive power."},
-                { new [] {(int)Domain.Thunder, (int)Domain.Fire}, "Thunderous echoes accompany the crackling flames, as the celestial symphony merges with the primal dance of fire."},
-                { new [] {(int)Domain.Thunder, (int)Domain.Earth}, "The thunder's resonance reverberates through the earth, embodying the raw power of nature's elemental forces."},
-                { new [] {(int)Domain.Thunder, (int)Domain.Wind}, "Winds carry the thunder's call across the land, as the celestial tempest orchestrates the dance of the elements."},
-                { new [] {(int)Domain.Thunder, (int)Domain.Swamp}, "The thunderstorm's fury meets the eerie silence of the swamp, as nature's chaos embraces the murky tranquility."},
-                { new [] {(int)Domain.Thunder, (int)Domain.Gorge}, "The thunder's roar echoes through the depths of the gorge, as the celestial spectacle illuminates the rugged terrain."},
-                { new [] {(int)Domain.Fire, (int)Domain.Earth}, "Fiery tendrils embrace the earth, forging landscapes of molten beauty amidst the elemental crucible."},
-                { new [] {(int)Domain.Fire, (int)Domain.Wind}, "The fiery dance meets the wind's embrace, as flames flicker and dance in the gentle caress of the celestial breeze."},
-                { new [] {(int)Domain.Fire, (int)Domain.Swamp}, "Flames flicker amidst the murky depths, casting an otherworldly glow upon the swamp's mysterious waters."},
-                { new [] {(int)Domain.Fire, (int)Domain.Gorge}, "The fiery spectacle illuminates the rugged gorge, casting shadows that dance upon the sheer cliffs of nature's forge."},
-                { new [] {(int)Domain.Earth, (int)Domain.Wind}, "The earth's embrace meets the wind's whisper, as landscapes shift and change beneath the gentle touch of the celestial breeze."},
-                { new [] {(int)Domain.Earth, (int)Domain.Swamp}, "Verdant valleys meet murky waters, as the earth's bounty nurtures life within the swamp's mysterious depths."},
-                { new [] {(int)Domain.Earth, (int)Domain.Gorge}, "The earth's strength frames the rugged gorge, standing as a testament to the enduring power of nature's geological forces."},
-                { new [] {(int)Domain.Wind, (int)Domain.Swamp}, "The wind's whispers mingle with the swamp's eerie silence, as nature's elements converge in an otherworldly embrace."},
-                { new [] {(int)Domain.Wind, (int)Domain.Gorge}, "The wind's gentle caress meets the rugged terrain of the gorge, shaping landscapes of breathtaking beauty amidst the celestial symphony."},
-                { new [] {(int)Domain.Swamp, (int)Domain.Gorge}, "Murky waters carve through rugged cliffs, as the swamp's mysterious depths reveal the hidden wonders of the gorge's ancient embrace."},
-                { new [] {(int)Domain.Heaven, (int)Domain.Heaven}, "Celestial realms intertwine in an eternal dance of cosmic wonder, where the boundless sky mirrors itself in an endless expanse of divine radiance."},
-                { new [] {(int)Domain.Mountain, (int)Domain.Mountain}, "Peaks of stone stand as eternal sentinels, where rugged terrain meets itself in an unyielding embrace of geological grandeur."},
-                { new [] {(int)Domain.Thunder, (int)Domain.Thunder}, "Echoes of thunder reverberate through the heavens, as the celestial symphony resonates with the thunderous applause of nature's elemental chorus."},
-                { new [] {(int)Domain.Fire, (int)Domain.Fire}, "Flames dance in an eternal waltz of primal energy, casting flickering shadows in the fiery embrace of the inferno's eternal dance."},
-                { new [] {(int)Domain.Earth, (int)Domain.Earth}, "Foundations of soil anchor the land in timeless stability, where the earth itself mirrors its ancient contours in an unchanging tableau of geological permanence."},
-                { new [] {(int)Domain.Wind, (int)Domain.Wind}, "Whispers of breeze carry tales of distant lands, as the wind itself whispers secrets of the ages in an eternal symphony of atmospheric harmony."},
-                { new [] {(int)Domain.Swamp, (int)Domain.Swamp}, "Murky waters converge in an endless labyrinth of tangled vegetation, where the swamp's mysterious depths mirror themselves in an eerie reflection of primordial chaos."},
-                { new [] {(int)Domain.Gorge, (int)Domain.Gorge}, "Cliffs of stone plunge into chasms deep, where the rugged gorge echoes its own rugged beauty in an unyielding testament to nature's erosive power."},
-                { new [] {(int)Domain.Emptyness, (int)Domain.Emptyness}, "...and if you gaze long enough into an abyss, the abyss will gaze back into you. Nietzsche, aphorism 146"},
-
-                };
-
-            }
-            return _descriptions;
-        }
-
-
     }
 }

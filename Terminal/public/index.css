@@ -109,7 +109,7 @@ body {
   position: absolute;
   left: 645px;
   top: 164px;
-  background-image: url("img/mountain_gorge.jpeg");
+  /* background-image: url("img/mountain_gorge.jpeg"); */
   background-color: rgb(53, 53, 53);
   opacity: .7;
   background-size: cover;
@@ -134,7 +134,7 @@ body {
   left: 518px;
   top: 518px;
   background-color: transparent;
-  background-image: url("img/chartt.jpeg");
+  /* background-image: url("img/chartt.jpeg"); */
   background-color: rgb(53, 53, 53);
   opacity: .7;
   background-size: cover;
@@ -148,7 +148,7 @@ body {
   left: 774px;
   top: 518px;
   background-color: rgb(53, 53, 53);
-  background-image: url("img/bellaluna.jpeg");
+  /* background-image: url("img/bellaluna.jpeg"); */
   background-size: cover;
   width: 250px;
   height: 250px;

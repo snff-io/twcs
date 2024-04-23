@@ -30,10 +30,13 @@ public class Body : IUnit, IPart<Body>
     {
         throw new NotImplementedException();
     }
-
-    public Body(
-    )
+    public Body()
     {
 
     }
+
+    public BodySuit Suit { get; set; }
+    public Dictionary<Awareness, int> Awareness { get; set; } = new Dictionary<Awareness, int>();
+
+
 }

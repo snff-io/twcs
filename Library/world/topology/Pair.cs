@@ -15,15 +15,17 @@ public partial class Pair
     {
         get
         {
-            try 
+            try
             {
-                return Hexagrams.Descriptions[new[] { (int)TopTrigram.Domain, (int)TopTrigram.Domain }];
+                int[] index =  {1,4};
+                return Descriptions.Data[TrigramMaps.ToKey(TopTrigram.Domain, TopTrigram.Domain)][index.ChooseRandom()];
             }
-            catch (Exception e) {
-                Console.WriteLine(e.Message + "t"+TopType +"b"+BottomType);
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message + "t" + TopType + "b" + BottomType);
             }
 
-            return Hexagrams.Descriptions[new[] { (int)Domain.Emptyness, (int)Domain.Emptyness }];
+            return Descriptions.Data[TrigramMaps.ToKey(Domain.Emptiness, Domain.Emptiness)][1];
         }
     }
 

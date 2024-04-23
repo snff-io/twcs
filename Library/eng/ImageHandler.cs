@@ -33,14 +33,14 @@ public class AnsiImageHandler : IImageHandler
     }
 
     public Image this[string map] => GetNamedImage(map);
-    
+
 
     public Image GetNamedImage(string map)
     {
-       
-        var ansipath = _server + _map[map].Replace("_", "ans/_").Replace(".jpeg",".ans"); 
+
+        var ansipath = _server + _map[map].Replace("_", "ans/_").Replace(".jpeg", ".ans");
         var imagepath = _server + _map[map];
-    
+
         return new Image(ansipath, imagepath, _client);
     }
 
@@ -50,8 +50,8 @@ public class AnsiImageHandler : IImageHandler
         var index = indexData.Split('\n');
 
         var domainPath = $"./{top}_{bottom}/".ToLower();
-        var domainIndex = index.Where(x=>x.StartsWith(domainPath));
-       // Group file paths by filename without extension
+        var domainIndex = index.Where(x => x.StartsWith(domainPath));
+        // Group file paths by filename without extension
         var groupedFiles = domainIndex.GroupBy(path =>
             Path.GetFileNameWithoutExtension(path));
 
@@ -59,14 +59,14 @@ public class AnsiImageHandler : IImageHandler
         List<Image> images = new List<Image>();
         foreach (var group in groupedFiles)
         {
-            string ansPath = group.FirstOrDefault(p => p.EndsWith(".ans"));
-            string jpegPath = group.FirstOrDefault(p => p.EndsWith(".jpeg"));
+            string? ansPath = group.FirstOrDefault(p => p.EndsWith(".ans"));
+            string? jpegPath = group.FirstOrDefault(p => p.EndsWith(".jpeg"));
 
-            ansPath = ansPath.Replace("./", $"{_server}/landscapes/");
-            jpegPath = jpegPath.Replace("./", $"{_server}/landscapes/");
-            
             if (ansPath != null && jpegPath != null)
             {
+                ansPath = ansPath.Replace("./", $"{_server}landscapes/");
+                jpegPath = jpegPath.Replace("./", $"{_server}landscapes/");
+
                 images.Add(new Image(ansPath, jpegPath, _client));
             }
         }
@@ -77,7 +77,8 @@ public class AnsiImageHandler : IImageHandler
     {
         var list = await GetLandscapeImages(top, bottom);
 
-        var r = Random.Shared.Next(0, list.Count()-1);
+        var rnd = new Random((int)top + (int)bottom);
+        var r = rnd.Next(0, list.Count() - 1);
 
         return list[r];
     }

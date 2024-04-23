@@ -1,3 +1,4 @@
+namespace library.worldcomputer.info;
 public static class Phe
 {
 
@@ -23,39 +24,39 @@ public static class Phe
         "The ground upon which we walk, rich and teeming with life, holds the memories of a thousand generations. It is the earth that nourishes and sustains, from the smallest seed pushing through the soil to the ancient trees that stand as silent witnesses to history. In its embrace, we find stability and growth, a testament to the unending cycle of life and renewal. Earth, in its humble majesty, reminds us of our own origins and our inevitable return, a continuous loop of life, death, and rebirth.",
         "Growth, Stability, Nourishment, Generations, Renewal, Majesty, Origins, Cycle, Life, History, Trees, Seeds, Soil."
     },
-        ["water_thunder"] = new string[]
+        ["gorge_thunder"] = new string[]
     {
-        "Storm water/thunder",
-        "Distant thunder roars,\nWater dances on the skin,\nStorm's breath, life ignites.",
-        "When the heavens roar and the skies darken, a primal energy courses through the air. It's in these moments that water and thunder converge, creating a symphony of power and renewal. Raindrops, charged with the force of the storm, caress the earth, reviving the parched land and awakening dormant seeds. This dance of elements, fierce yet nurturing, mirrors the tumultuous journey of growth and transformation that each soul undergoes, marked by moments of strife and serenity.",
+        "Storm gorge/thunder",
+        "Distant thunder roars,\ngorge dances on the skin,\nStorm's breath, life ignites.",
+        "When the heavens roar and the skies darken, a primal energy courses through the air. It's in these moments that gorge and thunder converge, creating a symphony of power and renewal. Raindrops, charged with the force of the storm, caress the earth, reviving the parched land and awakening dormant seeds. This dance of elements, fierce yet nurturing, mirrors the tumultuous journey of growth and transformation that each soul undergoes, marked by moments of strife and serenity.",
         "Energy, Renewal, Power, Symphony, Growth, Transformation, Journey, Strife, Serenity, Primal, Dark, Roar, Awakening."
     },
-        ["mountain_water"] = new string[]
+        ["mountain_gorge"] = new string[]
     {
-        "Cascade mountain/water",
+        "Cascade mountain/gorge",
         "Streams carve through stone,\nMountain's heart feeds the river,\nNature's cycle flows.",
-        "Amidst towering peaks, where the air holds a chill and the silence speaks, water finds its path. It begins as a trickle, emerging from the mountain's heart, growing in strength as it carves through rock and forest alike. This cascade, a testament to the enduring power of nature, nourishes the land, connecting mountain to valley, earth to sea. It's a reminder of the intricate web of life, where each element supports the other, in a cycle that speaks of resilience and beauty.",
+        "Amidst towering peaks, where the air holds a chill and the silence speaks, gorge finds its path. It begins as a trickle, emerging from the mountain's heart, growing in strength as it carves through rock and forest alike. This cascade, a testament to the enduring power of nature, nourishes the land, connecting mountain to valley, earth to sea. It's a reminder of the intricate web of life, where each element supports the other, in a cycle that speaks of resilience and beauty.",
         "Endurance, Path, Strength, Nourish, Connect, Cycle, Resilience, Beauty, Silence, Trickle, Carve, Forest, Sea."
     },
-        ["heaven_water"] = new string[]
+        ["heaven_gorge"] = new string[]
     {
-        "Mist heaven/water",
+        "Mist heaven/gorge",
         "Mist veils the dawn light,\nHeaven's breath upon the sea,\nWhispers merge with waves.",
-        "As dawn breaks, a delicate mist rises from the water, a soft embrace between heaven and earth. This ethereal veil blurs the line between the sea and the sky, creating a realm where light and shadow dance in harmony. The air, filled with the scent of salt and the whisper of distant waves, speaks of mysteries untold and journeys yet to embark upon. In this moment, the world seems suspended, caught between the ephemeral and the eternal, a testament to nature's delicate balance.",
+        "As dawn breaks, a delicate mist rises from the gorge, a soft embrace between heaven and earth. This ethereal veil blurs the line between the sea and the sky, creating a realm where light and shadow dance in harmony. The air, filled with the scent of salt and the whisper of distant waves, speaks of mysteries untold and journeys yet to embark upon. In this moment, the world seems suspended, caught between the ephemeral and the eternal, a testament to nature's delicate balance.",
         "Dawn, Ethereal, Harmony, Light, Shadow, Salt, Mysteries, Journey, Suspended, Ephemeral, Eternal, Balance, Nature."
     },
-        ["earth_water"] = new string[]
+        ["earth_gorge"] = new string[]
     {
-        "Shore earth/water",
-        "Waves kiss the shoreline,\nEarth embraces water's touch,\nEternal dance bound.",
-        "At the edge where earth meets water, the shore becomes a witness to time's endless march. Here, waves gently caress the sand, in a tender gesture of arrival and departure. This is the place of meeting, of parting, and of the ceaseless interplay between land and sea. The shoreline, with its scattered shells and footprints, holds the memories of those who have come before, a testament to the fleeting nature of existence and the enduring call of the horizon.",
+        "Shore earth/gorge",
+        "Waves kiss the shoreline,\nEarth embraces gorge's touch,\nEternal dance bound.",
+        "At the edge where earth meets gorge, the shore becomes a witness to time's endless march. Here, waves gently caress the sand, in a tender gesture of arrival and departure. This is the place of meeting, of parting, and of the ceaseless interplay between land and sea. The shoreline, with its scattered shells and footprints, holds the memories of those who have come before, a testament to the fleeting nature of existence and the enduring call of the horizon.",
         "Shoreline, Waves, Sand, Meeting, Parting, Interplay, Land, Sea, Memories, Existence, Horizon, Fleeting, Enduring."
     },
-        ["water_earth"] = new string[]
+        ["gorge_earth"] = new string[]
     {
-        "Delta water/earth",
+        "Delta gorge/earth",
         "Rivers meet the sea,\nDelta blooms in union's strength,\nLife's cradle, reborn.",
-        "Where river meets ocean, the delta flourishes as a testament to the strength found in unity. This fertile crescent, carved by the relentless flow of water against earth, nurtures an abundance of life. Here, ecosystems thrive, a mosaic of biodiversity, showcasing the resilience and adaptability of nature. The delta stands as a beacon of life's perpetual renewal, where the end of one journey marks the beginning of another, in the constant cycle of birth, growth, and rebirth.",
+        "Where river meets ocean, the delta flourishes as a testament to the strength found in unity. This fertile crescent, carved by the relentless flow of gorge against earth, nurtures an abundance of life. Here, ecosystems thrive, a mosaic of biodiversity, showcasing the resilience and adaptability of nature. The delta stands as a beacon of life's perpetual renewal, where the end of one journey marks the beginning of another, in the constant cycle of birth, growth, and rebirth.",
         "Fertile, Unity, Ecosystems, Biodiversity, Resilience, Adaptability, Renewal, Journey, Cycle, Birth, Growth, Rebirth, Nature."
     },
         ["wind_heaven"] = new string[]
@@ -65,9 +66,9 @@ public static class Phe
         "In the realm where the heavens stir, the gale winds command the skies with unbridled might. This celestial tempest, a display of raw power and majesty, sweeps across the firmament, reshaping clouds and dictating the weather's whims. It is here, amidst the roaring expanse, that the wind sings its wild, untamed song—a hymn to the forces that exist beyond the reach of mortals, reminding us of the vast, untouchable wilderness that the heavens hold, a realm of endless mystery and awe.",
         "Celestial, Tempest, Majesty, Firmament, Weather, Roaring, Wild, Untamed, Hymn, Forces, Mortal, Mystery, Awe."
     },
-        ["water_heaven"] = new string[]
+        ["gorge_heaven"] = new string[]
     {
-        "Rain water/heaven",
+        "Rain gorge/heaven",
         "From heaven, rain falls,\nQuenching earth's thirsting embrace,\nLife blooms anew, blessed.",
         "As if answering the earth's silent plea, the heavens open, releasing a gentle, nourishing rain that blankets the world below. This rain, a sacred bond between sky and land, brings with it the promise of renewal and growth. Each drop, a whisper of nature's resilience, feeds the rivers and lakes, and gives life to the dormant seeds waiting just beneath the soil. In this moment, the cycle of life is palpable, a testament to the enduring dance between the celestial and the terrestrial.",
         "Renewal, Growth, Nourishing, Sacred, Resilience, Cycle of Life, Whisper, Rivers, Lakes, Seeds, Dance, Celestial, Terrestrial."
@@ -76,7 +77,7 @@ public static class Phe
     {
         "Swamp heaven/swamp",
         "Mist veils the swamp's heart,\nHeaven's mirror, still and deep,\nSecrets lie beneath.",
-        "In the stillness of the swamp, where heaven and earth seem to converge, a mist hangs low, shrouding the water in mystery. This place, untouched by time, reflects the sky above in its glassy surface, a mirror to the heavens. Beneath this serene exterior, life teems in complexity and diversity. The swamp, with its hidden depths and silent watchers, holds secrets of survival, adaptation, and the intricate balance of ecosystems, a heaven in its own right, where every creature finds sanctuary.",
+        "In the stillness of the swamp, where heaven and earth seem to converge, a mist hangs low, shrouding the gorge in mystery. This place, untouched by time, reflects the sky above in its glassy surface, a mirror to the heavens. Beneath this serene exterior, life teems in complexity and diversity. The swamp, with its hidden depths and silent watchers, holds secrets of survival, adaptation, and the intricate balance of ecosystems, a heaven in its own right, where every creature finds sanctuary.",
         "Mystery, Convergence, Reflection, Timeless, Diversity, Complexity, Survival, Adaptation, Balance, Ecosystems, Sanctuary, Secrets, Stillness."
     },
         ["earth_heaven"] = new string[]
@@ -126,7 +127,7 @@ public static class Phe
     {
         "Fen swamp/thunder",
         "Thunder over fen,\nNature's heartbeat, loud and clear,\nSwamp whispers secrets.",
-        "As thunder rolls over the swamp, each rumble is like the heartbeat of the earth, resonant and powerful. The fen, with its dense vegetation and murky waters, listens in a hushed reverence. This is where the raw energy of the storm meets the tranquil stillness of the swamp, creating a moment of unparalleled intensity. The air, heavy with the scent of wet earth and fresh rain, carries the secrets of the swamp, whispered among the reeds and willows, a testament to the enduring dance between the fury of the skies and the quiet wisdom of the earth.",
+        "As thunder rolls over the swamp, each rumble is like the heartbeat of the earth, resonant and powerful. The fen, with its dense vegetation and murky gorges, listens in a hushed reverence. This is where the raw energy of the storm meets the tranquil stillness of the swamp, creating a moment of unparalleled intensity. The air, heavy with the scent of wet earth and fresh rain, carries the secrets of the swamp, whispered among the reeds and willows, a testament to the enduring dance between the fury of the skies and the quiet wisdom of the earth.",
         "Heartbeat, Resonant, Dense Vegetation, Murky, Tranquil, Intensity, Wet Earth, Fresh Rain, Secrets, Reeds, Willows, Fury, Wisdom."
     },
         ["mountain_wind"] = new string[]
@@ -139,9 +140,9 @@ public static class Phe
         ["earth_swamp"] = new string[]
     {
         "Hill earth/swamp",
-        "Hill overlooks swamp,\nEarth's green heart, water's caress,\nBalance in stillness.",
-        "From the vantage point of a hill overlooking the swamp, one can see the intricate dance of water and earth. This swamp, an emblem of life's resilience, thrives in stillness, its waters cradling the land. Here, the green heart of the earth beats in a slow, measured rhythm, nurtured by the gentle caress of the water. The swamp and the hill together form a landscape of contrast and harmony, a place where the static and the dynamic coexist, reflecting the delicate balance of nature's vast, interconnected web.",
-        "Vantage, Dance, Water, Earth, Resilience, Stillness, Green Heart, Rhythm, Nurtured, Contrast, Harmony, Static, Dynamic, Balance."
+        "Hill overlooks swamp,\nEarth's green heart, gorge's caress,\nBalance in stillness.",
+        "From the vantage point of a hill overlooking the swamp, one can see the intricate dance of gorge and earth. This swamp, an emblem of life's resilience, thrives in stillness, its gorges cradling the land. Here, the green heart of the earth beats in a slow, measured rhythm, nurtured by the gentle caress of the gorge. The swamp and the hill together form a landscape of contrast and harmony, a place where the static and the dynamic coexist, reflecting the delicate balance of nature's vast, interconnected web.",
+        "Vantage, Dance, gorge, Earth, Resilience, Stillness, Green Heart, Rhythm, Nurtured, Contrast, Harmony, Static, Dynamic, Balance."
     },
         ["wind_earth"] = new string[]
     {
@@ -175,14 +176,14 @@ public static class Phe
     {
         "Flood earth/thunder",
         "Rain swells, rivers rise,\nThunder's cry, earth's response floods,\nCycle of renewal.",
-        "As the storm gathers, thunder's cry heralds the coming of the rain, swelling rivers beyond their banks and covering the earth in a vast, moving sheet of water. This flood, while a force of destruction, is also an agent of renewal, redistributing nutrients and reshaping the landscape. The cycle of rain, thunder, and flooding, a powerful expression of nature's dynamics, reflects the interconnectedness of the elements and the ongoing process of destruction, renewal, and rebirth that characterizes the natural world.",
+        "As the storm gathers, thunder's cry heralds the coming of the rain, swelling rivers beyond their banks and covering the earth in a vast, moving sheet of gorge. This flood, while a force of destruction, is also an agent of renewal, redistributing nutrients and reshaping the landscape. The cycle of rain, thunder, and flooding, a powerful expression of nature's dynamics, reflects the interconnectedness of the elements and the ongoing process of destruction, renewal, and rebirth that characterizes the natural world.",
         "Storm, Cry, Rain, Rivers, Flood, Destruction, Renewal, Landscape, Cycle, Dynamics, Interconnectedness, Rebirth, Natural World."
     },
         ["heaven_thunder"] = new string[]
     {
         "Rapids heaven/thunder",
         "Rapids roar, sky splits,\nHeaven and thunder unite,\nNature's symphony.",
-        "In the heart of the wilderness, where the rapids churn with relentless energy, the sky above mirrors this tumult with its own spectacle of thunder and lightning. This is where heaven and thunder converge, in a dramatic symphony of sound and fury, showcasing the raw power of nature. The water, energized by the storm, becomes a force unto itself, carving through the landscape with unstoppable might. This natural orchestra, played out in the rapids under a tempestuous sky, is a testament to the wild, unbridled spirit of the natural world.",
+        "In the heart of the wilderness, where the rapids churn with relentless energy, the sky above mirrors this tumult with its own spectacle of thunder and lightning. This is where heaven and thunder converge, in a dramatic symphony of sound and fury, showcasing the raw power of nature. The gorge, energized by the storm, becomes a force unto itself, carving through the landscape with unstoppable might. This natural orchestra, played out in the rapids under a tempestuous sky, is a testament to the wild, unbridled spirit of the natural world.",
         "Wilderness, Rapids, Energy, Sky, Thunder, Lightning, Converge, Symphony, Fury, Power, Force, Landscape, Unbridled."
     },
         ["mountain_heaven"] = new string[]
@@ -196,22 +197,22 @@ public static class Phe
     {
         "Marsh mountain/thunder",
         "Thunder echoes 'round,\nMarsh and mountain, meeting grounds,\nStorm's ancient dialogue.",
-        "In the liminal space where marsh meets mountain, the echo of thunder creates a dialogue that resonates through time. This landscape, marked by the soft, water-logged earth of the marsh and the stoic, rising forms of the mountains, serves as the meeting ground for the elements. The storm, with its thunderous voice, speaks of ancient forces at play, reminding us of the enduring cycle of weather that shapes and redefines the natural world. Here, in the clash and confluence of water and stone, the storm narrates the ongoing story of nature's resilience and adaptability.",
+        "In the liminal space where marsh meets mountain, the echo of thunder creates a dialogue that resonates through time. This landscape, marked by the soft, gorge-logged earth of the marsh and the stoic, rising forms of the mountains, serves as the meeting ground for the elements. The storm, with its thunderous voice, speaks of ancient forces at play, reminding us of the enduring cycle of weather that shapes and redefines the natural world. Here, in the clash and confluence of gorge and stone, the storm narrates the ongoing story of nature's resilience and adaptability.",
         "Liminal, Echo, Dialogue, Resonate, Marsh, Mountain, Stoic, Storm, Ancient, Forces, Cycle, Weather, Resilience, Adaptability."
     },
         ["swamp_wind"] = new string[]
     {
         "Lake swamp/wind",
         "Wind stirs the swamp lake,\nRipples carry whispered tales,\nSecrets of the reed.",
-        "In the heart of the swamp, where the lake holds still waters, the wind arrives as a storyteller, stirring the surface into a tapestry of ripples. Each ripple carries with it whispered tales of the past, secrets held by the ancient reeds that line the shore. This delicate interplay between wind and water, between movement and stillness, creates a space where the mysteries of the natural world can be contemplated. The swamp lake, with its serene beauty and hidden depths, serves as a reminder of the quiet, powerful forces that shape our environment, whispering to those who listen of the intricate dance of life.",
+        "In the heart of the swamp, where the lake holds still gorges, the wind arrives as a storyteller, stirring the surface into a tapestry of ripples. Each ripple carries with it whispered tales of the past, secrets held by the ancient reeds that line the shore. This delicate interplay between wind and gorge, between movement and stillness, creates a space where the mysteries of the natural world can be contemplated. The swamp lake, with its serene beauty and hidden depths, serves as a reminder of the quiet, powerful forces that shape our environment, whispering to those who listen of the intricate dance of life.",
         "Storyteller, Tapestry, Ripples, Whispered, Secrets, Ancient, Reeds, Interplay, Movement, Stillness, Mysteries, Serene, Dance of Life."
     },
-        ["water_water"] = new string[]
+        ["gorge_gorge"] = new string[]
     {
-        "Lava water/water",
+        "Lava gorge/gorge",
         "Steam rises, fierce clash,\nLava meets ocean's embrace,\nCreation's cauldron.",
-        "At the boundary where molten lava kisses the cool expanse of the ocean, a fierce battle of elements unfolds. Steam billows into the sky as fire meets water, each seeking dominion, yet in their clash, a miraculous act of creation occurs. New land is born from the cauldron of their meeting, a testament to the raw power and beauty of nature's forces. This spectacle, where water greets water in its most primal forms, speaks to the endless cycle of destruction and rebirth that shapes our world.",
-        "Boundary, Molten, Ocean, Battle, Steam, Fire, Water, Dominion, Creation, Land, Power, Beauty, Cycle, Rebirth."
+        "At the boundary where molten lava kisses the cool expanse of the ocean, a fierce battle of elements unfolds. Steam billows into the sky as fire meets gorge, each seeking dominion, yet in their clash, a miraculous act of creation occurs. New land is born from the cauldron of their meeting, a testament to the raw power and beauty of nature's forces. This spectacle, where gorge greets gorge in its most primal forms, speaks to the endless cycle of destruction and rebirth that shapes our world.",
+        "Boundary, Molten, Ocean, Battle, Steam, Fire, gorge, Dominion, Creation, Land, Power, Beauty, Cycle, Rebirth."
     },
         ["fire_fire"] = new string[]
     {
@@ -224,22 +225,22 @@ public static class Phe
     {
         "Gust swamp/mountain",
         "Gusts sweep o'er swamp to peak,\nMountain's breath, swamp's murmur meet,\nDance of air and earth.",
-        "From the depths of the swamp to the heights of the mountain, the gust carries the essence of both worlds. It whispers secrets from the marshland, carrying them up to the very peaks where the earth touches the sky. This journey of the wind, a bridge between the swamp's deep mysteries and the mountain's stoic majesty, is a dance of air and earth. It speaks to the interconnectedness of all things, where the breath of the land and the sigh of the water converge in a perpetual exchange of life and energy.",
+        "From the depths of the swamp to the heights of the mountain, the gust carries the essence of both worlds. It whispers secrets from the marshland, carrying them up to the very peaks where the earth touches the sky. This journey of the wind, a bridge between the swamp's deep mysteries and the mountain's stoic majesty, is a dance of air and earth. It speaks to the interconnectedness of all things, where the breath of the land and the sigh of the gorge converge in a perpetual exchange of life and energy.",
         "Depths, Heights, Gust, Essence, Secrets, Marshland, Peaks, Earth, Sky, Journey, Wind, Interconnectedness, Life, Energy."
     },
         ["thunder_wind"] = new string[]
     {
         "Bog thunder/wind",
         "Wind howls, thunder roars,\nBog echoes with the storm's cry,\nNature's fierce debate.",
-        "As the storm descends upon the bog, the howl of the wind and the roar of the thunder engage in a fierce debate, a contest of strength and will. The bog, with its ancient waters and dense foliage, becomes a witness to this elemental clash, echoing with the sounds of the storm's fury. This tumultuous exchange, where wind and thunder vie for dominance, underscores the raw power and the untamed spirit of the natural world. In the heart of the bog, the storm's cry tells a story of resilience, of nature asserting its presence and might against the silence of the marsh.",
+        "As the storm descends upon the bog, the howl of the wind and the roar of the thunder engage in a fierce debate, a contest of strength and will. The bog, with its ancient gorges and dense foliage, becomes a witness to this elemental clash, echoing with the sounds of the storm's fury. This tumultuous exchange, where wind and thunder vie for dominance, underscores the raw power and the untamed spirit of the natural world. In the heart of the bog, the storm's cry tells a story of resilience, of nature asserting its presence and might against the silence of the marsh.",
         "Storm, Bog, Howl, Roar, Echo, Debate, Contest, Strength, Will, Elemental, Clash, Fury, Power, Resilience."
     },
         ["heaven_mountain"] = new string[]
     {
         "Gush heaven/mountain",
-        "Waterfalls from high,\nHeaven's gift to mountain's base,\nNature's serenade.",
-        "From the heavens above to the mountain's base, water gushes down in a spectacular display of gravity and grace. This cascade, born from the clouds, travels earthward, nourishing every crevice and life form in its path. It's a serenade from the sky, a melody that speaks of the high places where air turns to water and the earth reaches upward to embrace it. This is where heaven and mountain meet, in the rush and roar of waterfalls, in a dance of mist and light, celebrating the abundance of life.",
-        "Waterfalls, Gravity, Grace, Cascade, Clouds, Nourish, Serenade, Sky, High Places, Earth, Mist, Light, Abundance, Life."
+        "gorgefalls from high,\nHeaven's gift to mountain's base,\nNature's serenade.",
+        "From the heavens above to the mountain's base, gorge gushes down in a spectacular display of gravity and grace. This cascade, born from the clouds, travels earthward, nourishing every crevice and life form in its path. It's a serenade from the sky, a melody that speaks of the high places where air turns to gorge and the earth reaches upward to embrace it. This is where heaven and mountain meet, in the rush and roar of gorgefalls, in a dance of mist and light, celebrating the abundance of life.",
+        "gorgefalls, Gravity, Grace, Cascade, Clouds, Nourish, Serenade, Sky, High Places, Earth, Mist, Light, Abundance, Life."
     },
         ["thunder_heaven"] = new string[]
     {
@@ -273,28 +274,28 @@ public static class Phe
     {
         "Ripple fire/swamp",
         "Fire in the swamp,\nRipples through the fog and reeds,\nA silent witness.",
-        "In the heart of the swamp, fire flickers, casting light over the water and wetlands. This rare occurrence, where flame meets the dense fog and thick reeds, creates a scene of stark contrasts and haunting beauty. The fire's glow, rippling through the fog, becomes a silent witness to the resilience of the swamp, its ability to harbor life and death in equal measure. This moment, where fire gently touches the swamp without consuming it, speaks to the delicate balance of nature, the cycle of life and renewal that persists in even the most unexpected places.",
-        "Swamp, Fire, Light, Water, Wetlands, Fog, Reeds, Contrasts, Beauty, Glow, Resilience, Life, Death, Balance, Renewal."
+        "In the heart of the swamp, fire flickers, casting light over the gorge and wetlands. This rare occurrence, where flame meets the dense fog and thick reeds, creates a scene of stark contrasts and haunting beauty. The fire's glow, rippling through the fog, becomes a silent witness to the resilience of the swamp, its ability to harbor life and death in equal measure. This moment, where fire gently touches the swamp without consuming it, speaks to the delicate balance of nature, the cycle of life and renewal that persists in even the most unexpected places.",
+        "Swamp, Fire, Light, gorge, Wetlands, Fog, Reeds, Contrasts, Beauty, Glow, Resilience, Life, Death, Balance, Renewal."
     },
-        ["water_mountain"] = new string[]
+        ["gorge_mountain"] = new string[]
     {
-        "Fen water/mountain",
-        "Water meets the peak,\nMountain's base, a fen's embrace,\nWhere earth and sky speak.",
-        "Nestled at the mountain's base, the fen exists as a meeting point between the earth and the flowing water from the peaks above. This landscape, where water gathers in the embrace of the mountain, creates a unique ecosystem teeming with life. The fen, with its still waters and abundant flora, offers a tranquil yet vibrant tableau, a place where the dialogue between earth and sky is most palpable. It is a testament to the harmonious coexistence of contrasting elements, a space where the cycle of nourishment and growth unfolds in the quiet beauty of nature's design.",
-        "Fen, Water, Peak, Mountain, Ecosystem, Life, Still Waters, Flora, Tranquil, Vibrant, Earth, Sky, Harmony, Nourishment, Growth."
+        "Fen gorge/mountain",
+        "gorge meets the peak,\nMountain's base, a fen's embrace,\nWhere earth and sky speak.",
+        "Nestled at the mountain's base, the fen exists as a meeting point between the earth and the flowing gorge from the peaks above. This landscape, where gorge gathers in the embrace of the mountain, creates a unique ecosystem teeming with life. The fen, with its still gorges and abundant flora, offers a tranquil yet vibrant tableau, a place where the dialogue between earth and sky is most palpable. It is a testament to the harmonious coexistence of contrasting elements, a space where the cycle of nourishment and growth unfolds in the quiet beauty of nature's design.",
+        "Fen, gorge, Peak, Mountain, Ecosystem, Life, Still gorges, Flora, Tranquil, Vibrant, Earth, Sky, Harmony, Nourishment, Growth."
     },
-        ["thunder_water"] = new string[]
+        ["thunder_gorge"] = new string[]
     {
-        "Torrent thunder/water",
+        "Torrent thunder/gorge",
         "Thunder roars, rain falls,\nTorrents sweep the land anew,\nNature's renewal.",
-        "With the roar of thunder overhead, the skies open, unleashing a torrent of rain that sweeps across the land. This deluge, powered by the storm, revitalizes the earth, filling rivers and nourishing the soil. It's a display of nature's might and its capacity for renewal, where the ferocity of the thunder and the cleansing waters work in tandem to rejuvenate the landscape. This moment of storm and renewal, of sound and substance, reflects the profound cycles of nature, the ever-present balance between tempest and tranquility, destruction and growth.",
+        "With the roar of thunder overhead, the skies open, unleashing a torrent of rain that sweeps across the land. This deluge, powered by the storm, revitalizes the earth, filling rivers and nourishing the soil. It's a display of nature's might and its capacity for renewal, where the ferocity of the thunder and the cleansing gorges work in tandem to rejuvenate the landscape. This moment of storm and renewal, of sound and substance, reflects the profound cycles of nature, the ever-present balance between tempest and tranquility, destruction and growth.",
         "Thunder, Rain, Torrents, Land, Nature, Renewal, Storm, Revitalize, Earth, Rivers, Soil, Might, Cycle, Balance, Growth."
     },
         ["mountain_swamp"] = new string[]
     {
         "Rapids mountain/swamp",
         "From mountains high flow,\nSwamp drinks the rapid's gift slow,\nUnion of extremes.",
-        "The rapids cascade from the mountain's snowy peaks, carving through the landscape until they reach the swamp, where the water's tumultuous journey slows to a serene meander. This confluence of mountain vigor and swamp stillness embodies a union of extremes, a meeting place of energies. The swamp, with its dense canopy and rich biodiversity, thrives on the nutrients brought down by the mountain's rapids, illustrating the interconnectedness of ecosystems and the balance of nature's cycle.",
+        "The rapids cascade from the mountain's snowy peaks, carving through the landscape until they reach the swamp, where the gorge's tumultuous journey slows to a serene meander. This confluence of mountain vigor and swamp stillness embodies a union of extremes, a meeting place of energies. The swamp, with its dense canopy and rich biodiversity, thrives on the nutrients brought down by the mountain's rapids, illustrating the interconnectedness of ecosystems and the balance of nature's cycle.",
         "Cascade, Peaks, Landscape, Serene, Confluence, Vigor, Stillness, Canopy, Biodiversity, Nutrients, Interconnectedness, Ecosystems, Balance, Cycle."
     },
         ["wind_thunder"] = new string[]
@@ -307,9 +308,9 @@ public static class Phe
         ["swamp_heaven"] = new string[]
     {
         "Flood swamp/heaven",
-        "Heaven weeps, swamp fills,\nWaters blend, sky to earth spills,\nSacred exchange shared.",
-        "When the heavens open and weep upon the earth, the swamp becomes a sacred vessel for the sky's tears. This deluge from above transforms the swamp into a mirror of the heavens, where the boundaries between sky and earth blur in the flooded landscape. This exchange, where celestial waters meld with the terrestrial realm, is a poignant reminder of the cycles that govern natural life. It speaks to the sacredness of water as a life-giving force, and the swamp, in its receptivity, symbolizes the interconnectedness of all things, a place where heaven and earth intimately converge.",
-        "Heavens, Weep, Earth, Swamp, Deluge, Mirror, Boundaries, Flooded, Celestial, Terrestrial, Cycles, Sacred, Water, Interconnectedness, Converge."
+        "Heaven weeps, swamp fills,\ngorges blend, sky to earth spills,\nSacred exchange shared.",
+        "When the heavens open and weep upon the earth, the swamp becomes a sacred vessel for the sky's tears. This deluge from above transforms the swamp into a mirror of the heavens, where the boundaries between sky and earth blur in the flooded landscape. This exchange, where celestial gorges meld with the terrestrial realm, is a poignant reminder of the cycles that govern natural life. It speaks to the sacredness of gorge as a life-giving force, and the swamp, in its receptivity, symbolizes the interconnectedness of all things, a place where heaven and earth intimately converge.",
+        "Heavens, Weep, Earth, Swamp, Deluge, Mirror, Boundaries, Flooded, Celestial, Terrestrial, Cycles, Sacred, gorge, Interconnectedness, Converge."
     },
         ["heaven_wind"] = new string[]
     {
@@ -322,8 +323,8 @@ public static class Phe
     {
         "Canyon swamp/earth",
         "Canyon walls rise high,\nSwamp at its heart lies hidden,\nSecret earth cradles.",
-        "In the shadow of towering canyon walls, a hidden swamp thrives, cradled by the earth in a secret embrace. This secluded ecosystem, where land and water intimately mingle, is a testament to the enduring strength and adaptability of nature. Here, the canyon not only divides but also unites, offering a sanctuary for life in its most diverse forms. The swamp, nestled within the earth's embrace, reflects the complexity and resilience of the natural world.",
-        "Shadow, Towering, Hidden, Thrive, Cradle, Secret, Embrace, Secluded, Ecosystem, Land, Water, Strength, Adaptability, Sanctuary, Diversity, Complexity, Resilience."
+        "In the shadow of towering canyon walls, a hidden swamp thrives, cradled by the earth in a secret embrace. This secluded ecosystem, where land and gorge intimately mingle, is a testament to the enduring strength and adaptability of nature. Here, the canyon not only divides but also unites, offering a sanctuary for life in its most diverse forms. The swamp, nestled within the earth's embrace, reflects the complexity and resilience of the natural world.",
+        "Shadow, Towering, Hidden, Thrive, Cradle, Secret, Embrace, Secluded, Ecosystem, Land, gorge, Strength, Adaptability, Sanctuary, Diversity, Complexity, Resilience."
     },
         ["earth_wind"] = new string[]
     {
@@ -332,25 +333,25 @@ public static class Phe
         "The wind carries the whispers of ages across the vast expanse of a crater, where earth and air meet in a silent dialogue. This landscape, shaped by forces both violent and sublime, stands as a testament to the power of nature to create and transform. The crater, a scar upon the earth, now serves as a vessel for the wind's stories, a meeting place of elemental forces. Here, the breath of the earth and the reply of the sky weave together in a continuous exchange of energy and life.",
         "Whispers, Ages, Vast, Crater, Dialogue, Landscape, Forces, Violent, Sublime, Power, Nature, Scar, Vessel, Stories, Elemental, Energy, Life."
     },
-        ["swamp_water"] = new string[]
+        ["swamp_gorge"] = new string[]
     {
-        "Glacier swamp/water",
-        "Glacier feeds the swamp,\nAncient ice meets eager roots,\nWater's timeless gift.",
-        "In the unlikely union of glacier and swamp, a tale of contrasts unfolds. The ancient, slow-moving ice melts into the eager, life-filled swamp, providing a vital source of water that sustains and nourishes. This interaction between the frozen relics of the past and the vibrant, adaptive ecosystem of the swamp illustrates the cyclical nature of water and life. The glacier, with its timeless march, and the swamp, with its teeming vitality, showcase the interconnectedness and interdependence of all elements within the natural world.",
-        "Unlikely, Union, Contrasts, Ancient, Ice, Eager, Life, Sustain, Nourish, Interaction, Frozen, Vibrant, Cyclical, Water, March, Teeming, Interconnectedness, Interdependence."
+        "Glacier swamp/gorge",
+        "Glacier feeds the swamp,\nAncient ice meets eager roots,\ngorge's timeless gift.",
+        "In the unlikely union of glacier and swamp, a tale of contrasts unfolds. The ancient, slow-moving ice melts into the eager, life-filled swamp, providing a vital source of gorge that sustains and nourishes. This interaction between the frozen relics of the past and the vibrant, adaptive ecosystem of the swamp illustrates the cyclical nature of gorge and life. The glacier, with its timeless march, and the swamp, with its teeming vitality, showcase the interconnectedness and interdependence of all elements within the natural world.",
+        "Unlikely, Union, Contrasts, Ancient, Ice, Eager, Life, Sustain, Nourish, Interaction, Frozen, Vibrant, Cyclical, gorge, March, Teeming, Interconnectedness, Interdependence."
     },
-        ["water_wind"] = new string[]
+        ["gorge_wind"] = new string[]
     {
-        "Oasis water/wind",
-        "Wind sculpts, water fills,\nOasis blooms in the sand,\nLife's refuge, desert's gift.",
-        "In the heart of the desert, where the wind sculpts the dunes, there lies an oasis, a haven of water and life. This miracle of nature, where water finds its way to the surface, nurtured by the wind's relentless shaping of the earth, becomes a refuge for all forms of life. The oasis stands as a testament to the resilience of life in the face of adversity, a lush, vibrant spot amidst the arid expanse. It is the desert's gift, a reminder of the delicate balance that sustains life even in the most unlikely places.",
-        "Heart, Desert, Sculpt, Dunes, Oasis, Haven, Miracle, Nature, Water, Surface, Nurtured, Refuge, Life, Resilience, Adversity, Lush, Vibrant, Arid, Balance, Unlikely."
+        "Oasis gorge/wind",
+        "Wind sculpts, gorge fills,\nOasis blooms in the sand,\nLife's refuge, desert's gift.",
+        "In the heart of the desert, where the wind sculpts the dunes, there lies an oasis, a haven of gorge and life. This miracle of nature, where gorge finds its way to the surface, nurtured by the wind's relentless shaping of the earth, becomes a refuge for all forms of life. The oasis stands as a testament to the resilience of life in the face of adversity, a lush, vibrant spot amidst the arid expanse. It is the desert's gift, a reminder of the delicate balance that sustains life even in the most unlikely places.",
+        "Heart, Desert, Sculpt, Dunes, Oasis, Haven, Miracle, Nature, gorge, Surface, Nurtured, Refuge, Life, Resilience, Adversity, Lush, Vibrant, Arid, Balance, Unlikely."
     },
         ["swamp_fire"] = new string[]
     {
         "Tornado swamp/fire",
         "Swamp fire whirls aloft,\nNature's fury, dance of flames,\nTornado's embrace.",
-        "In the heart of the swamp, a rare spectacle unfolds as fire and wind unite in a tumultuous tornado. This fiery whirlwind, a fusion of elements, dances across the wetlands, a mesmerizing display of nature's raw power and beauty. The swamp, with its dense foliage and murky waters, becomes the backdrop for this extraordinary event, where the ferocity of fire is matched and magnified by the whirlwind's might. It's a moment of awe-inspiring harmony between destruction and the natural cycle of renewal.",
+        "In the heart of the swamp, a rare spectacle unfolds as fire and wind unite in a tumultuous tornado. This fiery whirlwind, a fusion of elements, dances across the wetlands, a mesmerizing display of nature's raw power and beauty. The swamp, with its dense foliage and murky gorges, becomes the backdrop for this extraordinary event, where the ferocity of fire is matched and magnified by the whirlwind's might. It's a moment of awe-inspiring harmony between destruction and the natural cycle of renewal.",
         "Spectacle, Unite, Tumultuous, Whirlwind, Fusion, Dance, Wetlands, Mesmerizing, Raw Power, Beauty, Foliage, Murky, Ferocity, Harmony, Destruction, Renewal."
     },
         ["fire_wind"] = new string[]
@@ -397,10 +398,10 @@ public static class Phe
     },
         ["fire_mountain"] = new string[]
     {
-        "Waterfall fire/mountain",
+        "gorgefall fire/mountain",
         "Firefall lights the night,\nMountain weeps flames, beauty bright,\nNature's spectacle.",
-        "In a rare and mesmerizing event, a waterfall of fire cascades down the mountain's flank, illuminated against the night sky. This 'firefall,' a natural illusion created by the setting sun striking a waterfall at just the right angle, transforms the liquid cascade into a river of flame. The mountain, traditionally a symbol of stability and permanence, becomes the stage for a fleeting moment of extraordinary beauty. It's a spectacle that merges the elements of fire and water in a display of nature's artistry, a reminder of the ephemeral beauty that exists in the interplay of light, water, and earth.",
-        "Rare, Mesmerizing, Waterfall, Fire, Night, Illusion, Sun, Cascade, Flame, Stability, Permanence, Fleeting, Beauty, Spectacle, Artistry, Ephemeral, Interplay, Light, Water, Earth."
+        "In a rare and mesmerizing event, a gorgefall of fire cascades down the mountain's flank, illuminated against the night sky. This 'firefall,' a natural illusion created by the setting sun striking a gorgefall at just the right angle, transforms the liquid cascade into a river of flame. The mountain, traditionally a symbol of stability and permanence, becomes the stage for a fleeting moment of extraordinary beauty. It's a spectacle that merges the elements of fire and gorge in a display of nature's artistry, a reminder of the ephemeral beauty that exists in the interplay of light, gorge, and earth.",
+        "Rare, Mesmerizing, gorgefall, Fire, Night, Illusion, Sun, Cascade, Flame, Stability, Permanence, Fleeting, Beauty, Spectacle, Artistry, Ephemeral, Interplay, Light, gorge, Earth."
     },
         ["wind_wind"] = new string[]
     {
@@ -412,30 +413,30 @@ public static class Phe
         ["swamp_swamp"] = new string[]
     {
         "Fjord swamp/swamp",
-        "Fjord's mist, swamp's veil,\nWater's secrets, softly held,\nNature's whispered tales.",
-        "In the shadow of towering cliffs, where the fjord meets the swamp, a world apart is cloaked in mist. This convergence of water upon water, where the stillness of the fjord's surface meets the swamp's dense embrace, is a realm of whispered secrets and soft exchanges. The swamp, with its labyrinth of waterways and rich tapestry of life, mirrors the fjord's tranquil beauty, creating a seamless blend of tranquility and mystery. Here, in the gentle hold of water, nature's tales are whispered, a symphony of life's resilience and beauty.",
+        "Fjord's mist, swamp's veil,\ngorge's secrets, softly held,\nNature's whispered tales.",
+        "In the shadow of towering cliffs, where the fjord meets the swamp, a world apart is cloaked in mist. This convergence of gorge upon gorge, where the stillness of the fjord's surface meets the swamp's dense embrace, is a realm of whispered secrets and soft exchanges. The swamp, with its labyrinth of gorgeways and rich tapestry of life, mirrors the fjord's tranquil beauty, creating a seamless blend of tranquility and mystery. Here, in the gentle hold of gorge, nature's tales are whispered, a symphony of life's resilience and beauty.",
         "Shadow, Cliffs, Mist, Convergence, Stillness, Dense, Embrace, Realm, Secrets, Exchanges, Labyrinth, Tapestry, Life, Tranquil, Mystery, Symphony, Resilience, Beauty."
     },
-        ["wind_water"] = new string[]
+        ["wind_gorge"] = new string[]
     {
-        "Geyser wind/water",
+        "Geyser wind/gorge",
         "Steam rises, wind's touch,\nGeyser's breath, earth and air's clutch,\nForce of nature, pure.",
-        "At the point where the earth's heated breath meets the touch of the wind, geysers erupt in a spectacular display of nature's force. This interaction between wind and water, air and earth, creates a moment of pure energy, as steam is thrust upwards, painting the sky with the power of the underground. The geyser, a natural spectacle, is a reminder of the planet's living, breathing core, where the elements meet and mingle in an endless dance of creation and destruction, a symbol of nature's untamed and pure force.",
+        "At the point where the earth's heated breath meets the touch of the wind, geysers erupt in a spectacular display of nature's force. This interaction between wind and gorge, air and earth, creates a moment of pure energy, as steam is thrust upwards, painting the sky with the power of the underground. The geyser, a natural spectacle, is a reminder of the planet's living, breathing core, where the elements meet and mingle in an endless dance of creation and destruction, a symbol of nature's untamed and pure force.",
         "Steam, Touch, Erupt, Display, Force, Energy, Sky, Power, Underground, Spectacle, Planet, Core, Elements, Dance, Creation, Destruction, Untamed, Pure."
     },
-        ["water_swamp"] = new string[]
+        ["gorge_swamp"] = new string[]
     {
-        "Coral Reef water/swamp",
+        "Coral Reef gorge/swamp",
         "Reef teems, life's burst,\nSwamp of the sea, colors first,\nNature's mosaic.",
-        "Beneath the surface of the ocean, where the coral reef thrives, exists a 'swamp' of the sea, a vibrant ecosystem bursting with life and color. This underwater jungle, with its intricate balance of coral, fish, and plant life, mirrors the diversity and complexity of its terrestrial counterpart. The reef, with its kaleidoscopic colors and teeming life, is a living mosaic, showcasing the beauty and resilience of nature. It is a reminder of the interconnectedness of all ecosystems, whether land-bound or submerged, and the critical role they play in sustaining life on our planet.",
+        "Beneath the surface of the ocean, where the coral reef thrives, exists a 'swamp' of the sea, a vibrant ecosystem bursting with life and color. This undergorge jungle, with its intricate balance of coral, fish, and plant life, mirrors the diversity and complexity of its terrestrial counterpart. The reef, with its kaleidoscopic colors and teeming life, is a living mosaic, showcasing the beauty and resilience of nature. It is a reminder of the interconnectedness of all ecosystems, whether land-bound or submerged, and the critical role they play in sustaining life on our planet.",
         "Surface, Ocean, Thrive, Ecosystem, Vibrant, Jungle, Balance, Coral, Fish, Plant, Diversity, Complexity, Kaleidoscopic, Teeming, Mosaic, Beauty, Resilience, Interconnectedness, Sustaining, Planet."
     },
         ["wind_swamp"] = new string[]
     {
         "Iceberg wind/swamp",
         "Iceberg in the mist,\nWind whispers through swamp's embrace,\nCold meets the marsh's breath.",
-        "In the heart of the swamp, an iceberg stands as an anomaly, brought by the wind's cold breath. This juxtaposition of ice within the warmth of the marsh creates a surreal landscape, where the air's chill whispers secrets to the water and the reeds. The presence of the iceberg in the swamp, a fusion of polar opposites, symbolizes the extraordinary encounters nature orchestrates, blending elements in unexpected ways to reveal the delicate balance and adaptability of ecosystems.",
-        "Anomaly, Juxtaposition, Ice, Warmth, Surreal, Landscape, Chill, Whispers, Secrets, Water, Reeds, Fusion, Opposites, Encounters, Nature, Balance, Adaptability, Ecosystems."
+        "In the heart of the swamp, an iceberg stands as an anomaly, brought by the wind's cold breath. This juxtaposition of ice within the warmth of the marsh creates a surreal landscape, where the air's chill whispers secrets to the gorge and the reeds. The presence of the iceberg in the swamp, a fusion of polar opposites, symbolizes the extraordinary encounters nature orchestrates, blending elements in unexpected ways to reveal the delicate balance and adaptability of ecosystems.",
+        "Anomaly, Juxtaposition, Ice, Warmth, Surreal, Landscape, Chill, Whispers, Secrets, gorge, Reeds, Fusion, Opposites, Encounters, Nature, Balance, Adaptability, Ecosystems."
     },
         ["thunder_mountain"] = new string[]
     {
@@ -444,18 +445,18 @@ public static class Phe
         "Beneath the mountain's rugged facade, a sinkhole opens, as if in response to the thunder's commanding voice. This deep chasm, formed by the earth's shifting whispers, resonates with the rumble of the sky, a symphony of natural forces at play. The mountain, with its peaks reaching for the heavens, and the sinkhole, a portal to the underworld, become a nexus where the elemental power of thunder binds the earth, illustrating the dynamic interplay between the surface and the depths, between creation and erosion.",
         "Rugged, Facade, Chasm, Shifting, Whispers, Rumble, Symphony, Forces, Peaks, Heavens, Portal, Underworld, Nexus, Elemental, Surface, Depths, Creation, Erosion."
     },
-        ["water_fire"] = new string[]
+        ["gorge_fire"] = new string[]
     {
-        "Cavern water/fire",
-        "Firelight on water,\nCavern's heart glows, mystery,\nElements in dance.",
-        "Deep within the cavern's heart, where water pools reflect the dance of firelight, a rare harmony exists. This convergence of water and fire, light and liquid, creates an enchanting spectacle, illuminating the depths with a glow that speaks of ancient mysteries. The fire's warmth meets the water's cool embrace in a dance of opposites, a dynamic interplay that brings to life the cavern's hidden world. It's a place where the elemental forces of water and fire unite, revealing the beauty and complexity of nature's artistry.",
+        "Cavern gorge/fire",
+        "Firelight on gorge,\nCavern's heart glows, mystery,\nElements in dance.",
+        "Deep within the cavern's heart, where gorge pools reflect the dance of firelight, a rare harmony exists. This convergence of gorge and fire, light and liquid, creates an enchanting spectacle, illuminating the depths with a glow that speaks of ancient mysteries. The fire's warmth meets the gorge's cool embrace in a dance of opposites, a dynamic interplay that brings to life the cavern's hidden world. It's a place where the elemental forces of gorge and fire unite, revealing the beauty and complexity of nature's artistry.",
         "Deep, Heart, Pools, Reflect, Dance, Harmony, Convergence, Light, Liquid, Enchanting, Depths, Glow, Mysteries, Warmth, Embrace, Opposites, Interplay, Forces, Unite, Artistry."
     },
-        ["fire_water"] = new string[]
+        ["fire_gorge"] = new string[]
     {
-        "Hurricane fire/water",
-        "In the storm's eye, fire,\nWater's wrath, flames' defiance,\nCyclone of elements.",
-        "Amidst the fury of a hurricane, a core of fire burns, defying the water's overwhelming wrath. This spectacle, where fire and water clash in a cyclone of elements, showcases the tumultuous relationship between the forces of nature. The hurricane, embodying water's might, swirls around the steadfast flame, creating a dynamic tableau of conflict and coexistence. It's a vivid depiction of nature's duality, where the unyielding power of fire stands resilient within the tempest's heart, illustrating the endless dance of creation and destruction that defines our world.",
+        "Hurricane fire/gorge",
+        "In the storm's eye, fire,\ngorge's wrath, flames' defiance,\nCyclone of elements.",
+        "Amidst the fury of a hurricane, a core of fire burns, defying the gorge's overwhelming wrath. This spectacle, where fire and gorge clash in a cyclone of elements, showcases the tumultuous relationship between the forces of nature. The hurricane, embodying gorge's might, swirls around the steadfast flame, creating a dynamic tableau of conflict and coexistence. It's a vivid depiction of nature's duality, where the unyielding power of fire stands resilient within the tempest's heart, illustrating the endless dance of creation and destruction that defines our world.",
         "Fury, Hurricane, Core, Defiance, Wrath, Clash, Cyclone, Relationship, Forces, Nature, Might, Swirls, Tableau, Conflict, Coexistence, Vivid, Duality, Resilient, Tempest, Creation, Destruction."
     },
     };

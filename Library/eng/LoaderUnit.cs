@@ -32,6 +32,7 @@ public Location Location {get;set;}
     bool IUnit.Bound {get;set;}
     public string Secret { get;set; }
     public DateTime LastLogin { get;set; }
+    public Dictionary<Awareness, int> Awareness { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
     public LoaderUnit(string displayTypeString)
     {

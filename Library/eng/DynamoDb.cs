@@ -106,7 +106,7 @@ public class DynamoDb<T> : IDal<T>
 
     }
 
-    public async Task<IEnumerable<T>> GetByAttr<TValue>(string attribute, TValue value)
+    public async Task<IEnumerable<T>> GetByAttr<TValue>(string attribute, TValue value, CancellationToken cancellationToken = default)
     {
         var table = typeof(T).Name;
 

@@ -1,3 +1,4 @@
+
 namespace library.worldcomputer.info;
 public class Heart : IUnit, IPart<Heart>
 {
@@ -24,6 +25,7 @@ public class Heart : IUnit, IPart<Heart>
     public Pair[] PublicKey { get; set; }
     public string Secret { get;set; }
     public DateTime LastLogin { get;set; }
+    public Dictionary<Awareness, int> Awareness { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
     public string GetHash(int length)
     {

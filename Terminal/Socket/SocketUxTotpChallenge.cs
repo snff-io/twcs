@@ -16,7 +16,18 @@ public class SocketUxTotpChallenge : IUxChallengeTotp<bool, IUnit>
     }
     public async Task<bool> HandleUx( Socket socket, IUnit unit)
     {
-        await "Enter the 6 digits from your authentictor:".Text().Send(socket);
+        if (false) 
+        {
+            await "AUTH DISABLED".Error().Send(socket);
+            unit.LastLogin = DateTime.Now;
+            await _bodyDal.Put((Body)unit);
+
+            return true;
+
+        }
+
+
+        await "Enter the 6 digits from your authentictor:".Emph().Send(socket);
 
         var tries = 10;
         while (tries > 0)

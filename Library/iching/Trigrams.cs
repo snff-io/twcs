@@ -25,7 +25,7 @@ public enum Domain
     Wind = 6,
     Swamp = 7,
     Gorge = 8,
-    Emptyness = 0
+    Emptiness = 0
 
 }
 
@@ -49,7 +49,7 @@ public static class Trigrams
                     { Domain.   Wind, new Trigram(Domain.Wind)},
                     { Domain.  Swamp, new Trigram(Domain.Swamp)},
                     { Domain.  Gorge, new Trigram(Domain.Gorge)},
-                    { Domain.  Emptyness, new Trigram(Domain.Emptyness)},
+                    { Domain.  Emptiness, new Trigram(Domain.Emptiness)},
                 };
             }
             return _trigrams;
@@ -60,6 +60,12 @@ public static class Trigrams
 
 public static class TrigramMaps
 {
+
+
+    public static string ToKey(Domain upper, Domain lower)
+    {
+        return $"{upper}_{lower}".ToLower();
+    }
 
     static Dictionary<Domain, Color> _altColorMap;
     public static Dictionary<Domain, Color> AltColorMap
@@ -78,7 +84,7 @@ public static class TrigramMaps
                     {Domain.Gorge    , Color.FromKnownColor(KnownColor.Blue)},
                     {Domain.Mountain , Color.FromKnownColor(KnownColor.Purple)},
                     {Domain.Thunder  , Color.FromKnownColor(KnownColor.Red)},
-                    {Domain.Emptyness  , Color.FromKnownColor(KnownColor.Transparent)},
+                    {Domain.Emptiness  , Color.FromKnownColor(KnownColor.Transparent)},
                 };
             }
             return _altColorMap;
@@ -103,7 +109,7 @@ public static class TrigramMaps
                     {Domain.Wind     , Color.FromArgb(1, 0,   127, 255)},
                     {Domain.Swamp    , Color.FromArgb(1, 127, 0,   255)},
                     {Domain.Gorge    , Color.FromArgb(1, 255, 0,   255)},
-                    {Domain.Emptyness    , Color.FromArgb(0, 0, 0,   0)},
+                    {Domain.Emptiness    , Color.FromArgb(0, 0, 0,   0)},
                 };
             }
             return _colorMap;
@@ -127,7 +133,7 @@ public static class TrigramMaps
                     {Domain.Wind     , 21},
                     {Domain.Swamp    , 18},
                     {Domain.Gorge    , 15},
-                    {Domain.Emptyness , 0},
+                    {Domain.Emptiness , 0},
                 };
             }
 
@@ -152,7 +158,7 @@ public static class TrigramMaps
                     {Domain.Wind,       "☵"},
                     {Domain.Swamp,      "☴"},
                     {Domain.Gorge,      "☳"},
-                    {Domain.Emptyness,  ""},
+                    {Domain.Emptiness,  ""},
                 };
             }
             return _characterMap;
@@ -210,7 +216,7 @@ public static class TrigramMaps
                         , where the rugged terrain plunges into depths below, creating a dramatic and awe-inspiring scene that evokes both wonder and reverence for the forces of nature."
                     },
                     {
-                        Domain.Emptyness,
+                        Domain.Emptiness,
                         @"Silence echoes through the void, defining an infinite vista of emptiness."
                     }
                 };

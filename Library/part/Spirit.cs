@@ -1,3 +1,4 @@
+
 namespace library.worldcomputer.info;
 public class Spirit : IUnit, IPart<Spirit>
 {
@@ -24,6 +25,8 @@ public class Spirit : IUnit, IPart<Spirit>
     public Pair[] PublicKey { get; set; }
     public DateTime LastLogin { get;set; }
  public string Secret { get;set; }
+    public Dictionary<Awareness, int> Awareness { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
     public string GetHash(int length)
     {
         throw new NotImplementedException();

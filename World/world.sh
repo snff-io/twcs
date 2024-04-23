@@ -1,1 +1,1 @@
-docker run --rm -it -p 5260:8080/tcp world:latest
+docker run --rm -it -p 5260:8080/tcp worldapi:latest

@@ -15,6 +15,7 @@ public interface IUnit : IHash
 
     bool Bound { get; set; }
 
+    Dictionary<Awareness, int> Awareness {get;set;}
     static string ToId(string value)
     {
         return value.Trim().Replace(" ", "_");

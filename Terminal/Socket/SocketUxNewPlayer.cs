@@ -45,6 +45,8 @@ public class SocketUxNewPlayer : IUxNewPlayer<IUnit>
         player.Location.Layer = 0;
         player.Location.X = pg.Current.X;
         player.Location.Y = pg.Current.Y;
+        (player as Body).Suit = new BodySuit(player);
+        (player as Body).Suit.New();
 
         await $"\n\n{player.FirstName} {player.LastName}\n\n".Info().Send(socket);
         await $"Remember your name, you'll need it to login!".Emph().Send(socket);

@@ -1,5 +1,6 @@
+
 namespace library.worldcomputer.info;
-public class Mind : IUnit, IPart<Mind>
+public class Mind :     IUnit, IPart<Mind>
 {
     public string Id { get; set; }
     public string FirstName { get; set; }
@@ -26,6 +27,7 @@ public class Mind : IUnit, IPart<Mind>
 
 
     public string Secret { get; set; }
+    public Dictionary<Awareness, int> Awareness { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
     public string GetHash(int length)
     {

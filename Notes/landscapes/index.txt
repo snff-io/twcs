@@ -1,0 +1,65 @@
+earth_earth/: Growth, Stability, Nourishment, Generations, Renewal, Majesty, Origins, Cycle, Life, History, Trees, Seeds, Soil.
+earth_fire/: Crest, Fire, Earth, Transformation, Light, End, Beginning, Cycle, Warmth, Destruction, Renewal, Cleanses, Growth, Resilience.
+earth_gorge/: Shoreline, Waves, Sand, Meeting, Parting, Interplay, Land, Sea, Memories, Existence, Horizon, Fleeting, Enduring.
+earth_heaven/: Serene, Beauty, Peace, Tranquility, Sacred, Haven, Horizon, Wildflowers, Connection, Divine, Terrestrial, Respite, Murmur.
+earth_mountain/: Vantage Point, Rugged Beauty, Vast Expanse, Natural Bridge, Terrestrial, Celestial, Solitude, Interconnectedness, Grounded, Uplifted, Panoramic, Majesty, Natural World.
+earth_swamp/: Vantage, Dance, Water, Earth, Resilience, Stillness, Green Heart, Rhythm, Nurtured, Contrast, Harmony, Static, Dynamic, Balance.
+earth_thunder/: Storm, Cry, Rain, Rivers, Flood, Destruction, Renewal, Landscape, Cycle, Dynamics, Interconnectedness, Rebirth, Natural World.
+earth_wind/: Whispers, Ages, Vast, Crater, Dialogue, Landscape, Forces, Violent, Sublime, Power, Nature, Scar, Vessel, Stories, Elemental, Energy, Life.
+emptyness_emptyness/: 
+fire_earth/: Fire, Ridge, Earth, Night Skies, Blaze, Glory, Destroyer, Creator, Renewal, Ashes, New Life, Heat, Cycle, Rebirth.
+fire_fire/: Aftermath, Blaze, Ember, Heartbeat, Essence, Flame, Transient, Existence, Prelude, Beginning, Passion, Destruction, Renewal, Ashes.
+fire_gorge/: Fury, Hurricane, Core, Defiance, Wrath, Clash, Cyclone, Relationship, Forces, Nature, Might, Swirls, Tableau, Conflict, Coexistence, Vivid, Duality, Resilient, Tempest, Creation, Destruction.
+fire_heaven/: Nature's Fury, Flames, Skyward, Celestial, Terrifying, Mesmerizing, Vibrant, Intense, Unbridled, Destruction, Beauty, Balance, Existence.
+fire_mountain/: Rare, Mesmerizing, Waterfall, Fire, Night, Illusion, Sun, Cascade, Flame, Stability, Permanence, Fleeting, Beauty, Spectacle, Artistry, Ephemeral, Interplay, Light, Water, Earth.
+fire_swamp/: Swamp, Fire, Light, Water, Wetlands, Fog, Reeds, Contrasts, Beauty, Glow, Resilience, Life, Death, Balance, Renewal.
+fire_thunder/: Storm, Sky, Fire, Force, Thunder, Applause, Ephemeral, Majesty, Power, Destruction, Creation, Energy, Interplay.
+fire_wind/: Conjured, Tsunami, Sweeps, Cataclysmic, Merger, Devastating, Wave, Flames, Devours, Amplifies, Fury, Primal, Aftermath, Transformed, Scars, Power, Unbridled.
+gorge_earth/: Fertile, Unity, Ecosystems, Biodiversity, Resilience, Adaptability, Renewal, Journey, Cycle, Birth, Growth, Rebirth, Nature.
+gorge_fire/: Deep, Heart, Pools, Reflect, Dance, Harmony, Convergence, Light, Liquid, Enchanting, Depths, Glow, Mysteries, Warmth, Embrace, Opposites, Interplay, Forces, Unite, Artistry.
+gorge_gorge/: Boundary, Molten, Ocean, Battle, Steam, Fire, Water, Dominion, Creation, Land, Power, Beauty, Cycle, Rebirth.
+gorge_heaven/: Renewal, Growth, Nourishing, Sacred, Resilience, Cycle of Life, Whisper, Rivers, Lakes, Seeds, Dance, Celestial, Terrestrial.
+gorge_mountain/: Fen, Water, Peak, Mountain, Ecosystem, Life, Still Waters, Flora, Tranquil, Vibrant, Earth, Sky, Harmony, Nourishment, Growth.
+gorge_swamp/: Surface, Ocean, Thrive, Ecosystem, Vibrant, Jungle, Balance, Coral, Fish, Plant, Diversity, Complexity, Kaleidoscopic, Teeming, Mosaic, Beauty, Resilience, Interconnectedness, Sustaining, Planet.
+gorge_thunder/: Energy, Renewal, Power, Symphony, Growth, Transformation, Journey, Strife, Serenity, Primal, Dark, Roar, Awakening.
+gorge_wind/: Heart, Desert, Sculpt, Dunes, Oasis, Haven, Miracle, Nature, Water, Surface, Nurtured, Refuge, Life, Resilience, Adversity, Lush, Vibrant, Arid, Balance, Unlikely.
+heaven_earth/: Vast, Infinite, Artistry, Cosmos, Contemplation, Wonder, Time, Interconnectedness, Celestial, Human Spirit, Explore, Understand, Fleeting.
+heaven_fire/: Celestial, Phenomenon, Vibrant, Dance, Captivating, Universe, Beauty, Ether, Light, Awe, Wonder, Silent, Symphony.
+heaven_gorge/: Dawn, Ethereal, Harmony, Light, Shadow, Salt, Mysteries, Journey, Suspended, Ephemeral, Eternal, Balance, Nature.
+heaven_heaven/: Eternity, Cosmos, Reflection, Serenity, Infinity, Light, Peace, Convergence, Luminosity, Silence, Timelessness, Spiritual, Origin.
+heaven_mountain/: Waterfalls, Gravity, Grace, Cascade, Clouds, Nourish, Serenade, Sky, High Places, Earth, Mist, Light, Abundance, Life.
+heaven_swamp/: Mystery, Convergence, Reflection, Timeless, Diversity, Complexity, Survival, Adaptation, Balance, Ecosystems, Sanctuary, Secrets, Stillness.
+heaven_thunder/: Wilderness, Rapids, Energy, Sky, Thunder, Lightning, Converge, Symphony, Fury, Power, Force, Landscape, Unbridled.
+heaven_wind/: Fury, Cry, Snow, Mountain, Avalanche, Dialogue, Elements, Power, Beauty, Destruction, Renewal, Growth, Relationship, Cycle.
+mountain_earth/: Isolated, Steep Walls, Flat Top, Silent, Sentinel, Vast, Blue Skies, Erosion, Millennia, Power, Nature, Majestic, Geological History.
+mountain_fire/: Heart of Fire, Volcano, Power, Creation, Energy, Ancient, Dynamic, Forces, Symphony, Destruction, Renewal, Cycle of Life, Earth.
+mountain_gorge/: Endurance, Path, Strength, Nourish, Connect, Cycle, Resilience, Beauty, Silence, Trickle, Carve, Forest, Sea.
+mountain_heaven/: Peninsula, Sea, Mountains, Earth, Sky, Blur, Rugged, Clouds, Infinite, Harmony, Balance, Beauty, Contemplation.
+mountain_mountain/: Lush, Embrace, Tapestry, Teems, Convergence, Bounty, Wisdom, Resilience, Cacophony, Vibrant, Hues, Wild, Symphony, Pulse, Earth, Secrets, Unyielding, Complexity.
+mountain_swamp/: Cascade, Peaks, Landscape, Serene, Confluence, Vigor, Stillness, Canopy, Biodiversity, Nutrients, Interconnectedness, Ecosystems, Balance, Cycle.
+mountain_thunder/: Liminal, Echo, Dialogue, Resonate, Marsh, Mountain, Stoic, Storm, Ancient, Forces, Cycle, Weather, Resilience, Adaptability.
+mountain_wind/: Thin Air, Extremes, Heavens, Ancient Skies, Elements, Timeless, Dialogue, Land, Air, Pulse, Planet, Ancient Forces, Earth.
+swamp_earth/: Shadow, Towering, Hidden, Thrive, Cradle, Secret, Embrace, Secluded, Ecosystem, Land, Water, Strength, Adaptability, Sanctuary, Diversity, Complexity, Resilience.
+swamp_fire/: Spectacle, Unite, Tumultuous, Whirlwind, Fusion, Dance, Wetlands, Mesmerizing, Raw Power, Beauty, Foliage, Murky, Ferocity, Harmony, Destruction, Renewal.
+swamp_gorge/: Unlikely, Union, Contrasts, Ancient, Ice, Eager, Life, Sustain, Nourish, Interaction, Frozen, Vibrant, Cyclical, Water, March, Teeming, Interconnectedness, Interdependence.
+swamp_heaven/: Heavens, Weep, Earth, Swamp, Deluge, Mirror, Boundaries, Flooded, Celestial, Terrestrial, Cycles, Sacred, Water, Interconnectedness, Converge.
+swamp_mountain/: Depths, Heights, Gust, Essence, Secrets, Marshland, Peaks, Earth, Sky, Journey, Wind, Interconnectedness, Life, Energy.
+swamp_swamp/: Shadow, Cliffs, Mist, Convergence, Stillness, Dense, Embrace, Realm, Secrets, Exchanges, Labyrinth, Tapestry, Life, Tranquil, Mystery, Symphony, Resilience, Beauty.
+swamp_thunder/: Heartbeat, Resonant, Dense Vegetation, Murky, Tranquil, Intensity, Wet Earth, Fresh Rain, Secrets, Reeds, Willows, Fury, Wisdom.
+swamp_wind/: Storyteller, Tapestry, Ripples, Whispered, Secrets, Ancient, Reeds, Interplay, Movement, Stillness, Mysteries, Serene, Dance of Life.
+thunder_earth/: Primal, Dialogue, Convergence, Raw Power, Create, Destroy, Echoing, Trembling, Awe, Respect, Forces, Dynamic, Ever-changing.
+thunder_fire/: Fury, Eruption, Sky, Spectacle, Primal, Confrontation, Fire, Sound, Molten, Electric, Untamed, Power, Language, Dynamic, Creation, Land, Energy.
+thunder_gorge/: Thunder, Rain, Torrents, Land, Nature, Renewal, Storm, Revitalize, Earth, Rivers, Soil, Might, Cycle, Balance, Growth.
+thunder_heaven/: Thunder, Peak, Mountain, Sky, Heaven, Earth, Storm, Stone, Clouds, Electric, Symphony, Dialogue, Power.
+thunder_mountain/: Rugged, Facade, Chasm, Shifting, Whispers, Rumble, Symphony, Forces, Peaks, Heavens, Portal, Underworld, Nexus, Elemental, Surface, Depths, Creation, Erosion.
+thunder_swamp/: Heart, Ice, Silent, Frozen, Thunder, Contrast, Stillness, Echoes, Ancient, Seasons, Life, Harsh, Dialogue, Sky, Earth, Resilience, Adaptability, Cycle.
+thunder_thunder/: Silence, Boom, Echo, Ancient, Battles, Sky, Earth, Duel, Titans, Reverberates, Sand, Symphony, Majesty, Menace, Dialogue, Elements, Dramatic, Stage.
+thunder_wind/: Storm, Bog, Howl, Roar, Echo, Debate, Contest, Strength, Will, Elemental, Clash, Fury, Power, Resilience.
+wind_earth/: Tender, Whisper, Landscape, Caress, Lover's Touch, Leaves, Rustle, Dialogue, Peace, Harmony, Quiet Moments, Breath of Life, Ephemeral, Eternal.
+wind_fire/: Wind, Flames, Dance, Air, Unbridled, Power, Nature, Smoke, Warmth, Sky, Change, Transformation, Energy, Life.
+wind_gorge/: Steam, Touch, Erupt, Display, Force, Energy, Sky, Power, Underground, Spectacle, Planet, Core, Elements, Dance, Creation, Destruction, Untamed, Pure.
+wind_heaven/: Celestial, Tempest, Majesty, Firmament, Weather, Roaring, Wild, Untamed, Hymn, Forces, Mortal, Mystery, Awe.
+wind_mountain/: Traveler, Whisper, Dawn, Shadows, Ancient, Sentinels, Plains, Passage, Time, Landscape, Relentless, Unyielding, Spirit, Harmony, Contrasts, Vast, Majesty.
+wind_swamp/: Anomaly, Juxtaposition, Ice, Warmth, Surreal, Landscape, Chill, Whispers, Secrets, Water, Reeds, Fusion, Opposites, Encounters, Nature, Balance, Adaptability, Ecosystems.
+wind_thunder/: Sweep, Warmth, Earth, Steam, Prelude, Spectacle, Thunder, Sky, Interaction, Dynamics, Dance, Elements, Force, Beauty, Might.
+wind_wind/: Vast, Desert, Voice, Shapes, Dance, Conversation, Gusts, Canvas, Artistry, Shifting, Silent, Fluid, Adaptation, Survival, Hymns, Dynamic, Evolving.

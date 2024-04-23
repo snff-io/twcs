@@ -37,38 +37,61 @@ public class FlatFileDb<T> : IDal<T>
 
         using (var reader = new StringReader(stream))
         {
-            return _deserializer.Deserialize<T>(reader);
+            try
+            {
+
+                return _deserializer.Deserialize<T>(reader);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+
         }
+        return default;
     }
 
-    public async Task<IEnumerable<T>> GetByAttr<TValue>(string attribute, TValue value)
+    public async Task<IEnumerable<T>> GetByAttr<TValue>(string attribute, TValue value, CancellationToken cancellationToken = default)
     {
         if (attribute == null || value == null)
             throw new ArgumentException("attribute or value is null");
 
-        var searchTerm = $"{attribute}: {value.ToString()}";
+        var searchTerm = $"{attribute}: {value}";
 
-        var files = Directory.GetFiles($"{_basePath}/{_collection}".ToLower(), "*.*", SearchOption.AllDirectories);
+        var files = Directory.GetFiles(Path.Combine(_basePath, _collection).ToLower(), "*.*", SearchOption.AllDirectories);
 
-        var cbag = new ConcurrentBag<T>();
-        await Parallel.ForEachAsync(files, async (file, ct) =>
+        var tasks = files.Select(async file =>
         {
-            // Read the contents of the file
-            string content = await File.ReadAllTextAsync(file);
+            cancellationToken.ThrowIfCancellationRequested();
 
-            // Check if the content contains the search term
-            if (content.Contains(searchTerm))
+            using (var stream = File.OpenRead(file))
+            using (var reader = new StreamReader(stream))
             {
-                var raw = await File.ReadAllTextAsync(file);
-                using (var reader = new StringReader(raw))
+                string line;
+                while ((line = await reader.ReadLineAsync()) != null)
                 {
-                    cbag.Add(_deserializer.Deserialize<T>(reader));
+                    if (line.Contains(searchTerm))
+                    {
+                        cancellationToken.ThrowIfCancellationRequested();
+
+                        var raw = await File.ReadAllTextAsync(file, cancellationToken);
+                        using (var strReader = new StringReader(raw))
+                        {
+                            return _deserializer.Deserialize<T>(strReader);
+                        }
+                    }
                 }
             }
+
+            return default(T);
         });
 
-        return cbag;
+        var results = await Task.WhenAll(tasks);
+        return results.Where(result => !EqualityComparer<T>.Default.Equals(result, default(T)));
     }
+
+
+
 
     public async Task<T[]> GetRandomUnbound(int number = 5)
     {

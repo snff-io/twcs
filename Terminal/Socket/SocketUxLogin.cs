@@ -75,6 +75,7 @@ public class SocketUxLogin : IUxLogin<IUnit>
 
             if (success)
             {
+                await $"You are {unit.FirstName} {unit.LastName} ({unit.b45Name()})".Info().Send(socket);
                 return await _gameLoopUx.HandleUx(socket, unit);
             }
             else

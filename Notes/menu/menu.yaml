@@ -1,0 +1,12 @@
+/travel?direction=<nswe>,count=<n>
+/market/sell/pair?type=<nn>
+/market/sell/item?instanceid=<guid>
+/market/buy/item/instanceid=<guid>
+/market/buy/pair/orderid=<guid>
+/market/orders/
+/market/withdraw/orderid=<guid>
+/item/use?instanceid<guid>
+/item/drop?instanceid=<guid>
+
+
+  

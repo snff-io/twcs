@@ -15,6 +15,8 @@ builder.Services.AddSingleton<IGrid>((services) =>
     return grid;
 });
 
+
+
 builder.Services.AddSingleton<IStatus, Status>();
 
 builder.Services.AddHttpClient();
@@ -38,11 +40,17 @@ builder.Services.AddSingleton<IImageHandler, AnsiImageHandler>();
 builder.Services.AddScoped<IIntentAction, MarketIntentAction>();
 builder.Services.AddScoped<IIntentAction, TravelIntentAction>();
 builder.Services.AddScoped<IIntentAction, LocationIntentAction>();
+builder.Services.AddScoped<IIntentAction, InventoryIntentAction>();
 
 builder.Services.AddSingleton<IIntent, MarketIntent>();
 builder.Services.AddSingleton<IIntent, TravelIntent>();
 builder.Services.AddSingleton<IIntent, LocationIntent>();
+builder.Services.AddSingleton<IIntent, InventoryIntent>();
 
+
+
+
+    
 
 
 var app = builder.Build();
@@ -74,5 +82,5 @@ app.Use(async (context, next) =>
     }
 });
 
-app.Run("http://100.115.92.204:5260");
-//app.Run();
+//app.Run("http://100.115.92.204:5260");
+app.Run();

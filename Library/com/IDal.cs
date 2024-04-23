@@ -8,5 +8,5 @@ public interface IDal<T>
 
     Task<T[]> GetRandomUnbound(int number = 5);
 
-    Task<IEnumerable<T>> GetByAttr<TValue>(string attribute, TValue value);
+    Task<IEnumerable<T>> GetByAttr<TValue>(string attribute, TValue value, CancellationToken cancellationToken = default);
 }
