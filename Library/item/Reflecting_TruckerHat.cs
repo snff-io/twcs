@@ -4,7 +4,7 @@ using Microsoft.Net.Http.Headers;
 
 namespace library.worldcomputer.info;
 
-public class Reflecting_Benie : Item
+public class Reflecting_TruckerHat : Item
 {
 
 
@@ -15,12 +15,12 @@ public class Reflecting_Benie : Item
         
     }
 
-    public Reflecting_TruckerHat(IUnit unit, int quality)
+    public Reflecting_TruckerHat(IUnit unit, int quality, IImageHandler imageHandler)
     {
         this.Quality = quality;
 
         EnergySlotsMax.Values.ForAll(i=>i = quality * 10);
-
+        _imageHandler = imageHandler;
     }
 
     public bool Use(Domain type, int magnitude)
@@ -32,8 +32,15 @@ public class Reflecting_Benie : Item
         return true;
     }
 
+    public Image GetImage()
+    {
+        return _imageHandler.GetNamedImage("covert_biclighter.jpeg");
+    }
+
     public string[] Examine()
     {
+        
+        
 
         var d = new List<string> {
         "Crafted from durable materials and adorned with a reflective surface, this hat-like accessory is designed to repel and counter energy-based attacks with precision.",

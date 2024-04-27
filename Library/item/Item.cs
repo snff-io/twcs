@@ -23,9 +23,9 @@ public class Item
 
     public virtual string Name { get; set; }
 
-    public Item()
+    public Item(IImageHandler imageHandler)
     {
-
+        _imageHandler = imageHandler;
     }
 
     public Item[] ItemSlots { get; protected set; }
@@ -91,6 +91,16 @@ public class Item
         Load(source.TopTrigram.Domain, magnitude );
         
         source.Magnitude -= Math.Min(0, source.Magnitude - magnitude);
+    }
+
+    public virtual Image GetImage()
+    {
+        return _imageHandler.GetNamedImage("default_item");
+    }
+
+    public virtual string[] Examine()
+    {
+        return new [] {"Default Item"}
     }
 }
 
