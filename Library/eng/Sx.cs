@@ -7,7 +7,7 @@ using DZen.BasE91;
 
 public static class Sx
 {
-    public async static Task Send(this string message, Socket socket)
+    public async static Task Send(this string message, ISocket socket)
     {
         await socket.SendAsync(message);
     }
@@ -24,12 +24,12 @@ public static class Sx
 
     public static string Info(this string value)
     {
-        return value.Color(KnownColor.Orange).Pre(">_");
+        return value.Color(KnownColor.Orange).Pre("<_");
     }
 
     public static string Emph(this string value)
     {
-        return value.Color(KnownColor.CornflowerBlue).Pre("#_");
+        return value.Color(KnownColor.CornflowerBlue).Pre("*_");
     }
 
     public static string Ansi(this string value)
@@ -51,9 +51,10 @@ public static class Sx
         return value.Pre("!_").Color(KnownColor.IndianRed);
     }
 
+
     public static string Option(this string value)
     {
-        return value.Color(KnownColor.Orange).Pre(")_");
+        return value.Color(KnownColor.Orange).Pre("(_");
     }
 
     public static string Prompt(this string value)

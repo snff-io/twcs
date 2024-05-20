@@ -27,6 +27,11 @@ public class InventoryIntentAction : IIntentAction
         {
             var b = unit as Body;
 
+            var options = b.Suit.Wearables.Keys.Select(x=>x.ToString());
+            
+             
+        
+
             foreach (var key in b.Suit.Wearables.Keys)
             {
                 await $"{key.ToString().Emph()} : {b.Suit.Wearables[key].Name.Info()}".Send(socket);

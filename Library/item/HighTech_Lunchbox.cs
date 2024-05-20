@@ -10,12 +10,12 @@ public class HighTech_Lunchbox : Item
 
     public override string Name => "Hightech_Lunchbox";
 
-    public HighTech_Lunchbox()
+    public HighTech_Lunchbox(IImageHandler imageHandler):base(imageHandler)
     {
         
     }
 
-    public HighTech_Lunchbox(IUnit unit, int quality)
+    public HighTech_Lunchbox(IUnit unit, int quality, IImageHandler imageHandler): base(imageHandler)
     {
         this.Quality = quality;
 

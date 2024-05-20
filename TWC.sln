@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "World", "World\World.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library", "Library\Library.csproj", "{8F96B69C-09BA-41AE-9172-1CE45744C942}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notes", "Notes\Notes.csproj", "{FE295371-7570-4579-9798-A02DFACCA1A5}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBD}") = "Terminal", "Terminal\Terminal.csproj", "{FE295371-7570-4579-9798-A02DFACCA1A6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{0cb37a94-ccd0-4bc3-9966-4b1e64f0713a}"
@@ -30,10 +28,7 @@ Global
 		{8F96B69C-09BA-41AE-9172-1CE45744C942}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F96B69C-09BA-41AE-9172-1CE45744C942}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F96B69C-09BA-41AE-9172-1CE45744C942}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FE295371-7570-4579-9798-A02DFACCA1A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FE295371-7570-4579-9798-A02DFACCA1A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FE295371-7570-4579-9798-A02DFACCA1A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FE295371-7570-4579-9798-A02DFACCA1A5}.Release|Any CPU.Build.0 = Release|Any CPU
+
 		
 		{FE295371-7570-4579-9798-A02DFACCA1A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FE295371-7570-4579-9798-A02DFACCA1A6}.Debug|Any CPU.Build.0 = Debug|Any CPU

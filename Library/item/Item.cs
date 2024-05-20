@@ -5,13 +5,15 @@ public class Item
 {
 
     static Item _empty;
+    protected IImageHandler _imageHandler;
+
     public static Item Empty
     {
         get
         {
             if (Item._empty == null)
             {
-                _empty = new EmptyItem();
+                _empty = new EmptyItem(null);
             }
             return _empty;
         }
@@ -100,13 +102,13 @@ public class Item
 
     public virtual string[] Examine()
     {
-        return new [] {"Default Item"}
+        return new [] {"Default Item"};
     }
 }
 
 public class EmptyItem : Item
 {
-    public EmptyItem()
+    public EmptyItem(IImageHandler imageHandler):base(imageHandler)
     {
     }
 }

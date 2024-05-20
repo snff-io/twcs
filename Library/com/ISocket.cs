@@ -8,6 +8,7 @@ public interface ISocket
     Task SendAsync(string message);
     Task<string> ReceiveAsync();
     Task CloseAsync();
+    Task<string> PromptForRx(string prompt, string regex);
 }
 
 

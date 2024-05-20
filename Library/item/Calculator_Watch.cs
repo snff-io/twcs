@@ -5,7 +5,7 @@ public class Calculator_Watch: Item
 
     public override string Name => "Calculator_Watch";
 
-    public Calculator_Watch()
+    public Calculator_Watch(IImageHandler imageHandler):base(imageHandler)
     {
         EnergySlots[Domain.Earth] = 5;
         EnergySlots[Domain.Wind] = 5;

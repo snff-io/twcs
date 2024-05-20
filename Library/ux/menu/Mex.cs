@@ -1,21 +1,29 @@
+using System.Drawing;
+
+namespace library.worldcomputer.info;
+
 public static class Mex
 {
-    public static IEnumerable<MenuOption> AsOptions(this IEnumerable<string> displayNames)
+
+    public static string Header(this string value)
     {
+        var v = value.Color(KnownColor.CornflowerBlue).Pre(">_");
+        v += new string('=', value.Length).Color(KnownColor.CornflowerBlue).Pre(">_"); ;
+
+        return v;
+    }
+
+    public async static Task<int> Menu(this string name, ISocket socket, params string[] choices)
+    {
+        await name.Header().Send(socket);
         var cnt = 1;
-        var options = new List<MenuOption>();
-        foreach (var name in displayNames)
+        for (cnt = 1; cnt < choices.Count(); cnt++)
         {
-
-            options.Add(new MenuOption
-            {
-                Display = name,                
-                Ordinal = cnt
-
-            });
-
-            cnt++;
+            await ($"{cnt}) " + choices[cnt-1].Option()).Send(socket);
         }
-        return options;
+
+        var choice = await socket.PromptForRx($"\n[1-{cnt}]:".Prompt(), $"[1-{cnt}]");
+
+        return int.Parse(choice);
     }
 }

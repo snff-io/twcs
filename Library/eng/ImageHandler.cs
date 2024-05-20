@@ -28,9 +28,9 @@ public class AnsiImageHandler : IImageHandler
             {"login", "energy/_8443df866856aabec61d8eaccf41953974ec9191.jpeg"},
             {"newuser1", "people/_203cbeedc14a19ea5e29ff2ac9587ed25730e1ee.jpeg"},
             {"newuser2", "people/_2bb67998d261e7402f73bd3d5fdad1ec8208860b.jpeg"},
-            {"covert_biclighter", "tech/_7c7e2217c3bb13defa46c0fc780bf8b89803c614.jpeg"}
-            {"reflective_truckerhat", "tech/_89d50fd42bf2dc39ea068646d8be84bba819c386.jpeg"}
-            {"default_item", "tech/_3ff00a406694b6d2640d595d370306acab1dd9d4ljpeg"}
+            {"covert_biclighter", "tech/_7c7e2217c3bb13defa46c0fc780bf8b89803c614.jpeg"},
+            {"reflective_truckerhat", "tech/_89d50fd42bf2dc39ea068646d8be84bba819c386.jpeg"},
+            {"default_item", "tech/_3ff00a406694b6d2640d595d370306acab1dd9d4ljpeg"},
             {"welcome", "hash"},
         };
     }

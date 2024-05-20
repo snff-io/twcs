@@ -10,7 +10,7 @@ public class TechBackpack : Item
 {
     public override string Name => "Tech_Backpack";
 
-    public TechBackpack()
+    public TechBackpack(IImageHandler imageHandler):base(imageHandler)
     {
 
         EnergySlotsMax.Values.ForAll(x => x = 1);
